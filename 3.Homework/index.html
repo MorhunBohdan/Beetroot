@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Homework №3</title>
+   <style>
+      .logo {
+         width: 100px;
+      }
+   </style>
+</head>
+<body>
+<header>
+   <h1 id="top">Semantics, HTML5 links and tags</h1>
+   <img src="img/logo.png" alt="Logo" class="logo">
+</header>
+<nav>
+   <a href="#Semantics">Семантика</a>
+   <a href="#Links">посилання</a>
+   <a href="#Tegs">HTML теги</a>
+</nav>
+<main>
+   <section id="Semantics">
+      <h2>What are Semantic Elements?</h2>
+      <p>A semantic element clearly describes its meaning to both the browser and the developer.</p>
+      <p>Examples of non-semantic elements: <code>	&#60;div&#62;</code> and <code>	&#60;span&#62;</code> - Tells nothing about its content.</p>
+      <p>Examples of semantic elements: 	<code>&#60;form&#62;</code>, <code>&#60;table&#62;</code>	, and <code>&#60;article&#62;</code> 	 - Clearly defines its content.</p>
+      <hr>
+      <h2>Semantic Elements in HTML</h2>
+      <p>Many web sites contain HTML code like: <code>&#60;div id="nav"&#62;</code> <code>&#60;div class="header"&#62;</code> <code>&#60;div id="footer"&#62;</code> to indicate navigation, header, and footer.</p>
+      <p>In HTML there are some semantic elements that can be used to define different parts of a web page: </p>
+      <ul>
+         <li>&#60;article&#62;</li>
+         <li>&#60;aside&#62;</li>
+         <li>&#60;details&#62;</li>
+         <li>&#60;figcaption&#62;</li>
+         <li>&#60;figure&#62;</li>
+         <li>&#60;footer&#62;</li>
+         <li>&#60;header&#62;</li>
+         <li>&#60;main&#62;</li>
+         <li>&#60;mark&#62;</li>
+         <li>&#60;nav&#62;</li>
+         <li>&#60;section&#62;</li>
+         <li>&#60;summary&#62;</li>
+         <li>&#60;time&#62;</li>
+      </ul>
+      <table border="2">
+         <tr>
+            <td colspan="2">Header</td>
+         </tr>
+         <tr>
+            <td colspan="2">Nav</td>
+         </tr>
+         <tr>
+            <td>section</td>
+            <td rowspan="2">aside</td>
+         </tr>
+         <tr>
+            <td>article</td>
+         </tr>
+         <tr>
+            <td colspan="2">footer</td>
+         </tr>
+      </table>
+      <p>Beetroot Front-End lecture:</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/dEBVe8Ij7JU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   </section>
+   <hr>
+   <section id="Links">
+      <h2>HTML Links - Hyperlinks</h2>
+      <p>HTML links are hyperlinks.</p>
+      <p>You can click on a link and jump to another document.</p>
+      <p>When you move the mouse over a link, the mouse arrow will turn into a little hand.</p>
+      <article>
+         <h2>HTML Links - Syntax</h2>
+         <p>The HTML <code>&#60;a&#62;</code> tag defines a hyperlink. It has the following syntax:
+         <code>&#60;a href="url"&#62;link text&#60;/a&#62;</code>
+         </p>
+         <p>By default, links will appear as follows in all browsers:</p>
+         <ul>
+            <li>An unvisited link is underlined and blue</li>
+            <li>A visited link is underlined and purple</li>
+            <li>An active link is underlined and red</li>
+         </ul>
+      </article>
+   </section>
+   <section id="Tegs">
+      <h2>Basic HTML</h2>
+      <figure>
+         <img src="img/Basic.png" alt="Basic tags">
+         <figcaption>w3schools basic tags table</figcaption>
+      </figure>
+      <h2>Forms and Input</h2>
+      <figure>
+         <img src="img/Forms.png" alt="HTML forms">
+         <figcaption>w3schools forms and input table</figcaption>
+      </figure>
+      <details>
+         <summary>HTML Element Reference - By Category</summary>
+         <p>HTML tags are divided into such categories:</p>
+         <ul>
+            <li>Basic HTML</li>
+            <li>Formatting</li>
+            <li>Forms and Input</li>
+            <li>Frames</li>
+            <li>Images</li>
+            <li>Audio / Video</li>
+            <li>Links</li>
+            <li>Tables</li>
+            <li>Styles and Semantics</li>
+            <li>Meta Info</li>
+            <li>Programming</li>
+         </ul>
+      </details>
+   </section>
+</main>
+<hr>
+<footer>
+   <a href="#top">Back to top</a>
+   <p>Autor: Morhun Bohdan</p>
+   <iframe src="CV for iframe.html" title="CV" width="710px"></iframe>
+   <p>Contact info:</p>
+   <a href="https://www.gmail.com/mail/help/intl/ru/about.html?de.">bogdan@gmail.com</a>
+   <a href="https://uk-ua.facebook.com">Facebook</a>
+   <a href="https://ru.linkedin.com">LinkedIn</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Forms</title>
+   <link rel="stylesheet" href="css/normalize.css">
+   <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body class="screen">
+   <main>
+   <div class="container">
+      <h2 class="title">Create an Account</h2>
+      <form action="#" method="post">
+      <div class="user-name">
+         <div class="input-field">
+            <label for="first-name" class="details">First Name</label> 
+            <input type="text" id="first-name" name="first-name" required>
+         </div>
+         <div class="input-field">
+            <label for="last-name" class="details">Last Name</label>
+            <input type="text" id="last-name" name="last-name" required>
+         </div>
+      </div>
+      <div class="input-field">
+         <label for="email" class="details">E-mail</label> 
+      <input type="email" id="email" name="email" class="email" required>
+      </div>
+      
+      <p>We'll never share your email with anyone else.</p>
+      <div class="gender-details">
+         <input type="radio" id="male" name="gender" value="male">
+         <label for="male">Male</label>
+         <input type="radio" id="female" name="gender" value="female">
+         <label for="female">Female</label>
+      </div>
+      <div class="address">
+         <div class="input-field">
+            <label for="country" class="details">Country</label>
+            <div class="select">
+            <select id="country" name="country" class="input-field" >
+               <option value="" disabled selected>Select</option>
+               <option value="Ukraine">Ukraine</option>
+               <option value="Poland">Poland</option>
+               <option value="United Kingdom">United Kingdom</option>
+               <option value="United States">United States</option>
+            </select>
+            <span class="input-arrowup"></span>
+            <span class="input-arrowdown"></span>
+            </div>
+         </div>
+         <div class="input-field">
+            <label for="city" class="details">City</label>
+            <input type="text" id="city" name="city">
+         </div>
+      </div>
+      <div class="sign-up">
+         <button type="submit">Sign Up</button>
+      </div>
+   </form>
+      <div class="bottom-text">
+         <p>By clicking the 'Sign Up' button, you confirm that you accept our <br>
+         <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+      </div>
+      <hr>
+      <div class="bottom">
+         <p>Have an account? <a href="">Log In</a></p>
+      </div>
+   </div>
+   </main>
+</body>
+</html>

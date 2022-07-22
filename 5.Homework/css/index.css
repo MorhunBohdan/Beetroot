@@ -120,20 +120,6 @@
 .container form .gender-details input[type="radio"]:checked {
  border-color:#E4E4E4;
 }
-
-/**.container form .address .input-field .select {
-   position: relative;
-   font-family: 'Inter';
-   font-style: normal;
-   font-weight: 400;
-   font-size: 15px;
-   line-height: 22px;
-   letter-spacing: -0.2px;
-}
-.container form .address .input-field .select {
-   opacity: 0.5;
-}**/
-
 .container p {
    margin: 0px;
    font-family: 'Roboto';

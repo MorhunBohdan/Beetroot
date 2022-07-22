@@ -46,7 +46,7 @@
    border: 1px solid #E4E4E4;
    border-radius: 6px;
    color: #545454;
-   transition: all 0.4ms;
+   transition: all 2.4ms;
 }
 .container .input-field input:focus {
    border: 1px solid #007BFF;
@@ -147,7 +147,7 @@
    color: #545454;
    letter-spacing: -0.2px;
    position: relative;
-   transition: all 0.4ms;
+   transition: all 2.4ms;
 }
 .container form .address .input-field:focus {
    border: 1px solid #007BFF;

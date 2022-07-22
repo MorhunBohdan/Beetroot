@@ -47,6 +47,13 @@
    border-radius: 6px;
    color: #545454
 }
+.container .input-field input:focus {
+   border: 1px solid #007BFF;
+   outline: 0;
+}
+.container .input-field input:hover {
+   border: 1px solid #007BFF;
+}   
 .container .input-field input[type="text"],input[type="email"] {
    padding: 8px;
    font-family: 'Inter';
@@ -139,6 +146,13 @@
    color: #545454;
    letter-spacing: -0.2px;
    position: relative;
+}
+.container form .address .input-field:focus {
+   border: 1px solid #007BFF;
+   outline: 0;
+}
+.container form .address .input-field .select .input-field:hover {
+   border: 1px solid #007BFF;
 }
 .container form .address .input-field .select .input-field{
    padding: 8px 38px 8px 10px;

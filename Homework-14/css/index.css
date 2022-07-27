@@ -1,0 +1,256 @@
+@font-face {
+  font-family: 'Train One';
+  src: url(../fonts/TrainOne-Regular.ttf);
+}
+@font-face {
+  font-family: "Lato";
+  src: url(../fonts/Lato-Bold.ttf);
+  src: url(../fonts/Lato-Light.ttf);
+  src: url(../fonts/Lato-Regular.ttf);
+}
+.header {
+  background: #FFF;
+  border-bottom: 1px solid #BDBDBD;
+}
+.header__conteiner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1170px;
+  width: 100%;
+  height: 80px;
+  margin: 0px auto;
+}
+.logo__link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.logo__title {
+  font-family: 'Train One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 43px;
+  text-transform: uppercase;
+  color: #282528;
+  margin: 0px;
+}
+.menu {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+
+}
+.menu__list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0px auto;
+  padding: 0px;
+}
+.menu-link-respons:hover {
+  color: #18B5DC;
+}
+.menu__list-item {
+  padding: 0px 15px;
+}
+.menu__link {
+  text-decoration: none;
+  color: #3C3C3C;
+}
+.button {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: #3C3C3C;
+}
+.button__input {
+  color: #3C3C3C;
+  border: 1px solid #3C3C3C;
+  background: #FFF;
+  padding: 10px 20px;
+}
+.button__input--hover:hover {
+  background: #18B5DC;
+}
+.main {
+  background: #F6F6F6;
+}
+.main__conteiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1170px;
+  width: 100%;
+  margin: 0px auto;
+  padding: 150px;
+}
+.title {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 41px;
+  text-align: center;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #3C3C3C;
+}
+.title::after {
+  content:'';
+  position: absolute;
+  width: 45px;
+  height: 4px;
+  background: #DDDBDB;
+  margin-left: -25px;
+}
+.main__h1 {
+  margin: 0px 0px 20px 0px;
+}
+.main__title {
+  padding-bottom: 64px;
+}
+.main__text {
+  max-width: 570px;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #3C3C3C;
+  padding-bottom: 60px;
+
+}
+.main-team {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #282528;
+}
+.main-team__row {
+  display: flex;
+  justify-content: space-between;
+}
+.team-active {
+  text-align: left;
+}
+.team-active__icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 270px;
+  background: #18B5DC;
+}
+.team-active__item {
+  padding: 0px 2px;
+}
+.team-active__icon1 {
+  z-index: 1;
+}
+.team-active__icon1 {
+  position: absolute;
+}
+.team-active__icon1:hover {
+  opacity: 0;
+}
+.team-active-colum {
+  display: flex;
+  flex-direction: column;
+}
+.team-active__border {
+  padding: 0px 15px 20px;
+}
+.team-active__icon {
+  padding: 0px 2px;
+}
+.team-active__name {
+  margin: 0px;
+  padding: 0px 15px;
+}
+.team-active__job {
+  margin: 0px;
+  padding: 0px 15px;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+  color: #646464;
+  margin: 0px;
+  padding: 0px 15px;
+}
+.team-colum {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.team-colum__icons{
+  padding: 0px 15px 20px;
+}
+
+.team-colum img{
+  height: 270px;
+}
+.team-colum__name {
+  margin: 0px;
+  padding: 0px 15px;
+}
+.team-colum__job {
+  margin: 0px;
+  padding: 0px 15px;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+  color: #646464;
+}
+.footer__conteiner {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0px;
+}
+.footer-size{
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+}
+.menu__list {
+  padding: 28px;
+}
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-icons__item {
+  padding: 0px 5px;
+}
+.social-icons__img1 {
+  position: absolute;
+  margin: 0px px;
+}
+.social-icons__img {
+  width: 24px;
+}
+
+.social-icons__img1:hover {
+ opacity: 0;
+}

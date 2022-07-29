@@ -1,101 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title></title>
-   <link rel="stylesheet" href="css/normalize.css">
-   <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   <header class="header_conteiner">
-      <nav class="content">
-         <ul>
-            <li><a href="#Home">Home</a></li>
-            <li><a href="#About-me">About me</a> </li>
-            <li><a href="#Skills">Skills</a> </li>
-            <li><a href="#Portfolio">Portfolio</a> </li>
-            <li><a href="#Contacts">Contacts</a></li>
-         </ul>
-      </nav>
-      <hr>
-   </header>
-   <section id="First-screen-conteiner">
-      <div class="content">
-         <h1>Denis Novik</h1>
-         <div class="bgimg"></div>
+  <header class="header-conteiner">
+    <nav class="content">
+      <ul class="content__lists">
+        <li><a class="content__link" href="#Home">Home</a></li>
+        <li><a class="content__link" href="#About-me">About me</a> </li>
+        <li><a class="content__link" href="#Skills">Skills</a> </li>
+        <li><a class="content__link" href="#Portfolio">Portfolio</a> </li>
+        <li><a class="content__link" href="#Contacts">Contacts</a></li>
+      </ul>
+    </nav>
+    <hr class="header-conteiner__hr">
+  </header>
+  <section class="denis-novik">
+    <div class="content">
+      <h1 class="denis-novik__title">Denis Novik</h1>
+      <div class="denis-novik__bgimg"></div>
+    </div>
+  </section>
+  <section class="about-me">
+    <div class="about-me__content">
+      <div class="about-me__discription">
+        <h2 class="title">About me</h2>
+        <p class="about-me__text">Hi, I'm Denis – UX/UI designer from Minsk.<br> I'm interested in design and everything
+          connected with it.
+        </p>
+        <p class="about-me__text">I'm studying at courses "Web and mobile design <br> interfaces" in IT-Academy.</p>
+        <p class="about-me__text">Ready to implement excellent projects <br> with wonderful people.</p>
       </div>
-   </section>
-   <section id="About-me-conteiner">
-      <div class="content">
-         <div class="about-me">
-            <h2>About me</h2>
-            <p>Hi, I'm Denis – UX/UI designer from Minsk.<br> I'm interested in design and everything connected with it.
-            </p>
-            <p>I'm studying at courses "Web and mobile design <br> interfaces" in IT-Academy.</p>
-            <p>Ready to implement excellent projects <br> with wonderful people.</p>
-         </div>
+    </div>
+  </section>
+  <section class="skills">
+    <div class="content skills__content">
+      <h2 class="title skills__title">Skills</h2>
+      <p class="skills__text">I work in such programs as</p>
+      <div class="abode">
+        <div class="abode__icons">
+          <img src="img/icons/Ps.svg" alt="Adobe-Photoshop">
+          <img src="img/icons/Ai.svg" alt="Adobe-Illustrator">
+          <img src="img/icons/Ae.svg" alt="Adobe-After-Effects">
+          <img src="img/icons/Figma.svg" alt="Figma">
+          <p class="abobe__program">Adobe <br> Photoshop</p>
+          <p class="abobe__program">Adobe <br>Illustrator</p>
+          <p class="abobe__program">Adobe <br>After Effects</p>
+          <p class="abobe__program">Figma</p>
+          <img src="img/icons/rating-ps.svg" alt="Photoshop">
+          <img src="img/icons/rating-ai.svg" alt="Illustrator">
+          <img src="img/icons/rating-ae.svg" alt="After">
+          <img src="img/icons/rating-figma.svg" alt="Figma">
+        </div>
       </div>
-   </section>
-   <section id="Skills-conteiner">
-      <div class="content">
-         <h2>Skills</h2>
-         <p>I work in such programs as</p>
-         <div class="abode">
-            <div class="icons">
-               <img src="img/icons/Ps.svg" alt="Adobe-Photoshop">
-               <img src="img/icons/Ai.svg" alt="Adobe-Illustrator">
-               <img src="img/icons/Ae.svg" alt="Adobe-After-Effects">
-               <img src="img/icons/Figma.svg" alt="Figma">
-               <p>Adobe <br> Photoshop</p>
-               <p>Adobe <br>Illustrator</p>
-               <p>Adobe <br>After Effects</p>
-               <p>Figma</p>
-               <img src="img/icons/rating-ps.svg" alt="Photoshop">
-               <img src="img/icons/rating-ai.svg" alt="Illustrator">
-               <img src="img/icons/rating-ae.svg" alt="After">
-               <img src="img/icons/rating-figma.svg" alt="Figma">
-            </div>
-         </div>
+    </div>
+  </section>
+  <section class="portfolio">
+    <div class="portfolio__content">
+      <h2 class="title">Portfolio</h2>
+      <img src="img/photos/Fashion-store.png" alt="Fashion-store">
+      <p class="portfolio__title">Online fashion store - Homepage</p>
+      <img src="img/photos/reebok_web.png" alt="reebok_web">
+      <p class="portfolio__title">Reebok Store - Concept</p>
+      <img src="img/photos/braun-landing.png" alt="braun-landing">
+      <p class="portfolio__title">Braun Landing Page - Concept</p>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer__content">
+      <div class="contacts">
+        <h2 class="title contacts__title">Contacts</h2>
+        <p class="contacts__text">Want to know more or just chat?<br>
+          You are welcome!</p>
+        <form action="#" method="#">
+          <button class="contacts__button" type="submit">
+            <p class="contacts__button-text">Send message</p>
+          </button>
+        </form>
+        <div class="footer-icons">
+          <a href="#" class="footer-icons__link"><img class="footer-icons__img" src="img/icons/linkedin.svg"
+              alt="Linkedin"></a>
+          <a href="#" class="footer-icons__link"><img class="footer-icons__img" src="img/icons/instagram.svg"
+              alt="Instagram"></a>
+          <a href="#" class="footer-icons__link"><img class="footer-icons__img" src="img/icons/behance.svg"
+              alt="behance"></a>
+          <a href="#" class="footer-icons__link"><img class="footer-icons__img" src="img/icons/dribbble.svg"
+              alt="dribbble"></a>
+        </div>
+        <div class="social">
+          <p class="social__text">Like me on</p>
+          <a class="social_text" href="#">LinkedIn</a>
+          <a class="social_text" href="#">Instagram</a>
+          <a class="social_text" href="#">Behance</a> <br>
+          <a class="social_text" href="#">Dribble</a>
+        </div>
       </div>
-   </section>
-   <section id="Portfolio-conteiner">
-      <div class="content">
-         <h2>Portfolio</h2>
-         <img src="img/photos/Fashion-store.png" alt="Fashion-store">
-         <p>Online fashion store - <br> Homepage</p>
-         <img src="img/photos/reebok_web.png" alt="reebok_web">
-         <p>Reebok Store - Concept</p>
-         <img src="img/photos/braun-landing.png" alt="braun-landing">
-         <p class="end">Braun Landing Page - Concept</p>
-      </div>
-   </section>
-   <footer>
-      <div class="content-footer">
-         <div class="contacts">
-            <h2>Contacts</h2>
-            <p>Want to know more or just chat?<br>
-               You are welcome!</p>
-            <form action="#" method="#">
-               <button type="submit">
-                  <p>Send message</p>
-               </button>
-            </form>
-            <div class="footer-icons">
-               <img src="img/icons/linkedin.svg" alt="Linkedin">
-               <img src="img/icons/instagram.svg" alt="Instagram">
-               <img src="img/icons/behance.svg" alt="behance">
-               <img src="img/icons/dribbble.svg" alt="dribbble">
-            </div>
-            <div class="social">
-               <p>Like me on</p>
-               <a href=""">LinkedIn</a>
-               <a href="">Instagram</a>
-               <a href="">Behance</a> <br>
-               <a href="">Dribble</a>
-            </div>
-         </div>
-      </div>
-</footer>
+    </div>
+  </footer>
 </body>
 </html>

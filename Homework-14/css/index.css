@@ -313,20 +313,32 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
   background: #18B5DC;
+  opacity: 0;
+  transition: all 1sec;
+  transition: opacity 0.25s;
 }
-
+.team-colum__overlay:hover{
+  opacity: 1;
+}
+.main-team__developer {
+  padding: 0px 15px;
+}
+.main-team__artist {
+  padding: 0px 15px;
+}
+.main-team__designer {
+  padding: 0px 15px;
+}
 .team-colum img{
   height: 270px;
 }
 .team-colum__name {
   margin: 0px;
-  padding: 0px 15px;
+  padding: 20px 0px 0px 0px;
 }
 .team-colum__job {
   margin: 0px;
-  padding: 0px 15px;
   font-family: 'Lato';
   font-style: normal;
   font-weight: 300;

@@ -1,4 +1,104 @@
 @font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?4ofsmf');
+  src:  url('../fonts/icomoon.eot?4ofsmf#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?4ofsmf') format('truetype'),
+    url('../fonts/icomoon.woff?4ofsmf') format('woff'),
+    url('../fonts/icomoon.svg?4ofsmf#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 42px;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook .path1:before {
+  content: "\e900";
+  color: rgb(24, 181, 220);
+}
+.icon-facebook .path2:before {
+  content: "\e901";
+  margin-left: -1.0234375em;
+  color: rgb(255, 255, 255);
+}
+.icon-facebook-1 .path1:before {
+  content: "\e902";
+  color: rgb(93, 203, 230);
+}
+.icon-facebook-1 .path2:before {
+  content: "\e903";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-instagram .path1:before {
+  content: "\e904";
+  color: rgb(24, 181, 220);
+}
+.icon-instagram .path2:before {
+  content: "\e905";
+  margin-left: -1.0234375em;
+  color: rgb(255, 255, 255);
+}
+.icon-instagram-1 .path1:before {
+  content: "\e906";
+  color: rgb(93, 203, 230);
+}
+.icon-instagram-1 .path2:before {
+  content: "\e907";
+  margin-left: -1.0234375em;
+  color: rgb(255, 255, 255);
+}
+.icon-linkedin .path1:before {
+  content: "\e908";
+  color: rgb(24, 181, 220);
+}
+.icon-linkedin .path2:before {
+  content: "\e909";
+  margin-left: -1.0478515625em;
+  color: rgb(255, 255, 255);
+}
+.icon-telegram .path1:before {
+  content: "\e90a";
+  color: rgb(24, 181, 220);
+}
+.icon-telegram .path2:before {
+  content: "\e90b";
+  margin-left: -1.0234375em;
+  color: rgb(255, 255, 255);
+}
+.icon-twitter .path1:before {
+  content: "\e90c";
+  color: rgb(24, 181, 220);
+}
+.icon-twitter .path2:before {
+  content: "\e90d";
+  margin-left: -1.0234375em;
+  color: rgb(255, 255, 255);
+}
+.icon-twitter-1 .path1:before {
+  content: "\e90e";
+  color: rgb(93, 203, 230);
+}
+.icon-twitter-1 .path2:before {
+  content: "\e90f";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+@font-face {
   font-family: 'Train One';
   src: url(../fonts/TrainOne-Regular.ttf);
 }
@@ -154,16 +254,20 @@
   background: #18B5DC;
 }
 .team-active__item {
+  text-decoration: none;
   padding: 0px 2px;
 }
-.team-active__icon1 {
-  z-index: 1;
+.icon-twitter-1 .path2:hover::before{
+  content: '\e90e';
+  color: #ffffff;
 }
-.team-active__icon1 {
-  position: absolute;
+.icon-facebook-1 .path2:hover::before{
+  content: '\e90e';
+  color: #ffffff;
 }
-.team-active__icon1:hover {
-  opacity: 0;
+.icon-instagram-1 .path2:hover::before{
+  content: '\e90e';
+  color: #ffffff;
 }
 .team-active-colum {
   display: flex;
@@ -197,7 +301,20 @@
   text-align: left;
 }
 .team-colum__icons{
-  padding: 0px 15px 20px;
+  position: relative;
+  width: 270px;
+}
+.team-colum__img {
+  display:block;
+  width: 100%;
+}
+.team-colum__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #18B5DC;
 }
 
 .team-colum img{

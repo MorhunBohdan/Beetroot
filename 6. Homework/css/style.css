@@ -1,0 +1,214 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url(../fonts/Open_Sans/OpenSans-VariableFont_wdth\wght.ttf);
+}
+body {
+  font-family: "Open Sans";
+  background: #fff;
+}
+.content {
+  max-width: 970px;
+  width: 100%;
+  margin: 0 auto;
+}
+.about-me,
+.portfolio {
+  background: #f6f6f6;
+}
+/*-----HEADER-----*/
+.content__lists {
+  list-style: none;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+}
+.content__link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.02em;
+  color: #828282;
+  text-decoration: none;
+  padding: 0px 20px;
+}
+.content__link:hover {
+  color: #070707;
+}
+.header-conteiner__hr {
+  max-width: 970px;
+  width: 100%;
+  margin: 0px auto;
+  background-color: #828282;
+  border: 1px solid #828282;
+}
+/*--FIRST SCREEN--*/
+.denis-novik__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 65px;
+  color: #070707;
+  margin: 12px 0px 50px 0px;
+}
+.denis-novik__bgimg {
+  background-image: url(../img/photos/main-photo.jpeg);
+  width: 970px;
+  height: 387px;
+  background-position: 0% 43%;
+  background-size: 970px;
+}
+
+/*--ABOUT ME--*/
+.about-me {
+  box-sizing: border-box;
+}
+.about-me__content {
+  height: 500px;
+  padding: 100px;
+}
+.about-me__discription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  margin: 0px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 46px;
+  color: #070707;
+  margin-bottom: 35px;
+  text-align: center;
+}
+.about-me__text {
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+/*--SKILLS--*/
+.skills__content {
+  padding: 100px 0px;
+}
+.abode__icons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+.skills__text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  margin: 20px 0px 50px 0px;
+  color: #070707;
+}
+.abobe__program {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #828282;
+}
+/*--PORTFOLIO--*/
+.portfolio {
+  text-align: center;
+}
+.portfolio__content {
+  max-width: 970px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0px;
+}
+.portfolio__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  text-decoration-line: underline;
+  color: #070707;
+  margin: 40px 0px 70px 0px;
+}
+
+/*----CONTACNTS----*/
+.footer__content {
+  padding-top: 100px;
+  margin-bottom: 50px;
+}
+.contacts {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.contacts__title {
+  margin: 0;
+  margin-bottom: 20px;
+}
+.contacts__text {
+  font-size: 18px;
+  line-height: 25px;
+  color: #070707;
+  margin: 0px 0px 60px 0px;
+}
+.contacts__button {
+  border: none;
+  width: 180px;
+  height: 44px;
+  background: #070707;
+  border-radius: 22px;
+  margin-bottom: 30px;
+  transition: all 5ms;
+}
+.contacts__button:hover {
+  background: #007bff;
+}
+.contacts__button-text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #fff;
+  margin: 0px;
+}
+.footer-icons__link {
+  padding: 0px 25px;
+}
+.footer-icons__img {
+  transition: all 0.2s ease-in-out;
+}
+.footer-icons__img:hover {
+  transform: scale(1.1);
+}
+.social__text,
+a {
+  margin: 60px 0px 0px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #828282;
+  text-decoration: none;
+}
+.social a:hover {
+  color: #070707;
+}

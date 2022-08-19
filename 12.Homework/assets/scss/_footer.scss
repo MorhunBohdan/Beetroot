@@ -1,0 +1,85 @@
+
+%conteiner {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+}
+%font-freehand-footer {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 35px;
+  color: #fff;
+  margin: 0px;
+}
+.conteiner {
+  @extend %conteiner;
+}
+.footer {
+  background: #16133d;
+  min-height: 250px;
+}
+.freehand-icon-footer {
+  display: flex;
+  align-items: center;
+  &__icon {
+    &-svg {
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      padding-top: 5px;
+      margin-right: 13px;
+    }
+  }
+  &__title {
+    @extend %font-freehand-footer;
+    margin: 40px 0px;
+  }
+}
+.social {
+  display: flex;
+  &__block {
+    background: #efeef3;
+    border-radius: 5px;
+    width: 38px;
+    height: 38px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__link {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__icon {
+    max-width: 20px;
+    fill: #16133d;
+    z-index: 2;
+  }
+  &__icon-b {
+    position: absolute;
+    max-width: 20px;
+    fill: #3db370;
+    z-index: 1;
+  }
+  &__link:hover .social__icon-b {
+    z-index: 3;
+  }
+  &__link:hover .social__icon-facebook-b {
+    z-index: 3;
+  }
+  &__icon-facebook {
+    max-width: 10px;
+    z-index: 2;
+  }
+  &__icon-facebook-b {
+    max-width: 10px;
+    position: absolute;
+    z-index: 1;
+  }
+}

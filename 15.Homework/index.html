@@ -20,6 +20,9 @@
         <a class="nav-menu__link" href="#">blog</a>
         <a class="nav-menu__link" href="#">contact</a>
       </nav>
+      <div class="header-burger">
+        <span class></span>
+      </div>
       <div class="search">
         <a class="icon-search-icon" href=""></a>
       </div>
@@ -31,49 +34,71 @@
       <img src="img/bg-image.png" alt="bg-image" class="first-screen__img">
       <div class="first-screen__conteiner">
         <h1 class="first-screen__titel">Manifest is a newborn theme.
-        Clean, simple and fast.</h1>
-      </div>   
+          Clean, simple and fast.</h1>
+      </div>
     </div>
     <div class="blog">
       <div class="blog__conteiner">
         <h2 class="blog__title">Blog</h2>
-        <article class="blog__content">
-          <img class="blog__img-1" src="img/blog-1.png" alt="blog-1">
-          <div class="blog__info">
-            <p class="blog__tag">Technology, Interface Design</p>
-            <h4 class="blog__title">Using UX Design to Build a Sustainable Future</h4>
-            <p class="blog__date">6 May, 2020</p>
-            <div class="blog__description">
-              <p class="blog__text">Transformation has to be driven by everybody, not just by climate groups, and we
-                have
-                a responsibility to use our influence to drive this. <span class="icon-arrow"></span></p>
+        <div class="blog__articals">
+          <article class="blog__content">
+            <div class="blog__box-top">
+              <div class="blog__img">
+                <img class="blog__img-1" src="img/blog-1.png" alt="blog-1">
+              </div>
+              <div class="blog-info">
+                <div class="blog-info__conteiner">
+                  <p class="blog-info__tag">Technology, Interface Design</p>
+                  <h4 class="blog-info__title">Using UX Design to Build a Sustainable Future</h4>
+                  <p class="blog-info__date">6 May, 2020</p>
+                  <div class="blog-info__description">
+                    <p class="blog-info__text">Transformation has to be driven by everybody, not just by climate groups,
+                      and
+                      we
+                      have
+                      a responsibility to use our influence to drive this. <span class="icon-arrow"></span></p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </article>
-        <article class="blog__content">
-          <div class="blog__info">
-            <p class="blog__tag">Technology, Interface Design</p>
-            <h4 class="blog__title">Using UX Design to Build a Sustainable Future</h4>
-            <p class="blog__date">6 May, 2020</p>
-            <div class="blog__description">
-              <p class="blog__text">Transformation has to be driven by everybody, not just by climate groups, and we
-                have
-                a responsibility to use our influence to drive this. <span class="icon-arrow"></span></p>
+          </article>
+          <article class="blog__content">
+            <div class="blog__box-bottom">
+              <div class="blog-info">
+                <div class="blog-info__conteiner">
+                  <p class="blog-info__tag">Technology, Interface Design</p>
+                  <h4 class="blog-info__title">Using UX Design to Build a Sustainable Future</h4>
+                  <p class="blog-info__date">6 May, 2020</p>
+                  <div class="blog-info__description">
+                    <p class="blog-info__text">Transformation has to be driven by everybody, not just by climate groups,
+                      and
+                      we
+                      have
+                      a responsibility to use our influence to drive this. <span class="icon-arrow"></span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="blog__img">
+                <img class="blog__img-2" src="img/blog-2.png" alt="blog-2">
+              </div>
             </div>
-          </div>
-          <img class="blog__img-2" src="img/blog-2.png" alt="blog-2">
-        </article>
+          </article>
+        </div>
       </div>
     </div>
     <div class="latest-posts">
       <div class="latest-posts__conteiner">
         <div class="heading">
           <h3 class="heading__title">Latest Posts</h3>
-          <p class="heading__view-all">View All<span class="icon-arrow"></span></p>
+          <div class="heading__text">
+            <p class="heading__view-all">View All</p><span class="icon-arrow"></span>
+          </div>
         </div>
         <div class="posts">
           <div class="post">
-            <img class="post__img-1" src="img/latest-1.png" alt="latest-1">
+            <div class="post__img">
+              <img class="post__img-1" src="img/latest-1.png" alt="latest-1">
+            </div>
             <div class="main-content">
               <div class="main-content__heading">
                 <p class="main-content__heading-tag">Interface Design</p>
@@ -88,7 +113,9 @@
             </div>
           </div>
           <div class="post">
-            <img class="post__img-2" src="img/latest-2.png" alt="latest-2">
+            <div class="post__img">
+              <img class="post__img-2" src="img/latest-2.png" alt="latest-2">
+            </div>
             <div class="main-content">
               <div class="main-content__heading">
                 <p class="main-content__heading-tag">Technology</p>
@@ -103,7 +130,9 @@
             </div>
           </div>
           <div class="post">
-            <img class="post__img-3" src="img/latest-3.png" alt="latest-3">
+            <div class="post__img">
+              <img class="post__img-3" src="img/latest-3.png" alt="latest-3">
+            </div>
             <div class="main-content">
               <div class="main-content__heading">
                 <p class="main-content__heading-tag">Visual Design</p>
@@ -124,11 +153,15 @@
       <div class="most-popular__conteiner">
         <div class="heading">
           <h3 class="heading__title">The Most Popular</h3>
-          <p class="heading__view-all">View All<span class="icon-arrow"></span></p>
+          <div class="heading__text">
+            <p class="heading__view-all">View All</p><span class="icon-arrow"></span>
+          </div>
         </div>
         <div class="most-popular__articals">
           <article class="most-popular__artical">
-            <img class="most-popular__img-1" src="img/popular-1.png" alt="popular-1">
+            <div class="most-popular__img">
+              <img class="most-popular__img-1" src="img/popular-1.png" alt="popular-1">
+            </div>
             <div class="main-content">
               <div class="main-content__heading">
                 <p class="main-content__heading-tag">Interface Design</p>
@@ -145,7 +178,9 @@
             </div>
           </article>
           <article class="most-popular__artical">
-            <img class="most-popular__img-2" src="img/popular-2.png" alt="popular-2">
+            <div class="most-popular__img">
+              <img class="most-popular__img-2" src="img/popular-2.png" alt="popular-2">
+            </div>
             <div class="main-content">
               <div class="main-content__heading">
                 <p class="main-content__heading-tag">Visual Design</p>
@@ -160,19 +195,19 @@
             </div>
           </article>
         </div>
-        <div class="most-popular__button">
-          <button>Load More</button>
+        <div class="most-popular__button-box">
+          <button class="most-popular__button"><span class="most-popular__button-text">Load More</span> </button>
         </div>
       </div>
     </div>
     <div class="info">
       <div class="info__conteiner">
         <div class="info__left">
-          <p class="info__left__text">Full-time UI/UX designer
-            Head of Design at VeronaLabs.com<span class="icon-arrow"></span></p>
+          <p class="info__left-text">Full-time UI/UX designer
+            Head of Design at VeronaLabs.com <br><span class="icon-arrow"></span></p>
         </div>
         <div class="info__right">
-          <p class="info__right__text">We work with clients around the world from our headquarters in Charleston, South
+          <p class="info__right-text">We work with clients around the world from our headquarters in Charleston, South
             Carolina.
             We focus on naming, branding, brand narratives, website design and development, and brand experiences.</p>
         </div>

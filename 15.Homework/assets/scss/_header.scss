@@ -25,7 +25,7 @@
   align-items: center;
 }
 .logo {
-  flex: 40%;
+ flex: 40%;
 }
 .icon-logo {
   text-decoration: none;
@@ -33,7 +33,6 @@
   cursor: url("../../icons/cursor.svg")  1 1, auto;
 }
 .nav-menu {
-  flex: 40%;
   &__link {
     cursor: url("../../icons/cursor.svg")  1 1, auto;
     position: relative;
@@ -60,6 +59,9 @@
   &__link:active::after {
     visibility: visible;
   }
+}
+.search {
+
 }
 .icon-search-icon {
   text-decoration: none;

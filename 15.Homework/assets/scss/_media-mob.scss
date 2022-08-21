@@ -1,0 +1,44 @@
+@media (max-width: 320px) {
+  .blog__box {
+    display: flex;
+    flex-direction: column;
+  }
+  .posts {
+    display: flex;
+  }
+  .blog__box-top {
+    flex-direction: column-reverse;
+  }
+  .blog__box-bottom {
+    flex-direction: column;
+  }
+  .most-popular__articals {
+    display: flex;
+    flex-direction: column;
+  }
+  .info__conteiner {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-conteiner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-content__cta {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .social__box {
+    margin: 0px;
+  }
+  .posts {
+    display: flex;
+    flex-direction: column;
+  }
+}

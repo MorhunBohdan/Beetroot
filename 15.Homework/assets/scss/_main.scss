@@ -1,0 +1,60 @@
+%conteiner {
+  max-width: 1170px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.main {
+}
+.first-screen {
+  position: relative;
+  margin-bottom: 90px;
+  &__img {
+    display: block;
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+    object-fit: cover;
+  }
+  &__conteiner {
+    @extend %conteiner;
+  }
+  &__titel {
+    position: absolute;
+    top: 10%;
+    margin: auto;
+    max-width: 770px;
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 64px;
+    letter-spacing: 0.05em;
+    color: #000000;
+  }
+}
+.blog {
+  &__conteiner {
+    @extend %conteiner
+  }
+  &__title {
+  }
+  &__content {
+  }
+  &__img-1 {
+  }
+  &__info {
+  }
+  &__tag {
+  }
+  &__date {
+  }
+  &__description {
+  }
+  &__text {
+  }
+  &__img-2 {
+  }
+}
+.icon-arrow {
+}

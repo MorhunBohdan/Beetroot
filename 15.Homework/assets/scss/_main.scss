@@ -266,6 +266,7 @@
   &__conteiner {
     display: flex;
     @extend %conteiner;
+    gap: 20px;
   }
   &__conteiner > * {
     flex-basis: 100%;
@@ -282,9 +283,9 @@
     color: #000000;
   }
   &__right {
-    max-width: 470px;
   }
   &__right-text {
+    max-width: 470px;
     font-family: "Lato";
     font-style: normal;
     font-weight: 400;

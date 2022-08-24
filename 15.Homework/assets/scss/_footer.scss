@@ -4,6 +4,7 @@
   margin: 0 auto;
 }
 .footer {
+  margin-top: auto;
   background: #f4f4f4;
 }
 .footer-conteiner {
@@ -60,7 +61,7 @@
     text-decoration: none;
     color: #565656;
     font-size: 24px;
-    cursor: url("../../icons/cursor.svg")  1 1, auto;
+    cursor: url("../../icons/cursor.svg") 1 1, auto;
   }
   &__box:hover {
     background-color: #565656;

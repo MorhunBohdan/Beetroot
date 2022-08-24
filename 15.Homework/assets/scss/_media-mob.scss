@@ -1,3 +1,48 @@
+@media (max-width: 1195px) {
+  .header-conteiner {
+    padding: 0px 15px;
+  }
+  .main > div:nth-child(n + 2) {
+    padding: 0px 15px;
+  }
+  .first-screen__titel {
+    padding: 0px 15px;
+  }
+  .footer-conteiner {
+    padding: 0px 15px;
+  }
+}
+@media (max-width: 826px){
+  .nav-menu {
+    display: none;
+  }
+  .header-burger {
+    display: flex;
+  }
+};
+@media (max-width: 768px) {
+  .posts {
+    flex-direction: column;
+  }
+  .post {
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  .post:nth-child(2){
+    flex-direction: row-reverse;
+  }
+  .post > * {
+    flex-basis: 100%;
+  }
+}
+@media (max-width: 320px) {
+  .blog__box {
+    display: block;
+  }
+}
+
 @media (max-width: 320px) {
   .blog__box {
     display: flex;

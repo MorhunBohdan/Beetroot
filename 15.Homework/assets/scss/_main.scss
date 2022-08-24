@@ -6,40 +6,6 @@
 }
 .main {
 }
-@media (max-width: 1195px) {
-  .icon-logo {
-    padding: 0px 15px;
-  }
-  .search {
-    padding: 0px 15px;
-  }
-  .nav-menu {
-    display: none;
-  }
-  .first-screen__titel {
-    padding: 0px 15px;
-  }
-  .blog {
-    padding: 0px 15px;
-  }
-  .latest-posts {
-    padding: 0px 15px;
-  }
-  .most-popular {
-    padding: 0px 15px;
-  }
-  .info {
-    padding: 0px 15px;
-  }
-  .footer-conteiner, .social {
-    padding: 0px 15px;
-  }
-}
-@media (max-width: 320px) {
-  .blog__box {
-    display: block;
-  }
-}
 .first-screen {
   position: relative;
   margin-bottom: 90px;
@@ -85,23 +51,17 @@
   }
   &__content {
   }
-  &__box-top {
+  &__box {
     display: flex;
+    gap: 30px;
     flex-direction: row;
-    flex-basis: 100%;
     align-items: center;
     margin-bottom: 50px;
     max-width: 100%;
   }
-  &__box-bottom {
-    display: flex;
-    flex-direction: row;
+  &__box > * {
     flex-basis: 100%;
-    align-items: center;
-    margin-bottom: 50px;
-    max-width: 100%;
   }
-
   &__img-1 {
     max-width: 100%;
     height: auto;
@@ -113,7 +73,6 @@
 }
 .blog-info {
   margin: 0 auto;
-  padding: 30px;
   &__conteiner {
     max-width: 450px;
     width: 100;
@@ -199,7 +158,6 @@
 .post {
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
   &__img {
   }
   &__img-1 {
@@ -307,11 +265,9 @@
 .info {
   &__conteiner {
     display: flex;
-    justify-content: space-between;
     @extend %conteiner;
-    flex: 0 auto;
   }
-  &__conteiner > *{
+  &__conteiner > * {
     flex-basis: 100%;
   }
   &__left {

@@ -54,17 +54,80 @@ body {
     text-decoration: none;
     color: #000000;
   }
-  &__link::after {
-    content: "";
-    position: absolute;
-    width: 40px;
-    border: 1px solid #000000;
-    top: 140%;
-    right: 50%;
-    visibility: hidden;
+  .lin1 {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 40px;
+      border: 1px solid #000000;
+      top: 140%;
+      right: 19%;
+      visibility: hidden;
+    }
+    &:active::after {
+      visibility: visible;
+    }
   }
-  &__link:active::after {
-    visibility: visible;
+  .lin2 {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 40px;
+      border: 1px solid #000000;
+      top: 140%;
+      right: 21%;
+      visibility: hidden;
+    }
+    &:active::after {
+      visibility: visible;
+    }
+  }
+  .lin3 {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 40px;
+      border: 1px solid #000000;
+      top: 140%;
+      right: 21%;
+      visibility: hidden;
+    }
+    &:active::after {
+      visibility: visible;
+    }
+  }
+  .lin4 {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 40px;
+      border: 1px solid #000000;
+      top: 140%;
+      right: 13%;
+      visibility: hidden;
+    }
+    &:active::after {
+      visibility: visible;
+    }
+  }
+  .lin5 {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 40px;
+      border: 1px solid #000000;
+      top: 140%;
+      right: 29%;
+      visibility: hidden;
+    }
+    &:active::after {
+      visibility: visible;
+    }
   }
 }
 .search {

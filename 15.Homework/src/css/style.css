@@ -59,16 +59,79 @@ body {
   text-decoration: none;
   color: #000000;
 }
-.nav-menu__link::after {
+.nav-menu .lin1 {
+  position: relative;
+}
+.nav-menu .lin1::after {
   content: "";
   position: absolute;
   width: 40px;
   border: 1px solid #000000;
   top: 140%;
-  right: 50%;
+  right: 19%;
   visibility: hidden;
 }
-.nav-menu__link:active::after {
+.nav-menu .lin1:active::after {
+  visibility: visible;
+}
+.nav-menu .lin2 {
+  position: relative;
+}
+.nav-menu .lin2::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  border: 1px solid #000000;
+  top: 140%;
+  right: 21%;
+  visibility: hidden;
+}
+.nav-menu .lin2:active::after {
+  visibility: visible;
+}
+.nav-menu .lin3 {
+  position: relative;
+}
+.nav-menu .lin3::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  border: 1px solid #000000;
+  top: 140%;
+  right: 21%;
+  visibility: hidden;
+}
+.nav-menu .lin3:active::after {
+  visibility: visible;
+}
+.nav-menu .lin4 {
+  position: relative;
+}
+.nav-menu .lin4::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  border: 1px solid #000000;
+  top: 140%;
+  right: 13%;
+  visibility: hidden;
+}
+.nav-menu .lin4:active::after {
+  visibility: visible;
+}
+.nav-menu .lin5 {
+  position: relative;
+}
+.nav-menu .lin5::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  border: 1px solid #000000;
+  top: 140%;
+  right: 29%;
+  visibility: hidden;
+}
+.nav-menu .lin5:active::after {
   visibility: visible;
 }
 

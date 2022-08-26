@@ -43,6 +43,7 @@
     );
   }
   &__items:hover {
+    cursor: url('../../icons/hand-point-up.svg'), auto;
     background: linear-gradient(
       360deg,
       #241f24 1.04%,
@@ -116,7 +117,13 @@
   background: #e0e0e0;
   border-radius: 8px;
   margin-left: rem(20px);
+  opacity: 50%;
+  transition: 0.5s;
 }
+.like:hover {
+  opacity: 100%;
+}
+
 .download {
   display: flex;
   justify-content: center;
@@ -126,4 +133,9 @@
   background: #e0e0e0;
   border-radius: rem(8px);
   margin-right: rem(20px);
+  opacity: 50%;
+  transition: 0.5s;
+}
+.download:hover {
+  opacity: 100%;
 }

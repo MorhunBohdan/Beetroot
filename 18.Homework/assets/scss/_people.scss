@@ -22,6 +22,7 @@
     );
   }
   &__items:hover {
+    cursor: url('../../icons/hand-point-up.svg'), auto;
     background: linear-gradient(
       360deg,
       #241f24 1.04%,

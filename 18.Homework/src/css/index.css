@@ -35,6 +35,7 @@
   background: linear-gradient(360deg, #241f24 0%, rgba(91, 91, 91, 0.447552) 34.11%, rgba(187, 186, 192, 0.26) 62.5%);
 }
 .cities-works__items:hover {
+  cursor: url("../../icons/hand-point-up.svg"), auto;
   background: linear-gradient(360deg, #241f24 1.04%, rgba(91, 91, 91, 0.26) 6.99%, rgba(187, 186, 192, 0) 12.29%);
 }
 .cities-works__items:hover .cities-works__icons {
@@ -105,6 +106,12 @@
   background: #e0e0e0;
   border-radius: 8px;
   margin-left: 1.25rem;
+  opacity: 50%;
+  transition: 0.5s;
+}
+
+.like:hover {
+  opacity: 100%;
 }
 
 .download {
@@ -116,6 +123,12 @@
   background: #e0e0e0;
   border-radius: 0.5rem;
   margin-right: 1.25rem;
+  opacity: 50%;
+  transition: 0.5s;
+}
+
+.download:hover {
+  opacity: 100%;
 }
 
 /* GRID AREAS */
@@ -132,6 +145,7 @@
   background: linear-gradient(360deg, #241f24 0%, rgba(91, 91, 91, 0.447552) 34.11%, rgba(187, 186, 192, 0.26) 62.5%);
 }
 .nature-works__items:hover {
+  cursor: url("../../icons/hand-point-up.svg"), auto;
   background: linear-gradient(360deg, #241f24 1.04%, rgba(91, 91, 91, 0.26) 6.99%, rgba(187, 186, 192, 0) 12.29%);
 }
 .nature-works__items:hover .nature-works__icons {
@@ -221,6 +235,7 @@
   background: linear-gradient(360deg, #241f24 0%, rgba(91, 91, 91, 0.447552) 34.11%, rgba(187, 186, 192, 0.26) 62.5%);
 }
 .people__items:hover {
+  cursor: url("../../icons/hand-point-up.svg"), auto;
   background: linear-gradient(360deg, #241f24 1.04%, rgba(91, 91, 91, 0.26) 6.99%, rgba(187, 186, 192, 0) 12.29%);
 }
 .people__items:hover .people__icons {

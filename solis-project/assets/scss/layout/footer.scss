@@ -62,6 +62,10 @@
     letter-spacing: 0.08em;
     color: #ffffff;
     text-decoration: none;
+    transition: 0.5s;
+    &:hover{
+      color: #53f3cd;
+    }
   }
   &__agreement {
     display: flex;
@@ -76,6 +80,10 @@
     letter-spacing: 0.08em;
     color: #ffffff;
     text-decoration: none;
+    transition: 0.5s;
+    &:hover{
+      color: #53f3cd;
+    }
   }
   &__policy {
     font-family: "Lato";
@@ -86,5 +94,9 @@
     letter-spacing: 0.08em;
     color: #ffffff;
     text-decoration: none;
+    transition: 0.5s;
+    &:hover{
+      color: #53f3cd;
+    }
   }
 }

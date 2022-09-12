@@ -19,6 +19,7 @@
     .benefits__conteiner {
       display: grid;
       grid-template-columns: 1fr;
+      box-sizing: border-box;
     }
     .benefits__item::after {
       max-width: 100%;
@@ -29,8 +30,12 @@
     }
   }
   @media (max-width: 425px) {
-    .benefits__item::after {
-      display: none;
+    .benefits__item {
+      padding: 0;
+      text-align: left;
+    }
+    .benefits__title {
+      font-size: 30px;
     }
   }
   &__item {

@@ -679,6 +679,7 @@ body {
   .benefits .benefits__conteiner {
     display: grid;
     grid-template-columns: 1fr;
+    box-sizing: border-box;
   }
 
   .benefits .benefits__item::after {
@@ -749,7 +750,12 @@ body {
     font-size: 40px;
   }
 
-  .benefits .benefits__item::after {
-    display: none;
+  .benefits .benefits__item {
+    padding: 0;
+    text-align: left;
+  }
+
+  .benefits .benefits__title {
+    font-size: 30px;
   }
 }

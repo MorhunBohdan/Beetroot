@@ -13,6 +13,7 @@
   @media (max-width: 1170px) {
     .benefits__conteiner {
       padding: 0 15px;
+      box-sizing: border-box;
     }
   }
   @media (max-width: 1024px) {
@@ -51,7 +52,8 @@
       right: 0;
       border: 1px solid #515773;
       background-color: #515773;
-    }
+      
+    } 
   }
   &__title {
     max-width: 20ch;

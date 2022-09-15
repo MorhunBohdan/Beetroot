@@ -1,3 +1,32 @@
+@font-face {
+  font-family: "Playfair Display";
+  src: url(../fonts/PlayfairDisplay-VariableFont_wght.woff2);
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url(../fonts/PlayfairDisplay-Italic-VariableFont_wght.woff2);
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url(../fonts/Lato-Light.woff2);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url(../fonts/Lato-Regular.woff2);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url(../fonts/Lato-Bold.woff2);
+  font-weight: 700;
+}
+
 body {
   background: #161926;
 }
@@ -24,7 +53,7 @@ body {
   box-sizing: border-box;
 }
 
-.header__list {
+.header__menu {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -229,7 +258,7 @@ body {
   display: block;
 }
 
-.header-active .header__list {
+.header-active .header__menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -655,10 +684,11 @@ body {
   max-width: 870px;
   width: 100%;
   margin: 0 auto;
+  overflow: hidden;
 }
 
-.video__screensaver {
-  max-width: 870px;
+.video__abstract {
+  border-radius: 8px;
   width: 100%;
 }
 
@@ -1012,6 +1042,12 @@ body {
   opacity: 0.1;
   border-bottom: 1px solid #ffffff;
   padding: 12px 5px;
+  outline: none;
+}
+
+.contact__name:valid {
+  opacity: 1;
+  border-color: #53f3cd;
 }
 
 .contact__email {
@@ -1019,6 +1055,12 @@ body {
   border: none;
   border-bottom: 1px solid #ffffff;
   padding: 12px 5px;
+  outline: none;
+}
+
+.contact__email:valid {
+  opacity: 1;
+  border-color: #53f3cd;
 }
 
 .contact__more {
@@ -1026,6 +1068,12 @@ body {
   border: none;
   border-bottom: 1px solid #ffffff;
   padding: 12px 5px;
+  outline: none;
+}
+
+.contact__more:valid {
+  opacity: 1;
+  border-color: #53f3cd;
 }
 
 .contact__button {

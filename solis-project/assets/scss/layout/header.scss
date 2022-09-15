@@ -30,7 +30,7 @@ body {
       padding: 0 15px;
     }
   }
-  &__list {
+  &__menu {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
@@ -240,7 +240,7 @@ body {
   .header__menu {
     display: block;
   }
-  .header__list {
+  .header__menu {
     display: flex;
     flex-direction: column;
     justify-content: center;

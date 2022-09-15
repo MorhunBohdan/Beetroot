@@ -29,7 +29,8 @@
     "gulp-uglify-es": "^3.0.0",
     "gulp-webp": "^4.0.1",
     "gulp-webpcss": "^1.1.1",
-    "sass": "^1.37.5"
+    "sass": "^1.37.5",
+    "video.js": "^7.20.2"
   },
   "description": ""
 }

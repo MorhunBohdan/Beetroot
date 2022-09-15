@@ -5,24 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Solis</title>
-  <link rel="stylesheet" href="libraries/normalize.min.css">
-  <link rel="stylesheet" href="src/css/style.css"> <!-- ПОМЕНЯТЬ НА МИНИФИЦИРОВАННЫЙ -->
-  <link rel="stylesheet" href="src/css/fonts.min.css">
+  <link rel="icon" type="image/x-icon" href="src/img/favicon/solis-icon.ico">
+  <link rel="stylesheet" href="libraries/normalize/normalize.min.css">
+  <link rel="stylesheet" href="src/css/style.min.css">
   <link rel="stylesheet" href="libraries/icomoon/icomoon.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
   <header class="header">
     <div class="header__conteiner">
       <img src="src/img/1.header/logo.svg" alt="logo">
       <nav class="header__menu">
-        <ul class="header__list">
-          <a class="header__item home" href="/#">Home</a>
-          <a class="header__item about" href="/#">About</a>
-          <a class="header__item products" href="/#">Products</a>
-          <a class="header__item use-cases" href="/#">Use Cases</a>
-          <a class="header__item pricing" href="/#">Pricing</a>
-          <a class="header__item resources" href="/#">Resources</a>
-        </ul>
+        <a class="header__item home" href="/#">Home</a>
+        <a class="header__item about" href="/#">About</a>
+        <a class="header__item products" href="/#">Products</a>
+        <a class="header__item use-cases" href="/#">Use Cases</a>
+        <a class="header__item pricing" href="/#">Pricing</a>
+        <a class="header__item resources" href="/#">Resources</a>
       </nav>
       <span class="header-burger">
         <span class="header-burger__item"></span>
@@ -132,11 +131,9 @@
           <img class="video__ellipse-small" src="src/img/5.video/Ellipse-small.svg" alt="Ellipse">
           <div class="video__tablet-screen">
             <div class="video__player">
-              <video class="video__screensaver" src="src/video/abstract-building.mp4"
-                poster="src/img/5.video/screensaver-video.webp" preload="metadata"></video>
-              <div class="video__button">
-                <button class="play icon-play"></button>
-              </div>
+              <video class="video__abstract" src="src/video/abstract-building.mp4"
+                poster="src/img/5.video/screensaver-video.webp" preload="metadata" loop></video>
+                <img class="play" src="src/img/5.video/icon play.png" alt="">
             </div>
           </div>
           <img class="video__ellipse-big" src="src/img/5.video/Ellipse-big.svg" alt="Ellipse">
@@ -169,6 +166,7 @@
           </div>
           <a href="/#" class="promises__button four">join now</a>
         </div>
+      </div>
     </section>
     <section class="reviews">
       <div class="reviews__conteiner">
@@ -210,11 +208,14 @@
         </div>
         <div class="contact__right">
           <form class="contact__form" action="/#" method="post" enctype="multipart/form-data">
-            <input class="contact__name text-style" type="text" name="username" value="" placeholder="Your name">
-            <input class="contact__email text-style" type="email" name="email" value="" placeholder="Email">
-            <input class="contact__more text-style" type="text" name="telmore" value="" placeholder="Tell more">
+            <input class="contact__name text-style" type="text" name="username" value="" placeholder="Your name"
+              required>
+            <input class="contact__email text-style" type="text" name="email" value="" placeholder="Email" required
+              pattern="[^ @]*@[^ @]*">
+            <input class="contact__more text-style" type="text" name="telmore" value="" placeholder="Tell more"
+              required>
             <button class="contact__button" type="submit">send request</button>
-          </form> 
+          </form>
         </div>
       </div>
     </section>
@@ -232,5 +233,6 @@
     </div>
   </footer>
   <script src="src/js/burger.min.js"></script>
+  <script src="libraries/video.js"></script>
 </body>
 </html>

@@ -78,18 +78,33 @@
     opacity: 0.1;
     border-bottom: 1px solid #ffffff;
     padding: 12px 5px;
+    outline: none;
+    &:valid {
+      opacity: 1;
+      border-color: #53f3cd;
+    }
   }
   &__email {
     background: none;
     border: none;
     border-bottom: 1px solid #ffffff;
     padding: 12px 5px;
+    outline: none;
+    &:valid{
+      opacity: 1;
+      border-color: #53f3cd;
+    }
   }
   &__more {
     background: none;
     border: none;
     border-bottom: 1px solid #ffffff;
     padding: 12px 5px;
+    outline: none;
+    &:valid {
+      opacity: 1;
+      border-color: #53f3cd;
+    }
   }
   &__button {
     background: none;

@@ -8,8 +8,7 @@
   <link rel="icon" type="image/x-icon" href="src/img/favicon/solis-icon.ico">
   <link rel="stylesheet" href="libraries/normalize/normalize.min.css">
   <link rel="stylesheet" href="src/css/style.min.css">
-  <link rel="stylesheet" href="libraries/icomoon/icomoon.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="libraries/jq/jquery.min.js"></script>
 </head>
 <body>
   <header class="header">
@@ -52,7 +51,7 @@
                 <p class="info__list-sign">$</p>
                 <p class="info__list-number">1 tril</p>
               </div>
-              <p class="info__list-text">Market cap potential</p>
+              <h3 class="info__list-text">Market cap potential</h3>
             </div>
             <hr class="info__list-divider">
             <div class="info__list-item">
@@ -60,7 +59,7 @@
                 <p class="info__list-sign">$</p>
                 <p class="info__list-number">3.65 mil</p>
               </div>
-              <p class="info__list-text">Deposited to platform</p>
+              <h3 class="info__list-text">Deposited to platform</h3>
             </div>
             <hr class="info__list-divider">
             <div class="info__list-item">
@@ -68,7 +67,7 @@
                 <p class="info__list-sign">$</p>
                 <p class="info__list-number">12</p>
               </div>
-              <p class="info__list-text">Stablecoins</p>
+              <h3 class="info__list-text">Stablecoins</h3>
             </div>
           </div>
           <div class="info__text">
@@ -117,9 +116,9 @@
           <div class="quote__block">
             <img class="quote__icon" src="src/img/4.quote/quote-icon.svg" alt="quote-icon">
             <div class="quote__text">
-              <p class="quote__text-item">Solis Group serves as a liquidity nexus that gives stablecoin issuers, holders
-                and exchanges certainty over access and liquidity</p>
-              <p class="quote__text-text-ceo">Lennon Burnett, Solis Group CEO</p>
+              <h2 class="quote__text-item">Solis Group serves as a liquidity nexus that gives stablecoin issuers, holders
+                and exchanges certainty over access and liquidity</h2>
+              <h3 class="quote__text-text-ceo">Lennon Burnett, Solis Group CEO</h3>
             </div>
           </div>
         </div>
@@ -131,10 +130,11 @@
           <img class="video__ellipse-small" src="src/img/5.video/Ellipse-small.svg" alt="Ellipse">
           <div class="video__tablet-screen">
             <div class="video__player">
-              <video class="video__abstract" src="src/video/abstract-building.mp4"
-                poster="src/img/5.video/screensaver-video.webp" preload="metadata" loop></video>
-                <div class="video__overlay"></div>
-                <img class="play" src="src/img/5.video/icon play.png" alt="play">
+              <video class="video__abstract" poster="src/img/5.video/screensaver-video.webp" preload="auto" loop>
+                <source src="src/video/abstract-building.mp4" type="video/mp4">
+              </video>
+              <div class="video__overlay"></div>
+              <img class="play" src="src/img/5.video/icon_play.webp" alt="play">
             </div>
           </div>
           <img class="video__ellipse-big" src="src/img/5.video/Ellipse-big.svg" alt="Ellipse">
@@ -234,6 +234,6 @@
     </div>
   </footer>
   <script src="src/js/burger.min.js"></script>
-  <script src="libraries/video.js"></script>
+  <script src="src/js/video.min.js"></script>
 </body>
 </html>

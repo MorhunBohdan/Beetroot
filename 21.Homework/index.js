@@ -78,25 +78,23 @@ const modalWindow = document.createElement("textarea");
 
 modalWindow.className = "textarea";
 modalWindow.setAttribute("placeholder", "Залишити свій коментарій");
-modalWindow.style.display = "none";
 button.after(modalWindow);
 
 const buttonClose = document.createElement("a");
 
-buttonClose.className = "button";
+buttonClose.className = "button-close";
 buttonClose.innerHTML = "Закрити";
-buttonClose.style.display = "none";
 modalWindow.after(buttonClose);
 
 button.onclick = function () {
-  modalWindow.style.display = "block";
-  buttonClose.style.display = "flex";
-  button.style.display = "none";
+  modalWindow.classList.add("textarea-active");
+  buttonClose.classList.add("button-close-active")
+  button.classList.add("button-active");
 };
 buttonClose.onclick = function () {
-  modalWindow.style.display = "none";
-  buttonClose.style.display = "none";
-  button.style.display = "flex";
+  modalWindow.classList.remove("textarea-active");
+  buttonClose.classList.remove("button-close-active")
+  button.classList.remove("button-active");
 };
 
 //Задание 3
@@ -130,19 +128,19 @@ let item = 0;
 controlTrafficLight.onclick = function () {
   item++;
   if (item == 1) {
-    topTrafficLight.setAttribute("id", "red");
+    topTrafficLight.classList.add("traffic-light-red");
   } else if (item >1) {
-    topTrafficLight.removeAttribute("id", "red");
+    topTrafficLight.classList.remove("traffic-light-red");
   }
   if (item == 2) {
-    midTrafficLight.setAttribute("id", "orange");
-  } else if (item >2) {
-    midTrafficLight.removeAttribute("id", "orange");
+    midTrafficLight.classList.add("traffic-light-orange");
+  } else if (item > 2) {
+    midTrafficLight.classList.remove("traffic-light-orange");
   }
   if (item == 3) {
-    bottomTrafficLight.setAttribute("id", "green");
+    bottomTrafficLight.classList.add("traffic-light-green");
   } else if (item > 3) {
-    bottomTrafficLight.removeAttribute("id", "green");
+    bottomTrafficLight.classList.remove("traffic-light-green");
     item = 0;
   }
 };

@@ -1,0 +1,166 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url(../src/fonts/Montserrat-Bold.woff2);
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url(../src/fonts/Montserrat-Regular.woff2);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url(../src/fonts/OpenSans-Regular.woff2);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url(../src/fonts/OpenSans-Italic.woff2);
+  font-style: italic;
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url(../fonts/SourceSansPro-Regular.woff2);
+  font-weight: 400;
+}
+%conteiner {
+  max-width: 1170px;
+  width: 100%;
+  margin: auto;
+  gap: 223px;
+}
+%menu-beffore {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: -25px;
+    width: 9px;
+    height: 9px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+  }
+}
+%dots {
+  width: 9px;
+  height: 9px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+}
+.header {
+  &__conteiner {
+    @extend %conteiner;
+    display: flex;
+    flex-direction: column;
+  }
+}
+.header-mask {
+  position: absolute;
+  width: 100%;
+  background: linear-gradient(243.43deg, #7e5aff 16.9%, #55b7ff 83.27%);
+  z-index: -1;
+  &__bg {
+    width: 100%;
+    opacity: 0.06;
+  }
+  &__arrow-link {
+  }
+  &__arrow {
+    bottom: 10%;
+    right: 48%;
+    position: absolute;
+  }
+}
+.header-dots {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 295px;
+  right: 52px;
+  gap: 40px;
+  &__item-1 {
+    @extend %dots;
+  }
+  &__item-2 {
+    @extend %dots;
+  }
+  &__item-3 {
+    @extend %dots;
+  }
+  &__item-4 {
+    @extend %dots;
+  }
+  &__item-5 {
+    @extend %dots;
+  }
+}
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 53px;
+  &__logo-link {
+  }
+  &__logo {
+  }
+  &__menu {
+    display: flex;
+    gap: 93px;
+  }
+  &__menu-about {
+    position: relative;
+    @extend %menu-beffore;
+  }
+  &__menu-project {
+    position: relative;
+    @extend %menu-beffore;
+  }
+  &__menu-news {
+    position: relative;
+    @extend %menu-beffore;
+  }
+  &__menu-contact {
+    position: relative;
+    @extend %menu-beffore;
+  }
+  &__social {
+    display: flex;
+    gap: 20px;
+  }
+  &__social-link {
+  }
+}
+.header-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  &__title {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 98px;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+  }
+  &__subtitle {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.3em;
+    color: #ffffff;
+  }
+}
+.text-style {
+  text-decoration: none;
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #ffffff;
+}

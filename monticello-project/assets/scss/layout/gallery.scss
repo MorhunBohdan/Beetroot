@@ -1,0 +1,83 @@
+.gallery {
+  margin-top: 150px;
+  &__conteiner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @extend %conteiner;
+    gap: 0;
+  }
+}
+.gallery-title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 54px;
+  text-align: center;
+  color: #2c4058;
+  padding: 150px 0 90px 0;
+}
+.line-black {
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    border: 1px solid #2C4058;
+    background-color: #2C4058;
+    top: 120px;
+  }
+}
+.gallery-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "grid-one grid-one grid-two grid-three"
+                      "grid-one grid-one grid-four grid-five"
+  ;
+  gap: 10px;
+  margin-bottom: 60px;
+  transition: all 0.3s;
+  &:hover {
+    gap: 20px;
+  }
+}
+.gallery-grid-item {
+  max-width: 285px;
+  width: 100%;
+  min-height: 214px;
+  object-fit: cover;
+  @extend %gallery-hover;
+}
+.grid-one {
+  max-width: 580px;
+  width: 100%;
+  min-height: 438px;
+  grid-area: grid-one;
+}
+.grid-two {
+  grid-area: grid-two;
+}
+.grid-three {
+  grid-area: grid-three;
+  
+}
+.grid-four {
+  grid-area: grid-four;
+}
+.grid-five {
+  grid-area: grid-five;
+}
+@media (max-width:1170px) {
+  .gallery__conteiner {
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+}

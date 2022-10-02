@@ -41,17 +41,41 @@
     border-radius: 50%;
   }
 }
+%menu-hover-focus {
+  transition: all 0.3s;
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:hover::before {
+    background-color: #ffffff;
+  }
+}
+%buttons-links-hover {
+  transition: all 0.3s;
+  &:hover,:focus {
+    transform: scale(1.3);
+  }
+}
 %dots {
   width: 9px;
   height: 9px;
   border: 1px solid #ffffff;
   border-radius: 50%;
 }
+%news-hover {
+  transition: all 0.3s;
+  &:hover,:focus {
+    transform: scale(1.1);
+  }
+}
 .header {
+  margin-bottom: 238px;
   &__conteiner {
-    @extend %conteiner;
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 2;
+    @extend %conteiner;
   }
 }
 .header-mask {
@@ -62,13 +86,9 @@
   &__bg {
     width: 100%;
     opacity: 0.06;
-  }
-  &__arrow-link {
-  }
-  &__arrow {
-    bottom: 10%;
-    right: 48%;
-    position: absolute;
+    max-height: 800px;
+    height: 100%;
+    object-fit: cover;
   }
 }
 .header-dots {
@@ -105,29 +125,35 @@
   }
   &__menu {
     display: flex;
+    flex-shrink: 1;
     gap: 93px;
   }
   &__menu-about {
     position: relative;
     @extend %menu-beffore;
+    @extend %menu-hover-focus;
   }
   &__menu-project {
     position: relative;
     @extend %menu-beffore;
+    @extend %menu-hover-focus;
   }
   &__menu-news {
     position: relative;
     @extend %menu-beffore;
+    @extend %menu-hover-focus;
   }
   &__menu-contact {
     position: relative;
     @extend %menu-beffore;
+    @extend %menu-hover-focus;
   }
   &__social {
     display: flex;
     gap: 20px;
   }
   &__social-link {
+    @extend %buttons-links-hover;
   }
 }
 .header-heading {
@@ -154,6 +180,15 @@
     letter-spacing: 0.3em;
     color: #ffffff;
   }
+  &__arrow-link {
+  }
+  &__arrow {
+    bottom: 0%;
+    right: 48%;
+    position: absolute;
+    @extend %buttons-links-hover;
+    z-index: 1;
+  }
 }
 .text-style {
   text-decoration: none;
@@ -163,4 +198,10 @@
   font-size: 14px;
   line-height: 18px;
   color: #ffffff;
+}
+@media (max-width:1170px) {
+  .header__conteiner {
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
 }

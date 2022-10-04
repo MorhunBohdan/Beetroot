@@ -13,6 +13,7 @@
     color: #2c4058;
     text-align: left;
     padding-bottom: 20px;
+    padding-top: 20px;
   }
   &__one {
     display: flex;
@@ -25,15 +26,16 @@
     max-width: 630px;
     width: 100%;
     position: relative;
-    &::after {
-      content: "";
+    &::before  {
       position: absolute;
       width: 100%;
-      height: 470px;
+      max-height: 470px;
+      height: 100%;
       background: #55B7FF;
-      top: -60px;
-      right: 296px;
+      right: 30%;
+      bottom: 15%;
       z-index: -1;
+      overflow: hidden
     }
   }
   &__one-img {
@@ -91,22 +93,24 @@
     max-width: 630px;
     width: 100%;
     position: relative;
-    &::after {
-      content: "";
+    &::before { 
       position: absolute;
       width: 100%;
-      height: 470px;
+      max-height: 470px;
+      height: 100%;
       background: #7E5AFF;
       top: -60px;
       left: 296px;
       z-index: -1;
+      overflow: hidden
     }
   }
   &__two-img {
-    max-width: 630px;
     width: 100%;
-    height: 470px;
+    max-height: 470px;
+    height: 100%;
     object-fit: cover;
+    object-position: top;
   }
 }
 .button {
@@ -139,12 +143,48 @@
     width: 100px;
     border: 1px solid #2c4058;
     background-color: #2c4058;
-    top: -20px;
+    top: 0;
   }
 }
 @media (max-width:1170px) {
   .project__conteiner {
     padding: 0 15px;
     box-sizing: border-box;
+  }
+}
+@media (max-width:900px) {
+  .project__one, .project__two {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  .project__two {
+    flex-direction: column-reverse;
+    max-width: 1170px;
+    width: 100%;
+  }
+  .project__one-right, .project__one-left, .project__two-right, .project__two-left {
+    max-width: 1170px;
+    width: 100%;
+  }
+  .project__one-left, .project__two-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .project__title {
+    text-align: center;
+  }
+  .project__text {
+    max-width: 478px;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .line {
+    padding-bottom: 50px;
   }
 }

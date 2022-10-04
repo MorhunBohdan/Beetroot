@@ -6,14 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="libraries/normalize.min.css">
   <link rel="stylesheet" href="libraries/icomoon/style.css">
-  <link rel="stylesheet" href="src/css/style.min.css">
+  <link rel="stylesheet" href="src/css/style.css">
+  <link rel="icon" href="favicon.svg" type="image/svg">
   <title>Monticello</title>
 </head>
 <body>
   <header class="header">
-    <div class="header-mask">
-      <img class="header-mask__bg" src="src/img/1.header/header-bg.webp" alt="header-background">
-    </div>
     <div class="header-dots">
       <div class="header-dots__item-1"></div>
       <div class="header-dots__item-2"></div>
@@ -23,30 +21,38 @@
     </div>
     <div class="header__conteiner">
       <div class="header-nav">
-        <a href="/#" class="header-nav__logo-link"><img class="header-nav__logo" src="src/img/1.header/logo.svg"
-            alt="logo"></a>
-        <nav class="header-nav__menu">
-          <a href="" class="header-nav__menu-about text-style">ABOUT US</a>
-          <a href="" class="header-nav__menu-project text-style">PROJECTS</a>
-          <a href="" class="header-nav__menu-news text-style">NEWS</a>
-          <a href="" class="header-nav__menu-contact text-style">CONTACT</a>
-        </nav>
-        <div class="header-nav__social">
-          <a href="/#" class="header-nav__social-link"><img src="src/img/1.header/facabook.svg" alt="facabook"></a>
-          <a href="/#" class="header-nav__social-link"><img src="src/img/1.header/twitter.svg" alt="twitter"></a>
-          <a href="/#" class="header-nav__social-link"><img src="src/img/1.header/instagram.svg" alt="instagram"></a>
+        <div class="header-nav__wrapper">
+          <a href="/#" class="header-nav__logo-link"><img class="header-nav__logo" src="src/img/1.header/logo.svg"
+              alt="logo"></a>
+          <div class="header-nav__menu-body">
+            <nav class="header-nav__menu">
+              <a data-goto=".section_1" href="#" class="header-nav__menu-item nav-about text-style">ABOUT US</a>
+              <a data-goto=".section_2" href="#" class="header-nav__menu-item nav-project text-style">PROJECTS</a>
+              <a data-goto=".section_3" href="#" class="header-nav__menu-item nav-news text-style">NEWS</a>
+              <a data-goto=".section_4" href="#" class="header-nav__menu-item nav-contact text-style">CONTACT</a>
+            </nav>
+            <div class="header-nav__social">
+              <a href="/#" class="header-nav__social-link"><img src="src/img/1.header/facabook.svg" alt="facabook"></a>
+              <a href="/#" class="header-nav__social-link"><img src="src/img/1.header/twitter.svg" alt="twitter"></a>
+              <a href="/#" class="header-nav__social-link"><img src="src/img/1.header/instagram.svg"
+                  alt="instagram"></a>
+            </div>
+          </div>
+          <span class="header-burger">
+            <span class="header-burger__item"></span>
+          </span>
         </div>
       </div>
       <div class="header-heading">
         <h1 class="header-heading__title">SIMPLE & MODERN</h1>
         <h2 class="header-heading__subtitle">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</h2>
-        <a href="" class="header-heading__arrow-link"><img class="header-heading__arrow"
-            src="src/img/1.header/Arrow.svg" alt="arrow"></img></a>
       </div>
     </div>
+    <a href="" class="header__arrow-link"><img class="header__arrow" src="src/img/1.header/Arrow.svg"
+        alt="arrow"></img></a>
   </header>
-  <main class="main">
-    <section class="project">
+    <main class="main">
+    <section class="project section_1">
       <div class="project__conteiner">
         <h2 class="project__title line">WHAT WE DO</h2>
         <div class="project__one">
@@ -78,7 +84,7 @@
         </div>
       </div>
     </section>
-    <section class="news">
+<!--    <section class="news section_2">
       <div class="news-mask">
         <img class="news-mask__bg" src="src/img/3.news/news-bg.webp" alt="news-background">
       </div>
@@ -139,8 +145,8 @@
         <div class="news-dots__item-4"></div>
         <div class="news-dots__item-5"></div>
       </div>
-    </section>
-    <section class="gallery">
+    </section> -->
+    <section class="gallery section_3">
       <div class="gallery__conteiner">
         <h2 class="gallery-title line-black">GALLERY</h2>
         <div class="gallery-grid">
@@ -153,7 +159,7 @@
         <a class="button" href="/#">SEE MORE</a>
       </div>
     </section>
-    <section class="contact">
+    <section class="contact section_4">
       <div class="contact__conteiner">
         <div class="contact__map">
           <img class="contact__map-app" src="snazzy-image-21.png" alt="">
@@ -172,7 +178,7 @@
                 required>
               <input class="contact__email text-style" type="text" name="email" value="" placeholder="Email" required
                 pattern="[^ @]*@[^ @]*">
-              <button class="button" type="submit">submit</button>
+              <button class="button center" type="submit">submit</button>
             </form>
           </div>
           <img class="contact__main-bg" src="src/img/5.contact/form-bg.webp" alt="form-bg">
@@ -180,7 +186,7 @@
       </div>
     </section>
   </main>
-  <footer class="footer">
+ <!--  <footer class="footer">
     <img class="footer__bg" src="src/img/6.footer/footer-bg.webp" alt="">
     <div class="footer__conteiner">
       <div class="footer__social">
@@ -193,6 +199,7 @@
       </div>
       <p class="footer__copirights">Copyrights © 2020 Montichello</p>
     </div>
-  </footer>
+  </footer> -->
+  <script src="src/js/index.js"></script>
 </body>
 </html>

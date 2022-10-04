@@ -73,6 +73,9 @@
     object-fit: cover;
   }
   &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 30px 20px;
   }
   &__title {
@@ -146,9 +149,25 @@
     @extend %dots;
   }
 }
+@media (max-width:1435px) {
+  .news-articles {
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+}
+@media (max-width:1400px) {
+  .news-articles__item {
+    min-height: 555px;
+    height: 100%;
+  }
+}
 @media (max-width:1170px) {
   .news__conteiner {
     padding: 0 15px;
+    box-sizing: border-box;
+  }
+  .news-articles {
+    padding: 0;
     box-sizing: border-box;
   }
 }

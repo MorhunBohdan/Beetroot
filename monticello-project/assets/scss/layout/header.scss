@@ -66,7 +66,7 @@
   transition: all 0.3s;
   &:hover,
   :focus {
-    transform: scale(1.1);
+    transform: scale(1.04);
   }
 }
 %gallery-hover {
@@ -109,6 +109,46 @@
     z-index: 1;
   }
 }
+.header-active-one {
+  background: linear-gradient(
+    243.43deg,
+    rgba(127, 92, 255, 0.9) 16.9%,
+    rgba(87, 185, 255, 0.9) 83.27%
+  ),
+  url(../img/1.header/header-bg-2.webp) no-repeat top center / cover;
+}
+.header-active-two {
+  background: linear-gradient(
+    243.43deg,
+    rgba(127, 92, 255, 0.9) 16.9%,
+    rgba(87, 185, 255, 0.9) 83.27%
+  ),
+  url(../img/1.header/header-bg-3.webp) no-repeat top center / cover;
+}
+.header-active-three {
+  background: linear-gradient(
+    243.43deg,
+    rgba(127, 92, 255, 0.9) 16.9%,
+    rgba(87, 185, 255, 0.9) 83.27%
+  ),
+  url(../img/1.header/header-bg-4.webp) no-repeat top center / cover;
+}
+.header-active-four {
+  background: linear-gradient(
+    243.43deg,
+    rgba(127, 92, 255, 0.9) 16.9%,
+    rgba(87, 185, 255, 0.9) 83.27%
+  ),
+  url(../img/1.header/header-bg-2.webp) no-repeat top center / cover;
+}
+.header-active-five {
+  background: linear-gradient(
+    243.43deg,
+    rgba(127, 92, 255, 0.9) 16.9%,
+    rgba(87, 185, 255, 0.9) 83.27%
+  ),
+  url(../img/1.header/header-bg-3.webp) no-repeat top center / cover;
+}
 .header-dots {
   position: absolute;
   display: flex;
@@ -131,12 +171,16 @@
   &__item-5 {
     @extend %dots;
   }
+  &__active {
+    background-color: #fff;
+  }
 }
 .header-nav {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 53px;
+  padding: 15px 0;
   &__wrapper {
     display: flex;
     max-width: 1170px;

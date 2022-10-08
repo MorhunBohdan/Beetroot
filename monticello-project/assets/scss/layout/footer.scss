@@ -45,3 +45,17 @@
 .footer-mask {
   width: 100%;
 }
+@media (max-width:770px) {
+  .footer__conteiner {
+    top:20%;
+  }
+  .footer__social  {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+  .footer__copirights {
+    text-align: center;
+  }
+}

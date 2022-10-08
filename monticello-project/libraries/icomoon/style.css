@@ -38,3 +38,7 @@
   content: "\e903";
   color: #2c4058;
 }
+.icon-zoom-in:before {
+  content: "\e904";
+  color: #fff;
+}

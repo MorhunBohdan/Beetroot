@@ -54,6 +54,7 @@
   width: 100%;
   min-height: 214px;
   object-fit: cover;
+  cursor: url('../img/4.gallery/zoom-in.png'), pointer;
   @extend %gallery-hover;
 }
 .grid-one {
@@ -69,7 +70,6 @@
 .grid-three {
   grid-area: grid-three;
   height: 100%;
-  
 }
 .grid-four {
   grid-area: grid-four;
@@ -106,4 +106,7 @@
   .button {
     margin-bottom: 0;
   }
+}
+.fancybox__content img {
+  width: 1600px;
 }

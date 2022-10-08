@@ -8,7 +8,7 @@
     align-items: center;
     min-height: 700px;
   }
-  &__map {
+  #map {
     width: 100%;
     line-height: 0;
     min-height: 700px;
@@ -79,12 +79,42 @@
     width: 100%;
     gap: 33px;
   }
+  &__control {
+    display: flex;
+    align-items: baseline;
+    position: relative;
+  }
+  &__error {
+    position: absolute;
+    bottom: -30px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    visibility: hidden;
+    padding-left: 5px;
+  }
+  &__inon-check {
+    width: 20px;
+    position: absolute;
+    right: 2px;
+    top: 15px;
+    visibility: hidden;
+  }
+  &__inon-exclamation {
+    width: 20px;
+    position: absolute;
+    right: 2px;
+    top: 15px;
+    visibility: hidden;
+  }
   &__name {
     background: none;
     border: none;
     opacity: 0.1;
     border-bottom: 1px solid #2c4058;
-    padding: 0px 5px 12px 5px;
+    padding: 12px 5px;
     outline: none;
     font-family: "Montserrat";
     font-style: normal;
@@ -93,10 +123,6 @@
     line-height: 27px;
     color: #4b5562;
     opacity: 0.5;
-    &:valid {
-      opacity: 1;
-      border-color: #2c4058;
-    }
     @extend %form-hover;
   }
   &__email {
@@ -113,10 +139,6 @@
     line-height: 27px;
     color: #4b5562;
     opacity: 0.5;
-    &:valid {
-      opacity: 1;
-      border-color: #2c4058;
-    }
     @extend %form-hover;
   }
   &__main-bg {
@@ -128,6 +150,43 @@
     z-index: -1;
   }
 }
+.success {
+  @extend %form-hover;
+  border-bottom: 2px solid green;
+  border-radius: 1px;
+  width: 82%;
+  .contact__name, .contact__email {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  .contact__inon-check {
+    visibility: visible;
+  }
+  .contact__name, .contact__email {
+    border-bottom: 0px;
+  }
+}
+.error {
+  @extend %form-hover;
+  border-bottom: 2px solid #b60000;
+  border-radius: 1px;
+  width: 82%;
+  .contact__name, .contact__email {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  .contact__inon-exclamation {
+    visibility: visible;
+  }
+  .contact__name, .contact__email {
+    border-bottom: 0px;
+  }
+  .contact__error {
+    color: #b60000;
+    visibility: visible;
+  }
+}
+
 .contact-line {
   position: relative;
   text-align: center;
@@ -167,14 +226,33 @@
   text-transform: uppercase;
   background: none;
 }
-@media (max-width:1170px) {
-  .contact__conteiner  {
-    padding: 0 15px;
-    box-sizing: border-box;
-  }
+.gm-control-active,
+.gm-fullscreen-control,
+.gmnoprint,
+.strmpr-search-box,
+.has-error,
+.storemapper-error,
+.strmpr-search,
+.strmpr-powered-by {
+  display: none;
 }
-@media (max-width:768px) {
-  .contact__main  {
+.strmpr {
+  padding: 0;
+  margin: 0;
+}
+.strmpr-map {
+  min-height: 700px;
+  margin: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  z-index: 1;
+}
+.strmpr-layout-vertical .strmpr-map {
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .contact__main {
     flex-wrap: wrap;
     flex-direction: column-reverse;
     justify-content: center;
@@ -185,7 +263,7 @@
   .contact__wrapper {
     position: relative;
     top: inherit;
-    bottom: inherit
+    bottom: inherit;
   }
   .contact__form {
     align-items: center;

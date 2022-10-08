@@ -5,13 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="libraries/normalize.min.css">
+  <link rel="stylesheet" href="libraries/fancyapps/fancybox.min.css">
+  <link rel="stylesheet" href="libraries/swiper/swiper.min.css">
   <link rel="stylesheet" href="libraries/icomoon/style.css">
   <link rel="stylesheet" href="src/css/style.css">
   <link rel="icon" href="favicon.svg" type="image/svg">
   <title>Monticello</title>
 </head>
 <body>
-  <header class="header">
+  <header class="header section_1">
     <div class="header-dots">
       <div class="header-dots__item-1"></div>
       <div class="header-dots__item-2"></div>
@@ -48,11 +50,10 @@
         <h2 class="header-heading__subtitle">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</h2>
       </div>
     </div>
-    <a href="" class="header__arrow-link"><img class="header__arrow" src="src/img/1.header/Arrow.svg"
-        alt="arrow"></img></a>
+    <img data-goto=".section_2" class="header__arrow" src="src/img/1.header/Arrow.svg" alt="arrow"></img>
   </header>
-    <main class="main">
-    <section class="project section_1">
+  <main class="main">
+    <section class="project section_2">
       <div class="project__conteiner">
         <h2 class="project__title line">WHAT WE DO</h2>
         <div class="project__one">
@@ -84,58 +85,101 @@
         </div>
       </div>
     </section>
-<!--    <section class="news section_2">
-      <div class="news-mask">
-        <img class="news-mask__bg" src="src/img/3.news/news-bg.webp" alt="news-background">
-      </div>
+    <section class="news section_3">
+      <div class="news-bg"></div>
       <div class="news__conteiner">
         <h2 class="news__title line-white">LATEST NEWS</h2>
-        <div class="news-articles">
-          <img class="news-articles__arrow-left" src="src/img/3.news/arrow-left.svg" alt="arrow-left">
-          <article class="news-articles__item">
-            <img src="src/img/3.news/articles-1.webp" alt="articles-1" class="news-articles__img">
-            <div class="news-articles__text">
-              <h3 class="news-articles__title">SEE THE UNMATCHED BEAUTY OF THE GREAT.</h3>
-              <p class="news-articles__subtitle">Free directories: directories are perfect for customers that are
-                searching for...</p>
-              <div class="news-articles__info">
-                <img src="src/img/3.news/author-1.webp" alt="" class="news-articles__author-avatar">
-                <div class="news-articles__author-info">
-                  <h4 class="news-articles__author-name">ALJA BRUN</h4>
-                  <p class="news-articles__post-date">20 Jan 2020</p>
+        <img class="prev" src="src/img/3.news/arrow-left.svg" alt="arrow-left">
+        <img class="next" src="src/img/3.news/arrow-right.svg" alt="arrow-left">
+        <div class="news-articles-conteiner swiper">
+          <div class="news-articles swiper-wrapper">
+            <div class="news-articles__item swiper-slide">
+              <img src="src/img/3.news/articles-1.webp" alt="articles-1" class="news-articles__img">
+              <div class="news-articles__text">
+                <h3 class="news-articles__title">SEE THE UNMATCHED BEAUTY OF THE GREAT.</h3>
+                <p class="news-articles__subtitle">Free directories: directories are perfect for customers that are
+                  searching for...</p>
+                <div class="news-articles__info">
+                  <img src="src/img/3.news/author-1.webp" alt="" class="news-articles__author-avatar">
+                  <div class="news-articles__author-info">
+                    <h4 class="news-articles__author-name">ALJA BRUN</h4>
+                    <p class="news-articles__post-date">20 Jan 2020</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </article>
-          <article class="news-articles__item">
-            <img src="src/img/3.news/articles-2.webp" alt="articles-2" class="news-articles__img">
-            <div class="news-articles__text">
-              <h3 class="news-articles__title">EFFECTIVE ADVERTISING POINTERS.</h3>
-              <p class="news-articles__subtitle">Having a home based business is a wonderful asset to your life...</p>
-              <div class="news-articles__info">
-                <img src="src/img/3.news/author-2.webp" alt="author-2" class="news-articles__author-avatar">
-                <div class="news-articles__author-info">
-                  <h4 class="news-articles__author-name">DOMINIC FREEMAN</h4>
-                  <p class="news-articles__post-date">13 Dec 2019</p>
+            <div class="news-articles__item swiper-slide">
+              <img src="src/img/3.news/articles-2.webp" alt="articles-2" class="news-articles__img">
+              <div class="news-articles__text">
+                <h3 class="news-articles__title">EFFECTIVE ADVERTISING POINTERS.</h3>
+                <p class="news-articles__subtitle">Having a home based business is a wonderful asset to your life...</p>
+                <div class="news-articles__info">
+                  <img src="src/img/3.news/author-2.webp" alt="author-2" class="news-articles__author-avatar">
+                  <div class="news-articles__author-info">
+                    <h4 class="news-articles__author-name">DOMINIC FREEMAN</h4>
+                    <p class="news-articles__post-date">13 Dec 2019</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </article>
-          <article class="news-articles__item">
-            <img src="src/img/3.news/articles-3.webp" alt="articles-3" class="news-articles__img">
-            <div class="news-articles__text">
-              <h3 class="news-articles__title">EFFECTIVE ADVERTISING POINTERS.</h3>
-              <p class="news-articles__subtitle">Having a home based business is a wonderful asset to your life...</p>
-              <div class="news-articles__info">
-                <img src="src/img/3.news/author-3.webp" alt="author-3" class="news-articles__author-avatar">
-                <div class="news-articles__author-info">
-                  <h4 class="news-articles__author-name">DOMINIC FREEMAN</h4>
-                  <p class="news-articles__post-date">13 Dec 2019</p>
+            <div class="news-articles__item swiper-slide">
+              <img src="src/img/3.news/articles-3.webp" alt="articles-3" class="news-articles__img">
+              <div class="news-articles__text">
+                <h3 class="news-articles__title">EFFECTIVE ADVERTISING POINTERS.</h3>
+                <p class="news-articles__subtitle">Having a home based business is a wonderful asset to your life...</p>
+                <div class="news-articles__info">
+                  <img src="src/img/3.news/author-3.webp" alt="author-3" class="news-articles__author-avatar">
+                  <div class="news-articles__author-info">
+                    <h4 class="news-articles__author-name">DOMINIC FREEMAN</h4>
+                    <p class="news-articles__post-date">13 Dec 2019</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </article>
-          <img class="news-articles__arrow-right" src="src/img/3.news/arrow-right.svg" alt="arrow-right">
+            <div class="news-articles__item swiper-slide">
+              <img src="src/img/3.news/articles-1.webp" alt="articles-1" class="news-articles__img">
+              <div class="news-articles__text">
+                <h3 class="news-articles__title">SEE THE UNMATCHED BEAUTY OF THE GREAT.</h3>
+                <p class="news-articles__subtitle">Free directories: directories are perfect for customers that are
+                  searching for...</p>
+                <div class="news-articles__info">
+                  <img src="src/img/3.news/author-1.webp" alt="" class="news-articles__author-avatar">
+                  <div class="news-articles__author-info">
+                    <h4 class="news-articles__author-name">ALJA BRUN</h4>
+                    <p class="news-articles__post-date">20 Jan 2020</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news-articles__item swiper-slide">
+              <img src="src/img/3.news/articles-2.webp" alt="articles-2" class="news-articles__img">
+              <div class="news-articles__text">
+                <h3 class="news-articles__title">EFFECTIVE ADVERTISING POINTERS.</h3>
+                <p class="news-articles__subtitle">Having a home based business is a wonderful asset to your life...</p>
+                <div class="news-articles__info">
+                  <img src="src/img/3.news/author-2.webp" alt="author-2" class="news-articles__author-avatar">
+                  <div class="news-articles__author-info">
+                    <h4 class="news-articles__author-name">DOMINIC FREEMAN</h4>
+                    <p class="news-articles__post-date">13 Dec 2019</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="news-articles__item swiper-slide">
+              <img src="src/img/3.news/articles-3.webp" alt="articles-3" class="news-articles__img">
+              <div class="news-articles__text">
+                <h3 class="news-articles__title">EFFECTIVE ADVERTISING POINTERS.</h3>
+                <p class="news-articles__subtitle">Having a home based business is a wonderful asset to your life...</p>
+                <div class="news-articles__info">
+                  <img src="src/img/3.news/author-3.webp" alt="author-3" class="news-articles__author-avatar">
+                  <div class="news-articles__author-info">
+                    <h4 class="news-articles__author-name">DOMINIC FREEMAN</h4>
+                    <p class="news-articles__post-date">13 Dec 2019</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="news-dots">
@@ -145,25 +189,28 @@
         <div class="news-dots__item-4"></div>
         <div class="news-dots__item-5"></div>
       </div>
-    </section> -->
-    <section class="gallery section_3">
+    </section>
+    <section class="gallery">
       <div class="gallery__conteiner">
         <h2 class="gallery-title line-black">GALLERY</h2>
         <div class="gallery-grid">
-          <img class="gallery-grid-item grid-one" src="src/img/4.gallery/gallery-1.webp" alt="gallery-1">
-          <img class="gallery-grid-item grid-two" src="src/img/4.gallery/gallery-2.webp" alt="gallery-2">
-          <img class="gallery-grid-item grid-three" src="src/img/4.gallery/gallery-3.webp" alt="gallery-3">
-          <img class="gallery-grid-item grid-four" src="src/img/4.gallery/gallery-4.webp" alt="gallery-4">
-          <img class="gallery-grid-item grid-five" src="src/img/4.gallery/gallery-5.webp" alt="gallery-5">
+          <img class="gallery-grid-item grid-one" data-fancybox="gallery" src="src/img/4.gallery/gallery-1.webp"
+            alt="gallery-1">
+          <img class="gallery-grid-item grid-two" data-fancybox="gallery" src="src/img/4.gallery/gallery-2.webp"
+            alt="gallery-2">
+          <img class="gallery-grid-item grid-three" data-fancybox="gallery" src="src/img/4.gallery/gallery-3.webp"
+            alt="gallery-3">
+          <img class="gallery-grid-item grid-four" data-fancybox="gallery" src="src/img/4.gallery/gallery-4.webp"
+            alt="gallery-4">
+          <img class="gallery-grid-item grid-five" data-fancybox="gallery" src="src/img/4.gallery/gallery-5.webp"
+            alt="gallery-5">
         </div>
         <a class="button" href="/#">SEE MORE</a>
       </div>
     </section>
     <section class="contact section_4">
       <div class="contact__conteiner">
-        <div class="contact__map">
-          <img class="contact__map-app" src="snazzy-image-21.png" alt="">
-        </div>
+        <div class="contact__map" id="map"></div>
         <div class="contact__wrapper ">
           <h2 class="contact__title contact-line">GET IN TOUCH</h2>
           <div class="contact__main">
@@ -174,10 +221,18 @@
               <p class="contact__info-time"><span class="icon-clock"></span>From 07:05AM to 19:30PM</p>
             </div>
             <form class="contact__form" action="/#" method="post" enctype="multipart/form-data">
-              <input class="contact__name text-style" type="text" name="username" value="" placeholder="Your name"
-                required>
-              <input class="contact__email text-style" type="text" name="email" value="" placeholder="Email" required
-                pattern="[^ @]*@[^ @]*">
+              <div class="contact__control">
+                <input class="contact__name text-style" type="text" name="username" value="" placeholder="Your name">
+                <img src="src/img/5.contact/check.svg" alt="check" class="contact__inon-check">
+                <img src="src/img/5.contact/exclamation.svg" alt="exclamation" class="contact__inon-exclamation">
+                <span class="contact__error"></span>
+              </div>
+              <div class="contact__control">
+                <input class="contact__email text-style" type="text" name="email" value="" placeholder="Email">
+                <img src="src/img/5.contact/check.svg" alt="check" class="contact__inon-check">
+                <img src="src/img/5.contact/exclamation.svg" alt="exclamation" class="contact__inon-exclamation">
+                <span class="contact__error"></span>
+              </div>
               <button class="button center" type="submit">submit</button>
             </form>
           </div>
@@ -186,7 +241,7 @@
       </div>
     </section>
   </main>
- <!--  <footer class="footer">
+  <footer class="footer">
     <img class="footer__bg" src="src/img/6.footer/footer-bg.webp" alt="">
     <div class="footer__conteiner">
       <div class="footer__social">
@@ -199,7 +254,13 @@
       </div>
       <p class="footer__copirights">Copyrights © 2020 Montichello</p>
     </div>
-  </footer> -->
+  </footer>
+  <!--  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDyhACx6pn3rNmMZhjFt4RJaSGzUiu5J0&callback=initMap&v=weekly"
+      defer
+    ></script> -->
+  <script src="libraries/fancyapps/fancybox.js"></script>
+  <script src="libraries/swiper/swiper.min.js"></script>
   <script src="src/js/index.js"></script>
 </body>
 </html>

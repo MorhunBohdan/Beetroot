@@ -335,19 +335,25 @@ window.initMap = initMap;
 const form = document.querySelector(".contact__form");
 const userName = document.querySelector(".contact__name");
 const userEmail = document.querySelector(".contact__email");
-let formIsValid = document.querySelectorAll (".contact__control")
-console.log(formIsValid)
-formIsValid.forEach(formValidCheck);
-function formValidCheck (value) {
-  let check = value.conteins('success')
-  console.log (check)
-}
+const contactSuccess = document.querySelector (".contact__success")
+const userNameValidation = userName.parentElement;
+const userEmailValidation = userEmail.parentElement;
+console.log(userNameValidation)
+let formIsValid = false;
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
+  validateInputFunction ();
+  if (formIsValid) {
+    form.remove();
+    contactSuccess.classList.remove('hidden')
+  } else {
+    checkInputs();
+  }
   
-  checkInputs();
 });
+console.log(formIsValid)
+console.log(userName)
 function checkInputs() {
   let userNameValue = userName.value.trim();
   let userEmailValue = userEmail.value.trim();
@@ -381,4 +387,10 @@ function isEmail(userEmail) {
     userEmail
   );
 }
-/* console.log(formIsValid) */
+function validateInputFunction () {
+  if (userNameValidation.classList.contains("success") && userEmailValidation.classList.contains("success")) {
+  formIsValid = true;
+  } else {
+  formIsValid = false; 
+  }
+}

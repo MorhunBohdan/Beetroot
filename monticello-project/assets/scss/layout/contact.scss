@@ -79,6 +79,22 @@
     width: 100%;
     gap: 33px;
   }
+  &__success {
+    display: flex;
+    justify-content: baseline;
+    text-align: center;
+    align-items: baseline;
+    max-width: 310px;
+    width: 100%;
+  }
+  &__success-text {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 54px;
+    color: #2c4058;
+  }
   &__control {
     display: flex;
     align-items: baseline;
@@ -149,6 +165,9 @@
     bottom: 0;
     z-index: -1;
   }
+}
+.hidden {
+  display: none;
 }
 .success {
   @extend %form-hover;

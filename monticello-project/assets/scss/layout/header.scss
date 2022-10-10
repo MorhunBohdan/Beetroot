@@ -95,9 +95,11 @@
   &__conteiner {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
     z-index: 2;
-    gap: 33vh;
+    gap: 32vh;
   }
   &__arrow-link {
   }
@@ -106,48 +108,48 @@
     right: 48%;
     position: absolute;
     @extend %buttons-links-hover;
-    z-index: 1;
+    z-index: 10;
   }
 }
 .header-active-one {
   background: linear-gradient(
-    243.43deg,
-    rgba(127, 92, 255, 0.9) 16.9%,
-    rgba(87, 185, 255, 0.9) 83.27%
-  ),
-  url(../img/1.header/header-bg-2.webp) no-repeat top center / cover;
+      243.43deg,
+      rgba(127, 92, 255, 0.9) 16.9%,
+      rgba(87, 185, 255, 0.9) 83.27%
+    ),
+    url(../img/1.header/header-bg-2.webp) no-repeat top center / cover;
 }
 .header-active-two {
   background: linear-gradient(
-    243.43deg,
-    rgba(127, 92, 255, 0.9) 16.9%,
-    rgba(87, 185, 255, 0.9) 83.27%
-  ),
-  url(../img/1.header/header-bg-3.webp) no-repeat top center / cover;
+      243.43deg,
+      rgba(127, 92, 255, 0.9) 16.9%,
+      rgba(87, 185, 255, 0.9) 83.27%
+    ),
+    url(../img/1.header/header-bg-3.webp) no-repeat top center / cover;
 }
 .header-active-three {
   background: linear-gradient(
-    243.43deg,
-    rgba(127, 92, 255, 0.9) 16.9%,
-    rgba(87, 185, 255, 0.9) 83.27%
-  ),
-  url(../img/1.header/header-bg-4.webp) no-repeat top center / cover;
+      243.43deg,
+      rgba(127, 92, 255, 0.9) 16.9%,
+      rgba(87, 185, 255, 0.9) 83.27%
+    ),
+    url(../img/1.header/header-bg-4.webp) no-repeat top center / cover;
 }
 .header-active-four {
   background: linear-gradient(
-    243.43deg,
-    rgba(127, 92, 255, 0.9) 16.9%,
-    rgba(87, 185, 255, 0.9) 83.27%
-  ),
-  url(../img/1.header/header-bg-2.webp) no-repeat top center / cover;
+      243.43deg,
+      rgba(127, 92, 255, 0.9) 16.9%,
+      rgba(87, 185, 255, 0.9) 83.27%
+    ),
+    url(../img/1.header/header-bg-2.webp) no-repeat top center / cover;
 }
 .header-active-five {
   background: linear-gradient(
-    243.43deg,
-    rgba(127, 92, 255, 0.9) 16.9%,
-    rgba(87, 185, 255, 0.9) 83.27%
-  ),
-  url(../img/1.header/header-bg-3.webp) no-repeat top center / cover;
+      243.43deg,
+      rgba(127, 92, 255, 0.9) 16.9%,
+      rgba(87, 185, 255, 0.9) 83.27%
+    ),
+    url(../img/1.header/header-bg-3.webp) no-repeat top center / cover;
 }
 .header-dots {
   position: absolute;
@@ -176,6 +178,7 @@
   }
 }
 .header-nav {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -256,8 +259,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
   text-align: center;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+  &__content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
   &__title {
     font-family: "Montserrat";
     font-style: normal;
@@ -266,6 +280,7 @@
     line-height: 98px;
     letter-spacing: 0.1em;
     color: #ffffff;
+    text-transform: uppercase;
   }
   &__subtitle {
     font-family: "Montserrat";
@@ -275,6 +290,7 @@
     line-height: 22px;
     letter-spacing: 0.3em;
     color: #ffffff;
+    text-transform: uppercase;
   }
 }
 .text-style {
@@ -299,6 +315,7 @@
     rgba(87, 185, 255, 0.9) 83.27%
   );
   box-shadow: 1px 5px 8px 1px rgba(0, 0, 255, 0.2);
+  z-index: 100;
 }
 .space {
   margin-top: 400px;
@@ -361,14 +378,14 @@
     flex-direction: column;
     position: absolute;
     width: 100%;
-    margin-top: 389px;
+    margin-top: 510px;
     left: 0;
     transition: all 0.4s;
     background: linear-gradient(
-    243.43deg,
-    rgba(127, 92, 255, 0.9) 16.9%,
-    rgba(127, 92, 255, 0.9) 16.9%,
-  );
+      243.43deg,
+      rgba(127, 92, 255, 0.9) 16.9%,
+      rgba(127, 92, 255, 0.9) 16.9%
+    );
     box-shadow: 1px 5px 8px 1px rgba(0, 0, 255, 0.2);
     padding: 8px;
   }
@@ -379,20 +396,43 @@
     box-sizing: border-box;
     width: 100%;
     text-align: center;
+    position: relative;
+    z-index: 100;
     .nav-about {
       margin-left: 0;
     }
-  .header-nav__menu-item {
-    padding: 15px;
-  }
-  .nav-about::before, .nav-project::before, .nav-news::before, .nav-contact::before  {
-    top: 40%;
-    left: 10%;
-  }
+    .header-nav__menu-item {
+      padding: 30px 15px;
+    }
+    .nav-about::before,
+    .nav-project::before,
+    .nav-news::before,
+    .nav-contact::before {
+      top: 40%;
+      left: 10%;
+    }
   }
   .header-nav__social {
     padding-bottom: 20px;
   }
+}
+.button-next {
+}
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.pagination {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: absolute;
+}
+.swiper-pagination-vertical.swiper-pagination-bullets,
+.swiper-vertical > .swiper-pagination-bullets {
+  top: 61vh;
+  right: 52px;
 }
 @media (max-width: 1170px) {
   .header-heading,
@@ -420,7 +460,11 @@
     display: flex;
     z-index: 10;
   }
-  
+}
+@media (max-width: 800px) {
+  .header__conteiner {
+    gap: 29vh;
+  }
 }
 @media (max-width: 768px) {
   .header {
@@ -434,19 +478,58 @@
   .header-heading__subtitle {
     font-size: 16px;
   }
-  .header__conteiner {
-    gap: 20vh;
-  }
+
   .header-dots {
     display: none;
   }
   .header-heading {
-    padding: 0 15px;
+    padding: 0 65px;
   }
   .header-nav__wrapper {
     gap: 0;
   }
   .header__arrow {
     right: 43%;
+  }
+}
+@media (max-width: 459px) {
+  .header__conteiner {
+    gap: 19vh;
+  }
+  .swiper-pagination-vertical.swiper-pagination-bullets,
+  .swiper-vertical > .swiper-pagination-bullets {
+    top: 60vh;
+    right: 15px;
+  }
+  .header-heading {
+    padding: 0 15px;
+  }
+}
+@media (max-width: 425px) {
+  .header__conteiner {
+    gap: 15vh;
+  }
+  .header-heading {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 341px) {
+  .header__conteiner {
+    gap: 16vh;
+  }
+}
+@media (max-width: 330px) {
+  .header__conteiner {
+    gap: 11vh;
+  }
+  .header-heading {
+    height: 475px;
+  }
+  .swiper-pagination-vertical.swiper-pagination-bullets,
+  .swiper-vertical > .swiper-pagination-bullets {
+    top: 54vh;
+  }
+  .space {
+    margin-top: 259px;
   }
 }

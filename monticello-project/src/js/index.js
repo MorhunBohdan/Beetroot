@@ -38,70 +38,51 @@ function clickOnMenu(e) {
   }
 }
 //Arrow slider
-let item = 1;
+let item = 0;
 const headerSlider = document.querySelector(".header");
 const arrowSlider = document.querySelector(".header__arrow");
-if (item == 1) {
-  headerSlider.classList.add("header-active-one");
-  document
-    .querySelector(".header-dots__item-1")
-    .classList.add("header-dots__active");
-}
+
 arrowSlider.onclick = function () {
   item++;
-  if (item > 1) {
-    headerSlider.classList.remove("header-active-one");
-    document
-      .querySelector(".header-dots__item-1")
-      .classList.remove("header-dots__active");
+  if (item == 1) {
+    headerSlider.className = "header section_1 header-active-one";
   }
   if (item == 2) {
-    headerSlider.classList.add("header-active-two");
-    document
-      .querySelector(".header-dots__item-2")
-      .classList.add("header-dots__active");
-  } else if (item > 2) {
-    headerSlider.classList.remove("header-active-two");
-    document
-      .querySelector(".header-dots__item-2")
-      .classList.remove("header-dots__active");
+    headerSlider.className = "header section_1 header-active-two";
   }
   if (item == 3) {
-    headerSlider.classList.add("header-active-three");
-    document
-      .querySelector(".header-dots__item-3")
-      .classList.add("header-dots__active");
-  } else if (item > 3) {
-    headerSlider.classList.remove("header-active-three");
-    document
-      .querySelector(".header-dots__item-3")
-      .classList.remove("header-dots__active");
+    headerSlider.className = "header section_1 header-active-three";
   }
   if (item == 4) {
-    headerSlider.classList.add("header-active-four");
-    document
-      .querySelector(".header-dots__item-4")
-      .classList.add("header-dots__active");
-  } else if (item > 4) {
-    headerSlider.classList.remove("header-active-four");
-    document
-      .querySelector(".header-dots__item-4")
-      .classList.remove("header-dots__active");
+    headerSlider.className = "header section_1 header-active-four";
   }
   if (item == 5) {
-    headerSlider.classList.add("header-active-five");
-    document
-      .querySelector(".header-dots__item-5")
-      .classList.add("header-dots__active");
-  } else if (item > 5) {
-    headerSlider.classList.remove("header-active-five");
-    document
-      .querySelector(".header-dots__item-5")
-      .classList.remove("header-dots__active");
-    item = 1;
+    headerSlider.className = "header section_1 header-active-five";
+  }
+  if (item > 5) {
+    headerSlider.className = "header section_1";
+    item = 0;
   }
   console.log(item);
 };
+//Header swiper
+const swipe1 = new Swiper(".swiper1", {
+  // Optional parameters
+  direction: "vertical",
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: ".pagination",
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".button-next",
+  },
+  slidesPerView: 1,
+  spaceBetween: 5,
+});
 //Header burger menu
 let burger = document.getElementsByClassName("header-burger")[0];
 let headerWrapper = document.getElementsByClassName("header-nav__wrapper")[0];
@@ -335,34 +316,43 @@ window.initMap = initMap;
 const form = document.querySelector(".contact__form");
 const userName = document.querySelector(".contact__name");
 const userEmail = document.querySelector(".contact__email");
-const contactSuccess = document.querySelector (".contact__success")
+const contactSuccess = document.querySelector(".contact__success");
 const userNameValidation = userName.parentElement;
 const userEmailValidation = userEmail.parentElement;
-console.log(userNameValidation)
+console.log(userNameValidation);
 let formIsValid = false;
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  validateInputFunction ();
+  validateInputFunction();
   if (formIsValid) {
-    form.remove();
-    contactSuccess.classList.remove('hidden')
+    form.classList.add("hidden");
+    contactSuccess.classList.remove("hidden");
+    if (form.classList.contains("hidden")) {
+      setTimeout (resetForm,5000)
+      function resetForm () {
+        form.classList.remove("hidden");
+        contactSuccess.classList.add("hidden");
+        userName.value = '';
+        userEmail.value = '';
+        userNameValidation.className = "contact__control";
+        userEmailValidation.className = "contact__control";
+      }
+    }
   } else {
     checkInputs();
   }
-  
 });
-console.log(formIsValid)
-console.log(userName)
+console.log(formIsValid);
+console.log(userName);
 function checkInputs() {
   let userNameValue = userName.value.trim();
   let userEmailValue = userEmail.value.trim();
-  const contactControl = document.querySelector ('.contact__control');
+  const contactControl = document.querySelector(".contact__control");
   if (userNameValue === "") {
     setErrorFor(userName, "User name is empty");
   } else {
     setSuccess(userName);
-    
   }
   if (userEmailValue === "") {
     setErrorFor(userEmail, "Email is empty");
@@ -387,10 +377,13 @@ function isEmail(userEmail) {
     userEmail
   );
 }
-function validateInputFunction () {
-  if (userNameValidation.classList.contains("success") && userEmailValidation.classList.contains("success")) {
-  formIsValid = true;
+function validateInputFunction() {
+  if (
+    userNameValidation.classList.contains("success") &&
+    userEmailValidation.classList.contains("success")
+  ) {
+    formIsValid = true;
   } else {
-  formIsValid = false; 
+    formIsValid = false;
   }
 }

@@ -104,13 +104,14 @@ const swiper = new Swiper(".swiper", {
   pagination: {
     el: ".news-dots",
   },
-
+  autoplay: {
+    delay: 4000,
+  },
   // Navigation arrows
   navigation: {
     nextEl: ".next",
     prevEl: ".prev",
   },
-
   slidesPerView: 3,
   spaceBetween: 30,
   breakpoints: {

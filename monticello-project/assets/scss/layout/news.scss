@@ -67,7 +67,7 @@
   justify-content: center;
   align-items: center;
   min-width: 0;
-  height: 514px;
+  height: 538px;
   width: 100%;
   margin: auto;
   &__item {
@@ -107,8 +107,6 @@
     margin: 0;
     padding-bottom: 39px;
   }
-  &__author {
-  }
   &__author-avatar {
     width: 60px;
     height: 60px;
@@ -117,8 +115,6 @@
   &__info {
     display: flex;
     gap: 20px;
-  }
-  &__author-info {
   }
   &__author-name {
     font-family: "Montserrat";
@@ -163,8 +159,6 @@
   max-width: 1170px;
   width: 100%;
   margin: auto;
-}
-.swiper-pagination {
 }
 .swiper-wrapper {
   justify-content: space-between;

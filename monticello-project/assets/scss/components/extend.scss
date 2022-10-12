@@ -1,0 +1,60 @@
+%conteiner {
+  max-width: 1170px;
+  width: 100%;
+  margin: auto;
+}
+%menu-beffore {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: -25px;
+    height: 9px;
+    width: -1px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+  }
+}
+%menu-hover-focus {
+  transition: all 0.3s;
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:hover::before {
+    background-color: #ffffff;
+  }
+}
+%buttons-links-hover {
+  transition: all 0.3s;
+  &:hover,
+  :focus {
+    transform: scale(1.3);
+  }
+}
+%dots {
+  width: 9px;
+  height: 9px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+}
+%news-hover {
+  transition: all 0.3s;
+  &:hover,
+  :focus {
+    transform: scale(1.04);
+  }
+}
+%gallery-hover {
+  transition: all 0.3s;
+  &:hover,
+  :focus {
+    transform: scale(1.05);
+  }
+}
+%form-hover {
+  transition: all 0.3s;
+  &:hover {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+  }
+}

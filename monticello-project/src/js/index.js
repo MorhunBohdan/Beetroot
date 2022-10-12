@@ -25,11 +25,12 @@ function clickOnMenu(e) {
   const menuLink = e.target;
   if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
     const gotoSection = document.querySelector(menuLink.dataset.goto);
+    console.log(gotoSection);
     const gotoBlockValue =
       gotoSection.getBoundingClientRect().top +
       scrollY -
       document.querySelector(".header-nav").offsetHeight;
-
+    console.log(gotoBlockValue);
     window.scrollTo({
       top: gotoBlockValue,
       behavior: "smooth",
@@ -319,22 +320,22 @@ const userEmail = document.querySelector(".contact__email");
 const contactSuccess = document.querySelector(".contact__success");
 const userNameValidation = userName.parentElement;
 const userEmailValidation = userEmail.parentElement;
-console.log(userNameValidation);
 let formIsValid = false;
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   validateInputFunction();
-  if (formIsValid) {
+  console.log(userName);
+  if (formIsValid && !userName.value == "" && !userEmail.value == "") {
     form.classList.add("hidden");
     contactSuccess.classList.remove("hidden");
     if (form.classList.contains("hidden")) {
-      setTimeout (resetForm,5000)
-      function resetForm () {
+      setTimeout(resetForm, 5000);
+      function resetForm() {
         form.classList.remove("hidden");
         contactSuccess.classList.add("hidden");
-        userName.value = '';
-        userEmail.value = '';
+        userName.value = "";
+        userEmail.value = "";
         userNameValidation.className = "contact__control";
         userEmailValidation.className = "contact__control";
       }
@@ -343,8 +344,6 @@ form.addEventListener("submit", function (e) {
     checkInputs();
   }
 });
-console.log(formIsValid);
-console.log(userName);
 function checkInputs() {
   let userNameValue = userName.value.trim();
   let userEmailValue = userEmail.value.trim();

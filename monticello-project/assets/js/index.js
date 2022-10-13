@@ -76,7 +76,6 @@ const swipe1 = new Swiper(".swiper1", {
   pagination: {
     el: ".pagination",
   },
-
   // Navigation arrows
   navigation: {
     nextEl: ".button-next",

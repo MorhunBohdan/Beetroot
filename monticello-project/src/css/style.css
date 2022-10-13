@@ -1590,15 +1590,15 @@
   .header__conteiner {
     gap: 16vh;
   }
+
+  .header-heading {
+    height: 500px;
+  }
 }
 
 @media (max-width: 330px) {
   .header__conteiner {
-    gap: 11vh;
-  }
-
-  .header-heading {
-    height: 475px;
+    gap: 15vh;
   }
 
   .swiper-pagination-vertical.swiper-pagination-bullets,
@@ -1609,10 +1609,28 @@
   .space {
     margin-top: 259px;
   }
+
+  .header__arrow {
+    bottom: 4%;
+  }
+
+  .header-heading__title {
+    font-size: 45px;
+  }
 }
 
 @media (max-width: 320px) {
   .project__adressline {
     text-align: center;
+  }
+}
+
+@media (max-height: 780px) {
+  .header-heading__title {
+    font-size: 40px;
+  }
+
+  .header-heading {
+    height: 386px;
   }
 }

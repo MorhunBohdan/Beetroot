@@ -1,0 +1,15 @@
+%nav-hover {
+  transition: all 0.4s;
+  &:hover {
+    transform: scale(1.2);
+    color: #FFFFFF;
+  }
+}
+%button-hover {
+  transition: all 0.4s;
+  &:hover {
+    transform: scale(1.1);
+    background: #000f93;
+    border: none;
+  }
+}

@@ -1,13 +1,15 @@
 %nav-hover {
   transition: all 0.4s;
-  &:hover {
+  &:hover,
+  :focus {
     transform: scale(1.2);
-    color: #FFFFFF;
+    color: #ffffff;
   }
 }
 %button-hover {
   transition: all 0.4s;
-  &:hover {
+  &:hover,
+  :focus {
     transform: scale(1.1);
     background: #000f93;
     border: none;

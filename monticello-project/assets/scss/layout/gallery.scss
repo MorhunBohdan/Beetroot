@@ -1,0 +1,112 @@
+.gallery {
+  margin-top: 150px;
+  &__conteiner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @extend %conteiner;
+    gap: 0;
+  }
+}
+.gallery-title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 54px;
+  text-align: center;
+  color: #2c4058;
+  padding: 20px 0 90px 0;
+}
+.line-black {
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    border: 1px solid #2C4058;
+    background-color: #2C4058;
+    top: 0px;
+  }
+}
+.gallery-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "grid-one  grid-two grid-three"
+                      "grid-one  grid-four grid-five"
+  ;
+  gap: 10px;
+  margin-bottom: 60px;
+  transition: all 0.3s;
+  &:hover {
+    gap: 20px;
+  }
+}
+.gallery-grid-item {
+  max-width: 285px;
+  width: 100%;
+  min-height: 214px;
+  object-fit: cover;
+  cursor: url('../img/4.gallery/zoom-in.png'), pointer;
+  @extend %gallery-hover;
+}
+.grid-one {
+  max-width: 580px;
+  width: 100%;
+  min-height: 438px;
+  grid-area: grid-one;
+}
+.grid-two {
+  grid-area: grid-two;
+  height: 100%;
+}
+.grid-three {
+  grid-area: grid-three;
+  height: 100%;
+}
+.grid-four {
+  grid-area: grid-four;
+}
+.grid-five {
+  grid-area: grid-five;
+}
+@media (max-width:1170px) {
+  .gallery__conteiner {
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+}
+@media (max-width:840px) {
+  .gallery-grid {
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-areas: "grid-one grid-one"
+                          "grid-two grid-three"
+                          " grid-four grid-five"
+  ;
+  }
+  .grid-one, .grid-two, .grid-three, .grid-four,.grid-five {
+    max-width: 1170px;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .gallery {
+    margin-top: 100px
+  }
+  .button {
+    margin-bottom: 0;
+  }
+}
+.fancybox__content img {
+  width: 1600px;
+}

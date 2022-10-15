@@ -1,0 +1,234 @@
+.project {
+  &__conteiner {
+    @extend %conteiner;
+  }
+  &__title {
+    position: relative;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 54px;
+    text-align: center;
+    color: #2c4058;
+    text-align: left;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  &__one {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 100%;
+    flex-shrink: 1;
+    gap: 70px;
+  }
+  &__one-right {
+    max-width: 630px;
+    width: 100%;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #55b7ff;
+      right: 30%;
+      bottom: 15%;
+      z-index: -1;
+    }
+  }
+  &__one-right-back {
+    position: absolute;
+    width: 100%;
+  }
+  &__one-img {
+    width: 100%;
+    max-height: 470px;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    position: relative;
+  }
+  &__one-left {
+    max-width: 470px;
+    width: 100%;
+  }
+  &__subtitle {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #2c4058;
+  }
+  &__text {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: #2c4058;
+    padding-bottom: 40px;
+  }
+  &__adress {
+    font-family: "Open Sans";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: #000000;
+  }
+  &__icon {
+    padding-right: 10px;
+  }
+  &__two {
+    padding-top: 90px;
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 100%;
+    flex-shrink: 1;
+    gap: 70px;
+  }
+  &__two-right {
+    max-width: 476px;
+    width: 100%;
+  }
+  &__two-left {
+    max-width: 630px;
+    width: 100%;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #7e5aff;
+      left: 30%;
+      bottom: 15%;
+      z-index: -1;
+    }
+  }
+  &__two-img {
+    width: 100%;
+    max-height: 470px;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  width: 190px;
+  height: 50px;
+  border: 1px solid #2c4058;
+  text-decoration: none;
+  margin-bottom: 60px;
+  outline: none;
+  @extend %buttons-links-hover;
+}
+.line {
+  padding-bottom: 150px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1550px) {
+  .project__one-right::before {
+    right: 20%;
+  }
+  .project__two-left::before {
+    left: 20%;
+  }
+}
+@media (max-width: 1424px) {
+  .project__one-right::before {
+    right: 10%;
+  }
+  .project__two-left::before {
+    left: 10%;
+  }
+}
+@media (max-width: 1298px) {
+  .project__one-right::before {
+    right: 5%;
+  }
+  .project__two-left::before {
+    left: 5%;
+  }
+}
+@media (max-width: 1298px) {
+  .project__one-right::before {
+    right: 0%;
+  }
+  .project__two-left::before {
+    left: 0%;
+  }
+}
+@media (max-width: 1170px) {
+  .project__conteiner {
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  .project__one-right::before {
+    display: none;
+  }
+  .project__two-left::before {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .project__one,
+  .project__two {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  .project__two {
+    flex-direction: column-reverse;
+    max-width: 1170px;
+    width: 100%;
+  }
+  .project__one-right,
+  .project__one-left,
+  .project__two-right,
+  .project__two-left {
+    max-width: 1170px;
+    width: 100%;
+  }
+  .project__one-left,
+  .project__two-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .project__title {
+    text-align: center;
+  }
+  .project__text {
+    max-width: 478px;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .line {
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 320px) {
+  .project__adressline {
+    text-align: center;
+  }
+}

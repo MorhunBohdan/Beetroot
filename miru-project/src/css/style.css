@@ -290,15 +290,18 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 88vh;
   background: linear-gradient(90deg, #070707 13.01%, rgba(0, 0, 0, 0.69) 75.59%), url(../img/2.first-screen/dune.webp) no-repeat center/cover;
-  padding-top: 200px;
+  padding-top: 150px;
 }
 
 .movie-display {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1622px;
   width: 100%;
+  margin-bottom: 50px;
 }
 
 .movie-display__description {
@@ -363,6 +366,7 @@
   color: #ffffff;
   text-shadow: 0px 11px 27px #000000;
   text-transform: uppercase;
+  padding: 47px 0 47px 0;
 }
 
 .movie-display__description-main-text {
@@ -372,13 +376,19 @@
   font-size: 16px;
   line-height: 24px;
   color: rgba(255, 255, 255, 0.8);
+  padding: 0 0 50px 0;
+}
+
+.movie-display__description-main-buttons {
+  display: flex;
+  gap: 20px;
 }
 
 .movie-display__description-btn-wathch {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  max-width: 172px;
+  max-width: 261px;
   height: 58px;
   color: #ffffff;
   background-color: hsla(234deg, 100%, 29%, 0.44);
@@ -391,7 +401,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 172px;
+  max-width: 234px;
   height: 58px;
   color: #ffffff;
   border-radius: 20px;
@@ -402,8 +412,9 @@
 
 .movie-display__slider {
   display: flex;
+  justify-content: center;
   position: relative;
-  max-width: 504px;
+  max-width: 877px;
   width: 100%;
 }
 
@@ -427,7 +438,7 @@
   justify-content: center;
   align-items: center;
   top: 15%;
-  left: -100px;
+  right: 0;
   max-width: 368px;
   width: 100%;
   height: 516px;
@@ -442,7 +453,7 @@
   align-items: center;
   position: absolute;
   top: 15%;
-  right: -100px;
+  left: 0;
   max-width: 368px;
   width: 100%;
   height: 516px;
@@ -456,8 +467,9 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  max-width: 1616px;
+  max-width: 1622px;
   width: 100%;
+  gap: 33px;
 }
 
 .recent-watched__top {

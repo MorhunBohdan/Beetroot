@@ -6,12 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="libraries/normalize/normalize.min.css">
   <link rel="stylesheet" href="libraries/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="libraries/icomoon/style.css">
   <link rel="stylesheet" href="src/css/style.css">
   <title>Miru</title>
 </head>
 <body>
   <header class="header">
-    <div class="header-main">
+    <div class="header-main conteiner">
       <div class="header-burger">
         <span class="header-burger__item"></span>
       </div>
@@ -26,15 +27,16 @@
         <a class="header-main__navbar-item" href="/#">Live</a>
         <a class="header-main__navbar-item" href="/#">Series</a>
       </nav>
-      <button class="header-main__btn-watchlist" type="button"> <img class="header-main__btn-watchlist-icon"
-          src="src/img/1.header/love.svg" alt="search"> Wathclist</button>
+      <button class="header-main__btn-watchlist" type="button"> <span
+          class="header-main__btn-watchlist-icon icon-heart"></span>Wathclist</button>
       <div class="header-login">
         <button class="header-login__btn-signin" type="button">Sign in</button>
         <button class="header-login__btn-register" type="button">Register</button>
       </div>
       <div class="header-login-mobile">
-        <button class="header-login-mobile__btn-watchlist" type="button"><img
-            class="header-login-mobile__btn-watchlist-icon" src="src/img/1.header/love.svg" alt="search"></button>
+        <button class="header-login-mobile__btn-watchlist" type="button">
+          <span class="header-login-mobile__btn-watchlist-icon icon-heart"></span>
+        </button>
         <a class="header-login-mobile__link" href="/#"><i
             class="fa-solid fa-user header-login-mobile__login-icon"></i></a>
       </div>
@@ -42,7 +44,7 @@
   </header>
   <main>
     <section class="first-screen">
-      <div class="movie-display">
+      <div class="movie-display conteiner">
         <div class="movie-display__description">
           <div class="movie-display__description-caption">
             <p class="movie-display__description-genre">action</p>
@@ -109,6 +111,77 @@
               <p class="recent-watched__block-description-genre">test</p>
               <h2 class="recent-watched__block-description-title">Test Title</h2>
               <p class="recent-watched__block-description-year">2020</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="popular-movies">
+      <div class="popular-movies__content conteiner">
+        <div class="popular-movies__content-top">
+          <h2 class="popular-movies__content-top-title">Popular Movies</h2>
+          <a class="popular-movies__content-top-more" href="/#">View more <i class="fa-solid fa-angle-right"></i></a>
+        </div>
+        <div class="popular-movies__content-grid">
+          <div class="popular-movies__content-grid-item p-one">
+            <div class="overlay"></div>
+            <img class="popular-movies__content-grid-img" src="posd1_1.webp" alt="post">
+            <div class="popular-movies__content-grid-text">
+              <h2 class="popular-movies__content-grid-title">Test Title</h2>
+              <div class="popular-movies__content-grid-caption">
+                <p class="popular-movies__content-grid-genre">action</p>
+                <p class="popular-movies__content-grid-year">2017</p>
+                <p class="popular-movies__content-grid-lenguage">english</p>
+                <p class="popular-movies__content-grid-length">1hr2min</p>
+              </div>
+            </div>
+          </div>
+          <div class="popular-movies__content-grid-item p-two">
+            <img class="popular-movies__content-grid-img" src="posd1_1.webp" alt="post">
+            <div class="popular-movies__content-grid-text">
+              <h2 class="popular-movies__content-grid-title">Test Title</h2>
+              <div class="popular-movies__content-grid-caption">
+                <p class="popular-movies__content-grid-genre">action</p>
+                <p class="popular-movies__content-grid-year">2017</p>
+                <p class="popular-movies__content-grid-lenguage">english</p>
+                <p class="popular-movies__content-grid-length">1hr2min</p>
+              </div>
+            </div>
+          </div>
+          <div class="popular-movies__content-grid-item p-three">
+            <img class="popular-movies__content-grid-img" src="posd1_1.webp" alt="post">
+            <div class="popular-movies__content-grid-text">
+              <h2 class="popular-movies__content-grid-title">Test Title</h2>
+              <div class="popular-movies__content-grid-caption">
+                <p class="popular-movies__content-grid-genre">action</p>
+                <p class="popular-movies__content-grid-year">2017</p>
+                <p class="popular-movies__content-grid-lenguage">english</p>
+                <p class="popular-movies__content-grid-length">1hr2min</p>
+              </div>
+            </div>
+          </div>
+          <div class="popular-movies__content-grid-item p-four">
+            <img class="popular-movies__content-grid-img" src="posd1_1.webp" alt="post">
+            <div class="popular-movies__content-grid-text">
+              <h2 class="popular-movies__content-grid-title">Test Title</h2>
+              <div class="popular-movies__content-grid-caption">
+                <p class="popular-movies__content-grid-genre">action</p>
+                <p class="popular-movies__content-grid-year">2017</p>
+                <p class="popular-movies__content-grid-lenguage">english</p>
+                <p class="popular-movies__content-grid-length">1hr2min</p>
+              </div>
+            </div>
+          </div>
+          <div class="popular-movies__content-grid-item p-five">
+            <img class="popular-movies__content-grid-img" src="posd1_1.webp" alt="post">
+            <div class="popular-movies__content-grid-text">
+              <h2 class="popular-movies__content-grid-title">Test Title</h2>
+              <div class="popular-movies__content-grid-caption">
+                <p class="popular-movies__content-grid-genre">action</p>
+                <p class="popular-movies__content-grid-year">2017</p>
+                <p class="popular-movies__content-grid-lenguage">english</p>
+                <p class="popular-movies__content-grid-length">1hr2min</p>
+              </div>
             </div>
           </div>
         </div>

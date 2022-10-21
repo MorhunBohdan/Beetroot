@@ -1,24 +1,12 @@
 let apiKey = "64d74b72";
 let omdbUrl = "http://www.omdbapi.com/";
-let inputSearch;
 let selectedType;
 let buttonSearch = $(".form__search-button");
-
-
-
+let pageNumber = 1;
+let content = $(".content");
 $(".select-input").change(function () {
   selectedType = $(".select-input option:selected").val();
-  console.log(selectedType);
 });
-
-inputSearch = $("#t").keypress(function(event){
-  let keycode = (event.keyCode ? event.keyCode : event.which);
-  if(keycode == '13'){
-    event.preventDefault();
-    inputSearch = $("#t").val();
-    ajaxRequest();
-  }
-})
 
 function ajaxRequest(options) {
   $.ajax(omdbUrl, {
@@ -30,11 +18,11 @@ function ajaxRequest(options) {
       apiKey: apiKey
     },
     success: function (data, status, xhr) {
-      movieResults(data);
-      console.log(data);
+        pageNumber = 1;
+        movieResults(data);
     },
     error: function (jqXhr, textStatus, errorMessage) {
-      console.log(errorMessage);
+      errorSearch (data)
     },
   });
 }
@@ -43,7 +31,6 @@ $(".form__search-button").click(function () {
   title = $("#t").val();
   type = $(".select-input option:selected").val();
   let pageNumber = 1;
-  console.log(inputSearch)
   ajaxRequest({
     title: title,
     type: type,
@@ -52,10 +39,10 @@ $(".form__search-button").click(function () {
 });
 
 function movieResults(data) {
-  let movies = data.Search;
-  console.log(movies)
+  movies = data.Search;
   let totalResult = data.totalResults;
   let pageLimit = 10;
+  pageNumber = 1;
   let resultPages = Math.round(totalResult / pageLimit);
   let displayNumber = $('.pagination .pagination-item').length;
 
@@ -71,32 +58,21 @@ function movieResults(data) {
       )
     );
   });
-  $('.pagination').pagination({
-    dataSource: function(done){
-      let = result = [];
-      for (let page = 1; page <= resultPages; page++) {
-        result.push(page);
-      }
-      done (result);
-    },
-    totalNumber: resultPages,
-    pageRange: 5,
-    showPrevious: false,
-    showNext: false,
-})
-
-  $(".paginationjs-page").on("click",function (e) {
-    e.preventDefault();
-      $(".content .movie-block").hide();
-      pageNumber = $(this).index();
-      console.log(pageNumber)
-        ajaxRequest({
-          title: title,
-          type: type,
-          pageNumber: pageNumber
-        });
+  content.addClass("active");
+  $('.pagination-conteiner').twbsPagination({
+    totalPages: resultPages,
+    visiblePages: 10,
+    onPageClick: function (event, pageNumber) {
+      $(".last").addClass("none")
+      $(".first").addClass("none")
+      $(".page-item").on("click",function (e) {
+        pageNumber++
+            ajaxRequest({
+              title: title,
+              type: type,
+              pageNumber: pageNumber
+            });
+      });
+    }
   });
-}
-
-
-
+} 

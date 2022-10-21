@@ -71,41 +71,32 @@ function movieResults(data) {
       )
     );
   });
+  $('.pagination').pagination({
+    dataSource: function(done){
+      let = result = [];
+      for (let page = 1; page <= resultPages; page++) {
+        result.push(page);
+      }
+      done (result);
+    },
+    totalNumber: resultPages,
+    pageRange: 5,
+    showPrevious: false,
+    showNext: false,
+})
 
-  $(".pagination .pagination-item:gt(pageLimit)").hide();
-
-  
-
-  for (let i = 1; i <= resultPages; i++) {
-    $(".pagination").append($("<a/>", { class: "pagination-item", href: "javascript:void(0)", text: i }));
-    $(".pagination .pagination-item:gt(" + (pageLimit - 1) + ")").hide();
-  }
-
-  $(".pagination-item").on("click",function (pageNumber) {
-    if ($(this).hasClass("active")) {
-      return false;
-    } else {
-      $(".pagination a").removeClass("active");
-      $(this).addClass("active");
+  $(".paginationjs-page").on("click",function (e) {
+    e.preventDefault();
       $(".content .movie-block").hide();
       pageNumber = $(this).index();
       console.log(pageNumber)
-      $(".pagination a").removeClass("active");
-      $(this).addClass("active");
         ajaxRequest({
           title: title,
           type: type,
           pageNumber: pageNumber
         });
-    }
   });
 }
-
-$(".Next").on("click", function(){
-  let currentPage = $(".pagination a.active").index();
-  currentPage = currentPage++;
-  console.log(currentPage)
-})
 
 
 

@@ -36,40 +36,21 @@
     justify-content: space-between;
     align-items: center;
   }
-  &__description-genre {
+  &__description-item {
     font-family: "Poppins";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+  }
+  .genre{
     color: #000f93;
     text-transform: uppercase;
   }
-  &__description-year {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: rgba(255, 255, 255, 0.6);
+  .uppercase {
     text-transform: uppercase;
-  }
-  &__description-lenguage {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: rgba(255, 255, 255, 0.6);
-    text-transform: uppercase;
-  }
-  &__description-length {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: rgba(255, 255, 255, 0.6);
   }
   &__description-main {
   }
@@ -189,7 +170,7 @@
   max-width: 1622px;
   width: 100%;
   gap: 33px;
-  padding-bottom: 20px;
+  padding-bottom: 75px;
   &__top {
     display: flex;
     justify-content: space-between;
@@ -205,6 +186,8 @@
     color: #ffffff;
   }
   &__top-pagination {
+    display: flex;
+    gap: 10px;
   }
   &__slider {
     width: 100%;

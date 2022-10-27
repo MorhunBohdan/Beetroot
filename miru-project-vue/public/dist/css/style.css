@@ -16,11 +16,14 @@
   font-weight: 700;
 }
 
+.top-movies__main-top-filter-item,
 .header-main__navbar-item {
   transition: all 0.4s;
 }
 
+.top-movies__main-top-filter-item:hover,
 .header-main__navbar-item:hover,
+.top-movies__main-top-filter-item :focus,
 .header-main__navbar-item :focus {
   transform: scale(1.2);
   color: #ffffff;
@@ -45,6 +48,7 @@
   box-sizing: border-box;
 }
 
+.top-movies__main-content-right-watchlist,
 .movie-display__description-btn-wathclist,
 .movie-display__description-btn-wathch,
 .header-login-mobile__btn-watchlist,
@@ -54,12 +58,14 @@
   transition: all 0.4s;
 }
 
+.top-movies__main-content-right-watchlist:hover,
 .movie-display__description-btn-wathclist:hover,
 .movie-display__description-btn-wathch:hover,
 .header-login-mobile__btn-watchlist:hover,
 .header-login__btn-register:hover,
 .header-login__btn-signin:hover,
 .header-main__btn-watchlist:hover,
+.top-movies__main-content-right-watchlist :focus,
 .movie-display__description-btn-wathclist :focus,
 .movie-display__description-btn-wathch :focus,
 .header-login-mobile__btn-watchlist :focus,
@@ -79,6 +85,26 @@
 .header-login-mobile__login-icon :focus {
   transform: scale(1.1);
   color: #000f93;
+}
+
+.top-movies__main-content-right-item {
+  transition: all 0.8s;
+}
+
+.top-movies__main-content-right-item:hover {
+  height: 195px;
+  background: linear-gradient(90deg, #303030 46.79%, rgba(21, 21, 21, 0.62) 102.99%);
+}
+
+.top-movies__main-content-right-item:hover .top-movies__main-content-right-info {
+  display: flex;
+  animation: fade-in 3000ms forwards;
+  height: 85px;
+}
+
+.top-movies__main-content-right-item:hover .top-movies__main-content-right-watchlist {
+  display: block;
+  animation: fade-in 3000ms forwards;
 }
 
 .header {
@@ -148,7 +174,7 @@
   max-width: 430px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 15px;
 }
 
@@ -156,7 +182,7 @@
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
@@ -335,43 +361,23 @@
   align-items: center;
 }
 
-.movie-display__description-genre {
+.movie-display__description-item {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+}
+
+.movie-display .genre {
   color: #000f93;
   text-transform: uppercase;
 }
 
-.movie-display__description-year {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: rgba(255, 255, 255, 0.6);
+.movie-display .uppercase {
   text-transform: uppercase;
-}
-
-.movie-display__description-lenguage {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: rgba(255, 255, 255, 0.6);
-  text-transform: uppercase;
-}
-
-.movie-display__description-length {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: rgba(255, 255, 255, 0.6);
 }
 
 .movie-display__description-main-title {
@@ -488,7 +494,7 @@
   max-width: 1622px;
   width: 100%;
   gap: 33px;
-  padding-bottom: 20px;
+  padding-bottom: 75px;
 }
 
 .recent-watched__top {
@@ -505,6 +511,11 @@
   font-size: 20px;
   line-height: 30px;
   color: #ffffff;
+}
+
+.recent-watched__top-pagination {
+  display: flex;
+  gap: 10px;
 }
 
 .recent-watched__slider {
@@ -567,13 +578,30 @@
 }
 
 .popular-movies {
-  background: rgba(0, 0, 0, 0.84);
+  background: #000f93;
+  position: relative;
+  z-index: -1;
+}
+
+.popular-movies__mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/3.popular-movies/mask-group.png) no-repeat center/cover;
+  z-index: -2;
+}
+
+.popular-movies__content {
+  padding: 100px 0;
 }
 
 .popular-movies__content-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 30px;
 }
 
 .popular-movies__content-top-title {
@@ -592,6 +620,11 @@
   font-size: 16px;
   line-height: 24px;
   color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .popular-movies__content-grid {
@@ -622,8 +655,12 @@
 
 .popular-movies__content-grid-text {
   position: absolute;
-  top: 40%;
-  left: 50%;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
 
 .popular-movies__content-grid-title {
@@ -641,6 +678,9 @@
 
 .popular-movies__content-grid-caption {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .popular-movies__content-grid-genre {
@@ -708,6 +748,224 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(270deg, #000000 24.23%, rgba(0, 0, 0, 0.08) 97.91%);
+}
+
+.top-movies {
+  background: #080808;
+}
+
+.top-movies__main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 100px 0;
+}
+
+.top-movies__main-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-movies__main-top-title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 52px;
+  color: #ffffff;
+}
+
+.top-movies__main-top-filter {
+  display: flex;
+}
+
+.top-movies__main-top-filter-item {
+  padding: 10px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.top-movies__main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  box-sizing: border-box;
+  height: 580px;
+}
+
+.top-movies__main-content-left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "one two" "three two" "four two";
+  gap: 30px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.top-movies__main-content-left-itme {
+  max-width: 411px;
+  width: 100%;
+  height: 146px;
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+
+.top-movies__main-content-left-itme-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.top-movies__main-content-right {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 720px;
+  width: 100%;
+}
+
+.top-movies__main-content-right-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 669px;
+  height: 82px;
+  width: 100%;
+  padding: 20px 45px;
+  box-sizing: border-box;
+  background: linear-gradient(90deg, rgba(21, 21, 21, 0.22) 46.79%, rgba(21, 21, 21, 0) 102.99%);
+  border-radius: 20px;
+}
+
+.top-movies__main-content-right-item-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.top-movies__main-content-right-item-top {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  height: 100%;
+}
+
+.top-movies__main-content-right-item-top-number {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.top-movies__main-content-right-itme-top-title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ffffff;
+}
+
+.top-movies__main-content-right-info {
+  display: none;
+  padding-left: 85px;
+  opacity: 0;
+}
+
+.top-movies__main-content-right-info-text {
+  width: 100%;
+}
+
+.top-movies__main-content-right-info-caption {
+  display: flex;
+  gap: 10px;
+}
+
+.top-movies__main-content-right-info-caption-item {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.top-movies__main-content-right-info-rating {
+  display: flex;
+  gap: 40px;
+}
+
+.top-movies__main-content-right-info-rating-stars {
+  display: flex;
+  gap: 5px;
+}
+
+.top-movies__main-content-right-info-title-rating-number {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+.top-movies__main-content-right-watchlist {
+  width: 70px;
+  height: 70px;
+  border: 1px solid rgba(228, 228, 228, 0.08);
+  border-radius: 20px;
+  background: none;
+  display: none;
+}
+
+.top-movies__main-content-right-watchlist > .icon-heart::before {
+  color: #fff;
+  font-size: 30px;
+}
+
+.fa-star {
+  color: orange;
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+  height: 100%;
+}
+
+.three {
+  grid-area: three;
+}
+
+.four {
+  grid-area: four;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 1622px) {

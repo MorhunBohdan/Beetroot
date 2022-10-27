@@ -1,26 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <HeaderComponent/>
+  <FirstScreen/>
+  <PopularMovies/>
+  <TopMovies/>
+  <FooterComponent/>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import '../libraries/normalize/normalize.min.css'
+import '../libraries/fontawesome/css/all.min.css'
+import '../libraries/icomoon/style.css'
+import HeaderComponent from './components/HeaderComponent.vue'
+import FirstScreen from './components/First-screen.vue'
+import PopularMovies from './components/Popular-movies.vue'
+import TopMovies from './components/TopMovies.vue'
+import FooterComponent from './components/FooterComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HeaderComponent,
+    FirstScreen,
+    PopularMovies,
+    TopMovies,
+    FooterComponent
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import  "../public/dist/css/style.min.css" 
 </style>

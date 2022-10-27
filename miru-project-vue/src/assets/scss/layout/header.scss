@@ -59,18 +59,18 @@
     max-width: 430px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 15px;
   }
   &__navbar-item {
     font-family: "Poppins";
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 24px;
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
-    @extend %nav-hover;
+    @extend %link-hover;
   }
   &__btn-watchlist {
     display: flex;

@@ -20,13 +20,7 @@
         />
       </div>
       <nav class="header-main__navbar">
-        <a
-          v-for="item in navmenu"
-          class="header-main__navbar-item"
-          :href="item.url"
-          :key="item.navmenu"
-          >{{ item.name }}</a
-        >
+        <router-link v-for="item in navmenu" class="header-main__navbar-item" :to="item.url" :key="item.navmenu">{{ item.name }}</router-link>
       </nav>
       <button class="header-main__btn-watchlist" type="button">
         <span class="header-main__btn-watchlist-icon icon-heart"></span
@@ -61,9 +55,9 @@ export default {
     return {
       searchInput: "",
       navmenu: [
-        { id: 1, name: "Home", url: "Home" },
-        { id: 2, name: "Movies", url: "Movies" },
-        { id: 3, name: "Series", url: "Series" },
+        { id: 1, name: "Home", url: "/Home" },
+        { id: 2, name: "Movies", url: "/Movies" },
+        { id: 3, name: "Series", url: "/Series" },
       ],
       buttons: {
         sign: "Sign in",

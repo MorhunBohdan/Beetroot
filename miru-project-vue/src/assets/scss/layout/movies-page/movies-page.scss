@@ -1,0 +1,209 @@
+.movie-list {
+  padding-top: 200px;
+  background: #080808;
+  &__main {
+    display: flex;
+    gap: 40px;
+  }
+  &__main-filter {
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+  }
+  &__main-filter-options {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    margin: 0;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  &__main-filter-category {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #151515;
+    border-radius: 20px;
+    max-width: 400px;
+    width: 100%;
+    max-height: 500px;
+    height: 100%;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    position: fixed;
+  }
+  &__main-filter-category-title {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #ffffff;
+  }
+  &__main-filter-category-checkboxes {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 90%;
+    gap: 18px;
+    box-sizing: border-box;
+  }
+  &__main-filter-category-checkboxes-item {
+    display: flex;
+    gap: 20px;
+  }
+  &__main-filter-category-checkbox-label {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.5);
+    gap: 18px;
+  }
+  &__main-filter-category-checkbox-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-appearance: none;
+    appearance: none;
+    font: inherit;
+    color: rgba(255, 255, 255, 0.5);
+    width: 24px;
+    height: 24px;
+    border: 2px solid currentColor;
+    border-radius: 6px;
+    transform: translateY(-0.075em);
+    &::before {
+      content: "";
+      display: none;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f00c";
+    }
+    @extend %checkbox-checked;
+  }
+  &__main-filter-category-checkbox-checkmark {
+  }
+  &__main-movies {
+    width: 100%;
+  }
+  &__main-movies-title {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  &__main-movies-content {
+  }
+  &__main-movies-content-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    background: #151515;
+    border-radius: 20px;
+  }
+  &__main-movies-content-filter-item {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    @extend %link-hover;
+  }
+  &__main-movies-content-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 35px 30px;
+    padding: 30px 0;
+    box-sizing: border-box;
+  }
+  &__main-movies-content-item {
+    background: #131313;
+    height: 448px;
+    border-radius: 20px;
+    border-radius: 20px;
+    padding: 20px 23px;
+    box-sizing: border-box;
+    @extend %movie-item-hover;
+  }
+  &__main-movies-content-item-poster {
+    background: #c4c4c4;
+    border-radius: 20px;
+    max-width: 230px;
+    width: 100%;
+    height: 320px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  &__main-movies-content-item-img {
+  }
+  &__main-movies-content-item-ganre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000f93;
+    width: 88px;
+    border-radius: 0px 0px 11px 11px;
+    position: absolute;
+    top: 0;
+    left: 31%;
+  }
+  &__main-movies-content-item-ganre-text {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  &__main-movies-content-item-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__main-movies-content-item-info-title {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+
+    color: #ffffff;
+  }
+  &__main-movies-content-item-info-caption {
+    display: flex;
+    gap: 12px;
+  }
+  &__main-movies-content-item-info-caption-item {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+  }
+  &__main-movies-content-pagination {
+  }
+}
+.conteiner {
+}
+.checked {
+  color: #ffffff;
+}

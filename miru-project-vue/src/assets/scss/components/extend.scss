@@ -40,7 +40,11 @@
   transition: all 0.8s;
   &:hover {
     height: 195px;
-    background: linear-gradient(90deg, #303030 46.79%, rgba(21, 21, 21, 0.62) 102.99%);
+    background: linear-gradient(
+      90deg,
+      #303030 46.79%,
+      rgba(21, 21, 21, 0.62) 102.99%
+    );
   }
   &:hover .top-movies__main-content-right-info {
     display: flex;
@@ -50,5 +54,37 @@
   &:hover .top-movies__main-content-right-watchlist {
     display: block;
     animation: fade-in 3000ms forwards;
+  }
+}
+%social-hover {
+  transition: all 0.4s;
+  &:hover,
+  :focus {
+    transform: scale(1.2);
+    background: #000f93;
+    border-radius: 20px;
+  }
+}
+%checkbox-checked {
+  transition: all 0.4s;
+  &:checked {
+    color: #ffffff;
+  }
+  &:checked::before {
+    display: block;
+    color: #ffffff;
+  }
+  &:checked + .movie-list__main-filter-category-checkbox-label {
+    color: #ffffff;
+  }
+}
+%movie-item-hover {
+  transition: all 0.4s;
+  &:hover,
+  :focus {
+    background: #2d2d2d;
+    box-shadow: 0px 33px 32px rgba(0, 0, 0, 0.81);
+    border-radius: 20px;
+    height: 538px;
   }
 }

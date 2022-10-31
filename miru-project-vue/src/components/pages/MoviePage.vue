@@ -1,83 +1,180 @@
 <template>
-  <section class="movie-list">
-   <div class="movie-list__main conteiner">
-     <div class="movie-list__main-filter">
-       <h2 class="movie-list__main-filter-options">Filter Option</h2>
-       <div class="movie-list__main-filter-category">
-         <h3 class="movie-list__main-filter-category-title">By Category</h3>
-         <div class="movie-list__main-filter-category-checkboxes">
-           <label for="Action">Action</label>
-           <input type="checkbox" name="Action">
-           <label for="Action">Action</label>
-           <input type="checkbox" name="Action">
-           <label for="Action">Action</label>
-           <input type="checkbox" name="Action">
-           <label for="Action">Action</label>
-           <input type="checkbox" name="Action">
-           <label for="Action">Action</label>
-           <input type="checkbox" name="Action">
-           <label for="Action">Action</label>
-           <input type="checkbox" name="Action">
-         </div>
-       </div>
-     </div>
-     <div class="movie-list__main-movies">
-       <h2 class="movie-list__main-movies-title">Movies</h2>
-       <div class="movie-list__main-movies-content">
-         <div class="movie-list__main-movies-content-filter">
-           <a class="movie-list__main-movies-content-filter-item" href="">Today</a>
-           <a class="movie-list__main-movies-content-filter-item" href="">This Week</a>
-           <a class="movie-list__main-movies-content-filter-item" href="">This Month</a>
-           <a class="movie-list__main-movies-content-filter-item" href="">Newest</a>
-         </div>
-         <div class="movie-list__main-movies-content-items">
-           <div class="movie-list__main-movies-content-item">
-             <div class="movie-list__main-movies-content-item-poster">
-               <img src="" alt="">
-             </div>
-             <div class="movie-list__main-movies-content-item-info">
-               <h3 class="movie-list__main-movies-content-item-title">Test Title</h3>
-               <div class="movie-list__main-movies-content-item-caption">
-                 <p class="movie-list__main-movies-content-item-caption-item">2018</p>
-                 <p class="movie-list__main-movies-content-item-caption-item">ENGLAND</p>
-                 <p class="movie-list__main-movies-content-item-caption-item">1hr 2min</p>
-                 <div class="movie-list__main-movies-content-item-caption-item-viewers">
-                   <i class="fa-solid fa-eye"></i>
-                   <p class="movie-list__main-movies-content-item-caption-item-number">567k viewers</p>
-                 </div>
-               </div>
-               <p class="movie-list__main-movies-content-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
-               <a class="movie-list__main-movies-content-item-genre" href="">Drama</a>
-             </div>
-             <div class="movie-list__main-movies-content-item-buttons">
-               <div class="movie-list__main-movies-content-item-buttons-rating">
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-                 <i class="fa-solid fa-star"></i>
-               </div>
-               <div class="movie-list__main-movies-content-item-buttons-items">
-                 <button class="movie-list__main-movies-content-item-buttons-watchlist"><span class="icon-heart"></span></button>
-                 <button class="movie-list__main-movies-content-item-buttons-watchnow">Watch Now</button>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-       <div class="movie-list__main-movies-content-pagination">
-         
-       </div>
-     </div>
-   </div>
+  <section class="data-item">
+    <div class="data-item__content conteiner">
+      <div class="data-item__content-leftside">
+        <div class="data-item__content-leftside-video"></div>
+        <div class="data-item__content-leftside-info">
+          <div class="data-item__content-leftside-info-top">
+            <div class="data-item__content-leftside-info-top-left">
+              <h2 class="data-item__content-leftside-info-top-left-title">
+                Thunder Stunt
+              </h2>
+              <div class="data-item__content-leftside-info-top-left-caption">
+                <p
+                  class="data-item__content-leftside-info-top-left-caption-item"
+                >
+                  2018
+                </p>
+                <p
+                  class="data-item__content-leftside-info-top-left-caption-item"
+                >
+                  167min
+                </p>
+                <p
+                  class="data-item__content-leftside-info-top-left-caption-item"
+                >
+                  Published on June 4, 2020
+                </p>
+              </div>
+            </div>
+            <div class="data-item__content-leftside-info-top-right">
+              <div class="data-item__content-leftside-info-top-right-rating">
+                <div
+                  class="data-item__content-leftside-info-top-right-rating-viewers"
+                >
+                  <i class="fa-solid fa-eye"></i>
+                  <p
+                    class="data-item__content-leftside-info-top-right-rating-viewers-number"
+                  >
+                    567k viewers
+                  </p>
+                </div>
+                <div
+                  class="data-item__content-leftside-info-top-right-rating-likes"
+                >
+                  <div
+                    class="data-item__content-leftside-info-top-right-rating-likes-up"
+                  >
+                    <i class="fa-solid fa-thumbs-up"></i>
+                    <p
+                      class="data-item__content-leftside-info-top-right-rating-likes-number"
+                    >
+                      45k Liked
+                    </p>
+                  </div>
+                  <div
+                    class="data-item__content-leftside-info-top-right-rating-likes-down"
+                  >
+                    <i class="fa-solid fa-thumbs-down"></i>
+                    <p
+                      class="data-item__content-leftside-info-top-right-rating-likes-number"
+                    >
+                      326 Dislike
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="data-item__content-leftside-info-description">
+            <p class="data-item__content-leftside-info-description-item">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum. Sed
+              ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo inventore veritatis et quasi architecto beatae vitae
+              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+              aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
+              est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+              velit, sed quia non numquam eius modi tempora incidunt ut labore
+              et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
+              veniam, quis nostrum exercitationem ullam corporis suscipit
+              laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
+              vel eum iure reprehenderit qui in ea voluptate velit esse quam
+              nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
+              voluptas nulla pariatur?
+            </p>
+          </div>
+        </div>
+        <div class="data-item__content-leftside-cast">
+          <h2 class="data-item__content-leftside-cast-title">Cast</h2>
+          <div class="data-item__content-leftside-cast-data">
+            <div class="data-item__content-leftside-cast-data-item">
+              <div class="data-item__content-leftside-cast-data-item-img"></div>
+              <div class="data-item__content-leftside-cast-data-item-info">
+                <h3 class="data-item__content-leftside-cast-data-item-name">
+                  Oliver Jons
+                </h3>
+                <p class="data-item__content-leftside-cast-data-item-character">Main Character</p>
+              </div>
+            </div>
+            <div class="data-item__content-leftside-cast-data-item">
+              <div class="data-item__content-leftside-cast-data-item-img"></div>
+              <div class="data-item__content-leftside-cast-data-item-info">
+                <h3 class="data-item__content-leftside-cast-data-item-name">
+                  Oliver Jons
+                </h3>
+                <p class="data-item__content-leftside-cast-data-item-character">Main Character</p>
+              </div>
+            </div>
+            <div class="data-item__content-leftside-cast-data-item">
+              <div class="data-item__content-leftside-cast-data-item-img"></div>
+              <div class="data-item__content-leftside-cast-data-item-info">
+                <h3 class="data-item__content-leftside-cast-data-item-name">
+                  Oliver Jons
+                </h3>
+                <p class="data-item__content-leftside-cast-data-item-character">Main Character</p>
+              </div>
+            </div>
+            <div class="data-item__content-leftside-cast-data-item">
+              <div class="data-item__content-leftside-cast-data-item-img"></div>
+              <div class="data-item__content-leftside-cast-data-item-info">
+                <h3 class="data-item__content-leftside-cast-data-item-name">
+                  Oliver Jons
+                </h3>
+                <p class="data-item__content-leftside-cast-data-item-character">Main Character</p>
+              </div>
+            </div>
+            <div class="data-item__content-leftside-cast-data-item">
+              <div class="data-item__content-leftside-cast-data-item-img"></div>
+              <div class="data-item__content-leftside-cast-data-item-info">
+                <h3 class="data-item__content-leftside-cast-data-item-name">
+                  Oliver Jons
+                </h3>
+                <p class="data-item__content-leftside-cast-data-item-character">Main Character</p>
+              </div>
+            </div>
+            <div class="data-item__content-leftside-cast-data-item">
+              <div class="data-item__content-leftside-cast-data-item-img"></div>
+              <div class="data-item__content-leftside-cast-data-item-info">
+                <h3 class="data-item__content-leftside-cast-data-item-name">
+                  Oliver Jons
+                </h3>
+                <p class="data-item__content-leftside-cast-data-item-character">Main Character</p>
+              </div>
+            </div>
+            <div class="data-item__content-leftside-cast-data-item">
+              <div class="data-item__content-leftside-cast-data-item-img"></div>
+              <div class="data-item__content-leftside-cast-data-item-info">
+                <h3 class="data-item__content-leftside-cast-data-item-name">
+                  Oliver Jons
+                </h3>
+                <p class="data-item__content-leftside-cast-data-item-character">Main Character</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="data-item__content-rightside">
+        <div class="data-item__content-rightside-poster">
+          <div class="data-item__content-rightside-poster-img"></div>
+          <div class="data-item__content-rightside-poster-genre">Action series</div>
+        </div>
+        
+      </div>
+    </div>
   </section>
- </template>
- 
- <script>
+</template>
 
- export default {
-   name: 'MoviePage',
-   components: {
-   }
- }
- </script>
+<script>
+export default {
+  name: "MoviePage",
+  components: {},
+};
+</script>

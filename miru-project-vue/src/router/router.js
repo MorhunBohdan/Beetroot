@@ -8,7 +8,7 @@ const routes = [
   { path: "/", alias: '/home', component: HomePage },
   { path: "/Movies", name: "Movies", component: MoviesPage },
   { path: "/Series", name: "Series", component: SeriesPage },
-  { path: "/Movie", name: "Movie", component: MoviePage },
+  { path: "/Movie/:id", name: "Movie", component: MoviePage },
 ];
 
 const router = createRouter({

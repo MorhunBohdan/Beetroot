@@ -65,16 +65,16 @@
         </div>
       </div>
     </div>
-    <div class="movie-list__main-movies">
-      <h2 class="movie-list__main-movies-title">Movies</h2>
-      <div class="movie-list__main-movies-content">
-        <div class="movie-list__main-movies-content-filter">
-          <a class="movie-list__main-movies-content-filter-item" href="">Today</a>
-          <a class="movie-list__main-movies-content-filter-item" href="">This Week</a>
-          <a class="movie-list__main-movies-content-filter-item" href="">This Month</a>
-          <a class="movie-list__main-movies-content-filter-item" href="">Newest</a>
+    <div class="data-block">
+      <h2 class="data-block__title">Movies</h2>
+      <div class="data-block__content">
+        <div class="data-block__content-filter">
+          <a class="data-block__content-filter-item" href="">Today</a>
+          <a class="data-block__content-filter-item" href="">This Week</a>
+          <a class="data-block__content-filter-item" href="">This Month</a>
+          <a class="data-block__content-filter-item" href="">Newest</a>
         </div>
-        <div class="movie-list__main-movies-content-items">
+        <div class="data-block__content-items">
           <!-- <div class="movie-list__main-movies-content-item">
             <div class="movie-list__main-movies-content-item-poster">
               <img src="" alt="">
@@ -107,131 +107,19 @@
               </div>
             </div>
           </div> -->
-            <div class="movie-list__main-movies-content-item">
-              <div class="movie-list__main-movies-content-item-poster">
-                <img src="" alt="" class="movie-list__main-movies-content-item-img">
-                <div class="movie-list__main-movies-content-item-ganre">
-                  <p class="movie-list__main-movies-content-item-ganre-text">Action</p>
+            <div class="data-block__content-item">
+              <div class="data-block__content-item-poster">
+                <img src="" alt="" class="data-block__content-item-img">
+                <div class="data-block__content-item-ganre">
+                  <p class="data-block__content-item-ganre-text">Action</p>
                 </div>
               </div>
-              <div class="movie-list__main-movies-content-item-info">
-                <h2 class="movie-list__main-movies-content-item-info-title">Test Title</h2>
-                <div class="movie-list__main-movies-content-item-info-caption">
-                  <p class="movie-list__main-movies-content-item-info-caption-item">2018</p>
-                  <p class="movie-list__main-movies-content-item-info-caption-item">EN</p>
-                  <p class="movie-list__main-movies-content-item-info-caption-item">1hr2min</p>
-                </div>
-              </div>
-            </div>
-            <div class="movie-list__main-movies-content-item">
-              <div class="movie-list__main-movies-content-item-poster">
-                <img src="" alt="" class="movie-list__main-movies-content-item-img">
-                <div class="movie-list__main-movies-content-item-ganre">
-                  <p class="movie-list__main-movies-content-item-ganre-text">Action</p>
-                </div>
-              </div>
-              <div class="movie-list__main-movies-content-item-info">
-                <h2 class="movie-list__main-movies-content-item-info-title">Test Title</h2>
-                <div class="movie-list__main-movies-content-item-info-caption">
-                  <p class="movie-list__main-movies-content-item-info-caption-item">2018</p>
-                  <p class="movie-list__main-movies-content-item-info-caption-item">EN</p>
-                  <p class="movie-list__main-movies-content-item-info-caption-item">1hr2min</p>
-                </div>
-              </div>
-            </div>
-            <div class="movie-list__main-movies-content-item">
-              <div class="movie-list__main-movies-content-item-poster">
-                <img src="" alt="" class="movie-list__main-movies-content-item-img">
-                <div class="movie-list__main-movies-content-item-ganre">
-                  <p class="movie-list__main-movies-content-item-ganre-text">Action</p>
-                </div>
-              </div>
-              <div class="movie-list__main-movies-content-item-info">
-                <h2 class="movie-list__main-movies-content-item-info-title">Test Title</h2>
-                <div class="movie-list__main-movies-content-item-info-caption">
-                  <p class="movie-list__main-movies-content-item-info-caption-item">2018</p>
-                  <p class="movie-list__main-movies-content-item-info-caption-item">EN</p>
-                  <p class="movie-list__main-movies-content-item-info-caption-item">1hr2min</p>
-                </div>
-              </div>
-            </div>
-            <div class="movie-list__main-movies-content-item">
-              <div class="movie-list__main-movies-content-item-poster">
-                <img src="" alt="" class="movie-list__main-movies-content-item-img">
-                <div class="movie-list__main-movies-content-item-ganre">
-                  <p class="movie-list__main-movies-content-item-ganre-text">Action</p>
-                </div>
-              </div>
-              <div class="movie-list__main-movies-content-item-info">
-                <h2 class="movie-list__main-movies-content-item-info-title">Test Title</h2>
-                <div class="movie-list__main-movies-content-item-info-caption">
-                  <p class="movie-list__main-movies-content-item-info-caption-item">2018</p>
-                  <p class="movie-list__main-movies-content-item-info-caption-item">EN</p>
-                  <p class="movie-list__main-movies-content-item-info-caption-item">1hr2min</p>
-                </div>
-              </div>
-            </div>
-            <div class="movie-list__main-movies-content-item">
-              <div class="movie-list__main-movies-content-item-poster">
-                <img src="" alt="" class="movie-list__main-movies-content-item-img">
-                <div class="movie-list__main-movies-content-item-ganre">
-                  <p class="movie-list__main-movies-content-item-ganre-text">Action</p>
-                </div>
-              </div>
-              <div class="movie-list__main-movies-content-item-info">
-                <h2 class="movie-list__main-movies-content-item-info-title">Test Title</h2>
-                <div class="movie-list__main-movies-content-item-info-caption">
-                  <p class="movie-list__main-movies-content-item-info-caption-item">2018</p>
-                  <p class="movie-list__main-movies-content-item-info-caption-item">EN</p>
-                  <p class="movie-list__main-movies-content-item-info-caption-item">1hr2min</p>
-                </div>
-              </div>
-            </div>
-            <div class="movie-list__main-movies-content-item">
-              <div class="movie-list__main-movies-content-item-poster">
-                <img src="" alt="" class="movie-list__main-movies-content-item-img">
-                <div class="movie-list__main-movies-content-item-ganre">
-                  <p class="movie-list__main-movies-content-item-ganre-text">Action</p>
-                </div>
-              </div>
-              <div class="movie-list__main-movies-content-item-info">
-                <h2 class="movie-list__main-movies-content-item-info-title">Test Title</h2>
-                <div class="movie-list__main-movies-content-item-info-caption">
-                  <p class="movie-list__main-movies-content-item-info-caption-item">2018</p>
-                  <p class="movie-list__main-movies-content-item-info-caption-item">EN</p>
-                  <p class="movie-list__main-movies-content-item-info-caption-item">1hr2min</p>
-                </div>
-              </div>
-            </div>
-            <div class="movie-list__main-movies-content-item">
-              <div class="movie-list__main-movies-content-item-poster">
-                <img src="" alt="" class="movie-list__main-movies-content-item-img">
-                <div class="movie-list__main-movies-content-item-ganre">
-                  <p class="movie-list__main-movies-content-item-ganre-text">Action</p>
-                </div>
-              </div>
-              <div class="movie-list__main-movies-content-item-info">
-                <h2 class="movie-list__main-movies-content-item-info-title">Test Title</h2>
-                <div class="movie-list__main-movies-content-item-info-caption">
-                  <p class="movie-list__main-movies-content-item-info-caption-item">2018</p>
-                  <p class="movie-list__main-movies-content-item-info-caption-item">EN</p>
-                  <p class="movie-list__main-movies-content-item-info-caption-item">1hr2min</p>
-                </div>
-              </div>
-            </div>
-            <div class="movie-list__main-movies-content-item">
-              <div class="movie-list__main-movies-content-item-poster">
-                <img src="" alt="" class="movie-list__main-movies-content-item-img">
-                <div class="movie-list__main-movies-content-item-ganre">
-                  <p class="movie-list__main-movies-content-item-ganre-text">Action</p>
-                </div>
-              </div>
-              <div class="movie-list__main-movies-content-item-info">
-                <h2 class="movie-list__main-movies-content-item-info-title">Test Title</h2>
-                <div class="movie-list__main-movies-content-item-info-caption">
-                  <p class="movie-list__main-movies-content-item-info-caption-item">2018</p>
-                  <p class="movie-list__main-movies-content-item-info-caption-item">EN</p>
-                  <p class="movie-list__main-movies-content-item-info-caption-item">1hr2min</p>
+              <div class="data-block__content-item-info">
+                <h2 class="data-block__content-item-info-title">Test Title</h2>
+                <div class="data-block__content-item-info-caption">
+                  <p class="data-block__content-item-info-caption-item">2018</p>
+                  <p class="data-block__content-item-info-caption-item">EN</p>
+                  <p class="data-block__content-item-info-caption-item">1hr2min</p>
                 </div>
               </div>
             </div>

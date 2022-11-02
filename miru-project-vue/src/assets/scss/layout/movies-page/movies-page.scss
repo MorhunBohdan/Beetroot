@@ -8,8 +8,8 @@
   &__main-filter {
     max-width: 400px;
     width: 100%;
-    position: relative;
     box-sizing: border-box;
+    position: relative;
   }
   &__main-filter-options {
     font-family: "Poppins";
@@ -24,6 +24,15 @@
   &__main-filter-category {
     display: flex;
     flex-direction: column;
+    position: fixed;
+    max-width: 400px;
+    width: 100%;
+    height: 100%;
+    gap: 40px;
+  }
+  &__main-filter-category-item {
+    display: flex;
+    flex-direction: column;
     gap: 20px;
     background: #151515;
     border-radius: 20px;
@@ -33,7 +42,6 @@
     height: 100%;
     padding: 20px 30px;
     box-sizing: border-box;
-    position: fixed;
   }
   &__main-filter-category-title {
     font-family: "Poppins";
@@ -50,10 +58,16 @@
     height: 90%;
     gap: 18px;
     box-sizing: border-box;
+    transition: all 0.4s;
+    :hover {
+      cursor: pointer;
+      color: #ffffff;
+    }
   }
   &__main-filter-category-checkboxes-item {
     display: flex;
     gap: 20px;
+    @extend %checkbox-checked;
   }
   &__main-filter-category-checkbox-label {
     display: flex;
@@ -90,6 +104,26 @@
     @extend %checkbox-checked;
   }
   &__main-filter-category-checkbox-checkmark {
+  }
+  &__main-filter-category-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    height: 58px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,.2);
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    @extend %button-search-hover;
+    @extend %button;
   }
 }
 .conteiner {
@@ -147,8 +181,6 @@
     @extend %movie-item-hover;
   }
   &__content-item-poster {
-    background: #c4c4c4;
-    border-radius: 20px;
     max-width: 230px;
     width: 100%;
     height: 320px;
@@ -156,17 +188,21 @@
     margin-bottom: 20px;
   }
   &__content-item-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
   }
   &__content-item-ganre {
     display: flex;
     justify-content: center;
     align-items: center;
     background: #000f93;
-    width: 88px;
+    width: 128px;
     border-radius: 0px 0px 11px 11px;
     position: absolute;
     top: 0;
-    left: 28%;
+    left: 22%;
   }
   &__content-item-ganre-text {
     font-family: "Poppins";
@@ -190,6 +226,10 @@
     line-height: 30px;
     text-align: center;
     color: #ffffff;
+    max-width: 15ch;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
   &__content-item-info-caption {
     display: flex;

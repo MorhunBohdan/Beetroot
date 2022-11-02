@@ -4,67 +4,18 @@
     <div class="movie-list__main-filter">
       <h2 class="movie-list__main-filter-options">Filter Option</h2>
       <div class="movie-list__main-filter-category">
-        <h3 class="movie-list__main-filter-category-title">By Category</h3>
-        <div class="movie-list__main-filter-category-checkboxes">
-          <div class="movie-list__main-filter-category-checkboxes-item">
-            <input class="movie-list__main-filter-category-checkbox-input" type="checkbox" id="label-1" name="Action">
-            <label class="movie-list__main-filter-category-checkbox-label" for="label-1">Action 1</label>
-          </div>
-          <div class="movie-list__main-filter-category-checkboxes-item">
-            <input class="movie-list__main-filter-category-checkbox-input" type="checkbox" name="Action">
-            <label class="movie-list__main-filter-category-checkbox-label" for="Action">Action 1</label>
-          </div>
-          <div class="movie-list__main-filter-category-checkboxes-item">
-            <input class="movie-list__main-filter-category-checkbox-input" type="checkbox" name="Action">
-            <label class="movie-list__main-filter-category-checkbox-label" for="Action">Action 1</label>
-          </div>
-          <div class="movie-list__main-filter-category-checkboxes-item">
-            <input class="movie-list__main-filter-category-checkbox-input" type="checkbox" name="Action">
-            <label class="movie-list__main-filter-category-checkbox-label" for="Action">Action 1</label>
-          </div>
-          <div class="movie-list__main-filter-category-checkboxes-item">
-            <input class="movie-list__main-filter-category-checkbox-input" type="checkbox" name="Action">
-            <label class="movie-list__main-filter-category-checkbox-label" for="Action">Action 1</label>
-          </div>
-          <div class="movie-list__main-filter-category-checkboxes-item">
-            <input class="movie-list__main-filter-category-checkbox-input" type="checkbox" name="Action">
-            <label class="movie-list__main-filter-category-checkbox-label" for="Action">Action 1</label>
-          </div>
-          <div class="movie-list__main-filter-category-checkboxes-item">
-            <input class="movie-list__main-filter-category-checkbox-input" type="checkbox" name="Action">
-            <label class="movie-list__main-filter-category-checkbox-label" for="Action">Action 1</label>
-          </div>
-          <div class="movie-list__main-filter-category-checkboxes-item">
-            <input class="movie-list__main-filter-category-checkbox-input" type="checkbox" name="Action">
-            <label class="movie-list__main-filter-category-checkbox-label" for="Action">Action 1</label>
-          </div>
-          <div class="movie-list__main-filter-category-checkboxes-item">
-            <input class="movie-list__main-filter-category-checkbox-input" type="checkbox" name="Action">
-            <label class="movie-list__main-filter-category-checkbox-label" for="Action">Action 1</label>
-          </div>
-          <div class="movie-list__main-filter-category-checkboxes-item">
-            <input class="movie-list__main-filter-category-checkbox-input" type="checkbox" name="Action">
-            <label class="movie-list__main-filter-category-checkbox-label" for="Action">Action 1</label>
-          </div>
-          <div class="movie-list__main-filter-category-checkboxes-item">
-            <input class="movie-list__main-filter-category-checkbox-input" type="checkbox" name="Action">
-            <label class="movie-list__main-filter-category-checkbox-label" for="Action">Action 1</label>
-          </div>
-          <div class="movie-list__main-filter-category-checkboxes-item">
-            <input class="movie-list__main-filter-category-checkbox-input" type="checkbox" name="Action">
-            <label class="movie-list__main-filter-category-checkbox-label" for="Action">Action 1</label>
-          </div>
-          <div class="movie-list__main-filter-category-checkboxes-item">
-            <input class="movie-list__main-filter-category-checkbox-input" type="checkbox" name="Action">
-            <label class="movie-list__main-filter-category-checkbox-label" for="Action">Action 1</label>
-          </div>
-          <div class="movie-list__main-filter-category-checkboxes-item">
-            <input class="movie-list__main-filter-category-checkbox-input" type="checkbox" name="Action">
-            <label class="movie-list__main-filter-category-checkbox-label" for="Action">Action 1</label>
+        <div class="movie-list__main-filter-category-item">
+          <h3 class="movie-list__main-filter-category-title">By Category</h3>
+          <div class="movie-list__main-filter-category-checkboxes">
+          <div class="movie-list__main-filter-category-checkboxes-item" v-for="genre in genresMovieList" :key="genre.genresMovieList">
+            <input class="movie-list__main-filter-category-checkbox-input" type="checkbox" v-bind:id="genresID + genre.id" name="Action" v-bind:value="genre.id" v-model="checkboxValues" @input="fromArrayToURL">
+            <label class="movie-list__main-filter-category-checkbox-label" v-bind:for="genresID + genre.id">{{genre.name}}</label>
           </div>
         </div>
       </div>
+      <button type="button" class="movie-list__main-filter-category-button" v-on:click="searchByGenre()">Search</button>
     </div>
+  </div>
     <div class="data-block">
       <h2 class="data-block__title">Movies</h2>
       <div class="data-block__content">
@@ -75,54 +26,9 @@
           <a class="data-block__content-filter-item" href="">Newest</a>
         </div>
         <div class="data-block__content-items">
-          <!-- <div class="movie-list__main-movies-content-item">
-            <div class="movie-list__main-movies-content-item-poster">
-              <img src="" alt="">
-            </div>
-            <div class="movie-list__main-movies-content-item-info">
-              <h3 class="movie-list__main-movies-content-item-title">Test Title</h3>
-              <div class="movie-list__main-movies-content-item-caption">
-                <p class="movie-list__main-movies-content-item-caption-item">2018</p>
-                <p class="movie-list__main-movies-content-item-caption-item">ENGLAND</p>
-                <p class="movie-list__main-movies-content-item-caption-item">1hr 2min</p>
-                <div class="movie-list__main-movies-content-item-caption-item-viewers">
-                  <i class="fa-solid fa-eye"></i>
-                  <p class="movie-list__main-movies-content-item-caption-item-number">567k viewers</p>
-                </div>
-              </div>
-              <p class="movie-list__main-movies-content-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
-              <a class="movie-list__main-movies-content-item-genre" href="">Drama</a>
-            </div>
-            <div class="movie-list__main-movies-content-item-buttons">
-              <div class="movie-list__main-movies-content-item-buttons-rating">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-              </div>
-              <div class="movie-list__main-movies-content-item-buttons-items">
-                <button class="movie-list__main-movies-content-item-buttons-watchlist"><span class="icon-heart"></span></button>
-                <button class="movie-list__main-movies-content-item-buttons-watchnow">Watch Now</button>
-              </div>
-            </div>
-          </div> -->
-            <div class="data-block__content-item">
-              <div class="data-block__content-item-poster">
-                <img src="" alt="" class="data-block__content-item-img">
-                <div class="data-block__content-item-ganre">
-                  <p class="data-block__content-item-ganre-text">Action</p>
-                </div>
-              </div>
-              <div class="data-block__content-item-info">
-                <h2 class="data-block__content-item-info-title">Test Title</h2>
-                <div class="data-block__content-item-info-caption">
-                  <p class="data-block__content-item-info-caption-item">2018</p>
-                  <p class="data-block__content-item-info-caption-item">EN</p>
-                  <p class="data-block__content-item-info-caption-item">1hr2min</p>
-                </div>
-              </div>
-            </div>
+          <div class="data-block__content-item" v-for="movie in movies" :key="movie.id">
+            <MovieItem  v-if="movies" v-bind:movieID="movie.id"/>
+          </div>
         </div>
       </div>
       <div class="movie-list__main-movies-content-pagination">
@@ -133,10 +39,70 @@
 </template>
 
 <script>
+import axios from 'axios';
+import MovieItem from "@/components/pages/MovieItem.vue";
 
 export default {
   name: 'MoviesPage',
   components: {
+    MovieItem
+  },
+  data() {
+    return {
+      movies: null,
+      error: null,
+      genresMovieList: null,
+      checkboxValues: [],
+      checkboxInput: null,
+      checkboxString: "",
+      checkboxID: null,
+      testURL: "https://api.themoviedb.org/3/discover/movie/?",
+      test: null,
+      genresID: "genre-",
+      imgUrl: "https://image.tmdb.org/t/p/original",
+      apiDiscoverUrl: "https://api.themoviedb.org/3/discover/movie/?",
+      apiMovieGenres: "https://api.themoviedb.org/3/genre/movie/list?",
+      apiKEY: "api_key=399190ed100bc4cf5960c22c0347d9aa",
+      params: {
+        api_key: "399190ed100bc4cf5960c22c0347d9aa",
+      }
+    }
+  },
+  methods: {
+    moviesList() {
+      axios.get(this.apiDiscoverUrl, {params: this.params})
+      .then(response => {
+        this.movies = response.data.results;
+      })
+      .catch(e => {
+        this.error.push(e)
+      })
+    },
+    movieGenresList() {
+      axios.get(this.apiMovieGenres, {params: this.params})
+      .then (response => {
+        this.genresMovieList = response.data.genres;
+      })
+      .catch(e => {
+        this.error.push(e)
+      })
+    },
+    searchByGenre () {
+      this.checkboxString = this.checkboxValues.join();
+      this.params.with_genres = this.checkboxString;
+      axios.get(this.apiDiscoverUrl, {params: this.params})
+      .then(response => {
+        this.movies = response.data.results;
+        console.log(this.movies)
+      })
+      .catch(e => {
+        this.error.push(e)
+      })
+    }
+  },
+  mounted() {
+    this.moviesList();
+    this.movieGenresList();
   }
 }
 </script>

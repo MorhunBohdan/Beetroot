@@ -28,6 +28,15 @@
     border: none;
   }
 }
+%button-search-hover {
+  transition: all 0.4s;
+  &:hover,
+  :focus {
+    transform: scale(1.05);
+    background: #000f93;
+    border: none;
+  }
+}
 %icon-hover {
   transition: all 0.4s;
   &:hover,
@@ -86,5 +95,11 @@
     box-shadow: 0px 33px 32px rgba(0, 0, 0, 0.81);
     border-radius: 20px;
     height: 538px;
+  }
+  &:hover
+    .data-conteiner
+    .data-block__content-item-info
+    .data-block__content-item-info-title {
+    white-space: normal;
   }
 }

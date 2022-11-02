@@ -41,6 +41,7 @@
   color: #ffffff;
 }
 
+.movie-list__main-filter-category-button,
 .movie-display__description-btn-wathclist,
 .movie-display__description-btn-wathch,
 .header-login-mobile__link,
@@ -89,6 +90,17 @@
   border: none;
 }
 
+.movie-list__main-filter-category-button {
+  transition: all 0.4s;
+}
+
+.movie-list__main-filter-category-button:hover,
+.movie-list__main-filter-category-button :focus {
+  transform: scale(1.05);
+  background: #000f93;
+  border: none;
+}
+
 .header-login-mobile__login-icon {
   transition: all 0.4s;
 }
@@ -131,23 +143,27 @@
 }
 
 .series-list__main-filter-category-checkbox-input,
-.movie-list__main-filter-category-checkbox-input {
+.movie-list__main-filter-category-checkbox-input,
+.movie-list__main-filter-category-checkboxes-item {
   transition: all 0.4s;
 }
 
 .series-list__main-filter-category-checkbox-input:checked,
-.movie-list__main-filter-category-checkbox-input:checked {
+.movie-list__main-filter-category-checkbox-input:checked,
+.movie-list__main-filter-category-checkboxes-item:checked {
   color: #ffffff;
 }
 
 .series-list__main-filter-category-checkbox-input:checked::before,
-.movie-list__main-filter-category-checkbox-input:checked::before {
+.movie-list__main-filter-category-checkbox-input:checked::before,
+.movie-list__main-filter-category-checkboxes-item:checked::before {
   display: block;
   color: #ffffff;
 }
 
 .series-list__main-filter-category-checkbox-input:checked + .movie-list__main-filter-category-checkbox-label,
-.movie-list__main-filter-category-checkbox-input:checked + .movie-list__main-filter-category-checkbox-label {
+.movie-list__main-filter-category-checkbox-input:checked + .movie-list__main-filter-category-checkbox-label,
+.movie-list__main-filter-category-checkboxes-item:checked + .movie-list__main-filter-category-checkbox-label {
   color: #ffffff;
 }
 
@@ -164,6 +180,11 @@
   box-shadow: 0px 33px 32px rgba(0, 0, 0, 0.81);
   border-radius: 20px;
   height: 538px;
+}
+
+.series-list__main-movies-content-item:hover .data-conteiner .data-block__content-item-info .data-block__content-item-info-title,
+.data-block__content-item:hover .data-conteiner .data-block__content-item-info .data-block__content-item-info-title {
+  white-space: normal;
 }
 
 .header {
@@ -1043,8 +1064,8 @@
 .movie-list__main-filter {
   max-width: 400px;
   width: 100%;
-  position: relative;
   box-sizing: border-box;
+  position: relative;
 }
 
 .movie-list__main-filter-options {
@@ -1061,6 +1082,16 @@
 .movie-list__main-filter-category {
   display: flex;
   flex-direction: column;
+  position: fixed;
+  max-width: 400px;
+  width: 100%;
+  height: 100%;
+  gap: 40px;
+}
+
+.movie-list__main-filter-category-item {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
   background: #151515;
   border-radius: 20px;
@@ -1070,7 +1101,6 @@
   height: 100%;
   padding: 20px 30px;
   box-sizing: border-box;
-  position: fixed;
 }
 
 .movie-list__main-filter-category-title {
@@ -1089,6 +1119,12 @@
   height: 90%;
   gap: 18px;
   box-sizing: border-box;
+  transition: all 0.4s;
+}
+
+.movie-list__main-filter-category-checkboxes :hover {
+  cursor: pointer;
+  color: #ffffff;
 }
 
 .movie-list__main-filter-category-checkboxes-item {
@@ -1131,6 +1167,25 @@
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f00c";
+}
+
+.movie-list__main-filter-category-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  width: 100%;
+  height: 58px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0);
+  box-sizing: border-box;
 }
 
 .checked {
@@ -1190,8 +1245,6 @@
 }
 
 .data-block__content-item-poster {
-  background: #c4c4c4;
-  border-radius: 20px;
   max-width: 230px;
   width: 100%;
   height: 320px;
@@ -1199,16 +1252,24 @@
   margin-bottom: 20px;
 }
 
+.data-block__content-item-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
 .data-block__content-item-ganre {
   display: flex;
   justify-content: center;
   align-items: center;
   background: #000f93;
-  width: 88px;
+  width: 128px;
   border-radius: 0px 0px 11px 11px;
   position: absolute;
   top: 0;
-  left: 28%;
+  left: 22%;
 }
 
 .data-block__content-item-ganre-text {
@@ -1235,6 +1296,10 @@
   line-height: 30px;
   text-align: center;
   color: #ffffff;
+  max-width: 15ch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .data-block__content-item-info-caption {
@@ -1761,11 +1826,11 @@
   justify-content: center;
   align-items: center;
   background: #000f93;
-  width: 88px;
+  width: 128px;
   border-radius: 0px 0px 11px 11px;
   position: absolute;
   top: 0;
-  left: 28%;
+  left: 22%;
 }
 
 .data-block__content-item-ganre-text {

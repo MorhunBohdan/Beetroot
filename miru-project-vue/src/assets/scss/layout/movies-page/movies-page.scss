@@ -39,7 +39,6 @@
     max-width: 400px;
     width: 100%;
     max-height: 500px;
-    height: 100%;
     padding: 20px 30px;
     box-sizing: border-box;
   }
@@ -103,7 +102,26 @@
     }
     @extend %checkbox-checked;
   }
-  &__main-filter-category-checkbox-checkmark {
+  &__main-filter-category-date {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    :hover {
+      cursor: pointer;
+      color: #ffffff;
+    }
+  }
+  &__main-filter-category-date-item {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(255,255,255,.5);
+    text-decoration: none;
+    background-color: rgba(255,255,255,0); 
+    border: none;
+    cursor: pointer;
   }
   &__main-filter-category-button {
     display: flex;
@@ -154,21 +172,10 @@
     background: #151515;
     border-radius: 20px;
   }
-  &__content-filter-item {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: rgba(255, 255, 255, 0.2);
-    text-decoration: none;
-    @extend %link-hover;
-  }
   &__content-items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 35px 30px;
-    padding: 30px 0;
     box-sizing: border-box;
   }
   &__content-item {

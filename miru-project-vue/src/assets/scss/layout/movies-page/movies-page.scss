@@ -69,59 +69,35 @@
     @extend %checkbox-checked;
   }
   &__main-filter-category-checkbox-label {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: rgba(255, 255, 255, 0.5);
-    gap: 18px;
+    @extend %checkbox-label;
   }
   &__main-filter-category-checkbox-input {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    -webkit-appearance: none;
-    appearance: none;
-    font: inherit;
-    color: rgba(255, 255, 255, 0.5);
-    width: 24px;
-    height: 24px;
-    border: 2px solid currentColor;
-    border-radius: 6px;
-    transform: translateY(-0.075em);
-    &::before {
-      content: "";
-      display: none;
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      content: "\f00c";
-    }
+    @extend %checkbox-input;
     @extend %checkbox-checked;
   }
   &__main-filter-category-date {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-between;
+    height: 50%;
+    gap: 18px;
+    box-sizing: border-box;
+    transition: all 0.4s;
     :hover {
       cursor: pointer;
       color: #ffffff;
     }
   }
   &__main-filter-category-date-item {
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: rgba(255,255,255,.5);
-    text-decoration: none;
-    background-color: rgba(255,255,255,0); 
-    border: none;
-    cursor: pointer;
+    display: flex;
+    gap: 20px;
+  }
+  &__main-filter-category-date-item-input {
+    @extend %checkbox-input;
+    @extend %checkbox-checked;
+  }
+  &__main-filter-category-date-item-label {
+    @extend %checkbox-label;
   }
   &__main-filter-category-button {
     display: flex;
@@ -137,14 +113,15 @@
     line-height: 24px;
     color: #ffffff;
     border-radius: 20px;
-    border: 1px solid rgba(255,255,255,.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     background-color: rgba(255, 255, 255, 0);
     box-sizing: border-box;
     @extend %button-search-hover;
     @extend %button;
   }
 }
-.conteiner {
+.by-date {
+  height: 172px;
 }
 .checked {
   color: #ffffff;
@@ -161,6 +138,10 @@
     margin-bottom: 20px;
   }
   &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-bottom: 100px;
   }
   &__content-filter {
     display: flex;
@@ -253,4 +234,73 @@
   }
   &__content-item-caption-item {
   }
+}
+.data-pagination {
+  display: flex;
+  justify-content: center;
+}
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+  width: 100%;
+  background: rgba(0, 15, 147, 0.15);
+  border: 1px solid #000f93;
+  border-radius: 20px;
+}
+#componentContainer {
+  padding: 0px;
+}
+.pagination-container > li {
+  list-style: none;
+}
+.btn {
+  height: 53px;
+  width: 53px;
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #000f93;
+  transition: all 0.4s;
+}
+.btn:hover {
+  color: #fdfdfd;
+}
+.back-btn {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  transition: all 0.4s;
+}
+.back-btn > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.back-btn:hover,
+:focus {
+  
+}
+.next-btn {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transition: all 0.4s;
+}
+.next-btn > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.next-btn:hover,
+:focus {
+  
+}
+.btn-active {
+  background: #000f93;
+  border-radius: 20px;
+  color: #fdfdfd;
 }

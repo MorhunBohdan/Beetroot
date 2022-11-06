@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="jquery-3.6.1.min.js"></script>
+  <script src="jquery.twbsPagination.min.js"></script>
+  <title>OMDb API</title>
+</head>
+<body>
+  <div class="form-div">
+    <form action="form" method="get">
+      <h2 class="form__title">Search</h2>
+      <hr>
+      <div class="form__search">
+        <label class="form__label-search" for="t">Title:</label>
+        <input type="text" id="t" name="t" class="form__input-search">
+        <label class="form__label-type">Type:</label>
+        <select class="select-input" name="type">
+          <option value="Movie">Movie</option>
+          <option value="Series">Series</option>
+        </select>
+        <button id="search-by-title-button" type="button" class="form__search-button">Search</button>
+      </div>
+    </form>
+  </div>
+  <div class="content">
+  </div>
+  <div class="pagination-conteiner">
+  </div>
+</body>
+<script src="ajax.js"></script>
+</html>

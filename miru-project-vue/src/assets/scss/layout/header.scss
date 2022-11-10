@@ -171,7 +171,7 @@
   }
 }
 .header-burger {
-  display: none;
+  display: block;
   align-items: center;
   max-width: 45px;
   width: 100%;
@@ -205,6 +205,118 @@
       margin-top: 10px;
     }
   }
+}
+
+
+.sidebar {
+  --nav-width: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--nav-width);
+  height: 100vh;
+  background: black;
+  transform: translateX(calc(-1 * var(--nav-width)));
+  transition: transform 0.25s;
+  z-index: 10;
+  &__item {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-decoration: none;
+    padding: 15px 10px;
+    --c: rgba(255, 255, 255, 0.6); /* the color */
+    color: #0000;
+    background: linear-gradient(90deg, #fff 50%, var(--c) 0)
+        calc(100% - var(--_p, 0%)) / 200% 100%,
+      linear-gradient(#000f93 0 0) 0% 100% / var(--_p, 0%) 100% no-repeat;
+    -webkit-background-clip: text, padding-box;
+    background-clip: text, padding-box;
+    transition: 0.5s;
+    &:hover {
+      --_p: 100%;
+    }
+  }
+}
+.sidebar-top {
+  &__logo {
+    padding: 30px 15px;
+  }
+  &__login {
+    width: 100%;
+    height: 100px;
+    background-color: #000f93;
+    padding: 30px 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+  }
+  &__login-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:  url(../img/3.popular-movies/mask-group.png) no-repeat  center / cover;;
+  }
+  &__login-user {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__login-icon {
+    color: #fff;
+    font-size: 24px;
+  }
+  &__login-btn-signin {
+    @extend %button;
+    width: 100px;
+    padding: 5px 0;
+    background: rgba(19, 19, 19, 0.42);
+    backdrop-filter: blur(10.2px);
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    @extend %button-hover;
+  }
+  &__login-btn-register {
+    @extend %button;
+    width: 100px;
+    padding: 5px 0;
+    background: rgba(19, 19, 19, 0.42);
+    backdrop-filter: blur(10.2px);
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    @extend %button-hover;
+  }
+}
+
+.sidebar-open {
+  display: flex;
+  flex-direction: column;
+  transform: translateX(0);
+  box-sizing: border-box;
+}
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.sidebar-overlay-open {
+  display: block;
 }
 @media (max-width: 1622px) {
   .header-main {

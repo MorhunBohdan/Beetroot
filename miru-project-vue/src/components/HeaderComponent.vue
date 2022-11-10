@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header-main conteiner">
-      <div class="header-burger">
+      <div class="header-burger" v-on:click="navbar()">
         <span class="header-burger__item"></span>
       </div>
       <img
@@ -20,7 +20,13 @@
         />
       </div>
       <nav class="header-main__navbar">
-        <router-link v-for="item in navmenu" class="header-main__navbar-item" :to="item.url" :key="item.navmenu">{{ item.name }}</router-link>
+        <router-link
+          v-for="item in navmenu"
+          class="header-main__navbar-item"
+          :to="item.url"
+          :key="item.navmenu"
+          >{{ item.name }}</router-link
+        >
       </nav>
       <button class="header-main__btn-watchlist" type="button">
         <span class="header-main__btn-watchlist-icon icon-heart"></span
@@ -46,6 +52,43 @@
       </div>
     </div>
   </header>
+  <div class="sidebar-overlay"></div>
+  <nav class="sidebar">
+    <div class="sidebar-top">
+      <img
+        class="sidebar-top__logo"
+        src="../../public/dist/img/1.header/logo.svg"
+        alt="Miru"
+      />
+      <div class="sidebar-top__login">
+        <div class="sidebar-top__login-mask"></div>
+        <div class="sidebar-top__login-user">
+          <a class="sidebar-top__login__link" href="/#"
+            ><i class="fa-solid fa-user sidebar-top__login-icon"></i
+          ></a>
+        </div>
+        <button class="sidebar-top__login-btn-signin" type="button">
+          {{ buttons.sign }}
+        </button>
+        <button class="sidebar-top__login-btn-register" type="button">
+          {{ buttons.register }}
+        </button>
+      </div>
+    </div>
+    <router-link
+      v-for="item in navmenu"
+      class="sidebar__item"
+      :to="item.url"
+      :key="item.navmenu"
+      >{{ item.name }}</router-link
+    >
+    <div v-if="this.$route.name == 'Movies'" class="sidebar__filter">
+    
+    </div>
+    <div v-else-if="this.$route.name == 'Series'" class="sidebar__filter">
+      <p>Series</p>
+    </div>
+  </nav>
 </template>
 
 <script>
@@ -69,6 +112,23 @@ export default {
   methods: {
     searchValue(e) {
       this.searchInput = e.target.value;
+    },
+    navbar() {
+      {
+        const navMenu = document.querySelector(".sidebar");
+        const navOverlay = document.querySelector(".sidebar-overlay");
+        const navButton = document.querySelector(".header-burger");
+
+        navButton.addEventListener("click", () => {
+          navMenu.classList.add("sidebar-open");
+          navOverlay.classList.add("sidebar-overlay-open");
+        });
+
+        navOverlay.addEventListener("click", () => {
+          navMenu.classList.remove("sidebar-open");
+          navOverlay.classList.remove("sidebar-overlay-open");
+        });
+      }
     },
   },
 };

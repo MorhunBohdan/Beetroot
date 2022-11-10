@@ -5,13 +5,31 @@
     display: flex;
     gap: 40px;
   }
-  &__main-filter {
-    max-width: 400px;
-    width: 100%;
-    box-sizing: border-box;
-    position: relative;
+}
+.by-date {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #151515;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 100%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  height: 172px;
+}
+.checked {
+  color: #ffffff;
+}
+.main-filter {
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  &__mobile {
+    display: none;
   }
-  &__main-filter-options {
+  &__options {
     font-family: "Poppins";
     font-style: normal;
     font-weight: 600;
@@ -21,16 +39,20 @@
     color: #ffffff;
     margin-bottom: 20px;
   }
-  &__main-filter-category {
+  &__category {
     display: flex;
     flex-direction: column;
-    position: fixed;
+    position: relative;
     max-width: 400px;
     width: 100%;
     height: 100%;
     gap: 40px;
   }
-  &__main-filter-category-item {
+  &__category-item {
+    display: flex;
+    flex-direction: column;
+  }
+  &__category-item-wrapper {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -38,11 +60,10 @@
     border-radius: 20px;
     max-width: 400px;
     width: 100%;
-    max-height: 500px;
     padding: 20px 30px;
     box-sizing: border-box;
   }
-  &__main-filter-category-title {
+  &__category-title {
     font-family: "Poppins";
     font-style: normal;
     font-weight: 500;
@@ -50,7 +71,7 @@
     line-height: 30px;
     color: #ffffff;
   }
-  &__main-filter-category-checkboxes {
+  &__category-checkboxes {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -58,24 +79,25 @@
     gap: 18px;
     box-sizing: border-box;
     transition: all 0.4s;
+    height: 500px;
     :hover {
       cursor: pointer;
       color: #ffffff;
     }
   }
-  &__main-filter-category-checkboxes-item {
+  &__category-checkboxes-item {
     display: flex;
     gap: 20px;
     @extend %checkbox-checked;
   }
-  &__main-filter-category-checkbox-label {
-    @extend %checkbox-label;
-  }
-  &__main-filter-category-checkbox-input {
+  &__category-checkbox-input {
     @extend %checkbox-input;
     @extend %checkbox-checked;
   }
-  &__main-filter-category-date {
+  &__category-checkbox-label {
+    @extend %checkbox-label;
+  }
+  &__category-date {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -88,18 +110,18 @@
       color: #ffffff;
     }
   }
-  &__main-filter-category-date-item {
+  &__category-date-item {
     display: flex;
     gap: 20px;
   }
-  &__main-filter-category-date-item-input {
+  &__category-date-item-input {
     @extend %checkbox-input;
     @extend %checkbox-checked;
   }
-  &__main-filter-category-date-item-label {
+  &__category-date-item-label {
     @extend %checkbox-label;
   }
-  &__main-filter-category-button {
+  &__category-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,11 +143,10 @@
   }
 }
 .by-date {
-  height: 172px;
 }
-.checked {
-  color: #ffffff;
+.main-filter-category-date-item-input {
 }
+
 .data-block {
   width: 100%;
   &__title {
@@ -161,10 +182,11 @@
   }
   &__content-item {
     background: #131313;
+    max-width: 275px;
+    width: 100%;
     height: 448px;
     border-radius: 20px;
     border-radius: 20px;
-    padding: 20px 23px;
     box-sizing: border-box;
     @extend %movie-item-hover;
   }
@@ -235,6 +257,82 @@
   &__content-item-caption-item {
   }
 }
+.data-conteiner {
+  padding: 20px 23px;
+  box-sizing: border-box;
+}
+.first-level {
+  position: relative;
+}
+.second-level {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  z-index: 10;
+}
+.second-level-two {
+  display: none;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  z-index: 10;
+}
+
+.third-level,
+.third-level-one {
+  position: absolute;
+  display: none;
+  top: 75%;
+  left: 0;
+  z-index: 10;
+  background: #151515;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  max-width: 400px;
+  width: 100%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  height: 100%;
+}
+.first-level {
+  width: 220px;
+  height: 58px;
+  padding: 10px 0px;
+  align-items: center;
+}
+.second-level {
+  align-items: center;
+}
+.second-level-two {
+  align-items: center;
+}
+.first-level:hover {
+  height: 200px;
+  cursor: pointer;
+}
+.second-level:hover {
+  height: 200px;
+  cursor: pointer;
+}
+.first-level:hover .second-level {
+  display: flex;
+  cursor: pointer;
+}
+.first-level:hover .second-level-two {
+  display: flex;
+  cursor: pointer;
+}
+.second-level:hover .third-level-one {
+  display: flex;
+  height: 830px;
+  cursor: pointer;
+}
+.second-level-two:hover > .third-level {
+  display: flex;
+  height: 193px;
+  cursor: pointer;
+}
 .data-pagination {
   display: flex;
   justify-content: center;
@@ -283,7 +381,6 @@
 }
 .back-btn:hover,
 :focus {
-  
 }
 .next-btn {
   border-top-right-radius: 20px;
@@ -297,10 +394,84 @@
 }
 .next-btn:hover,
 :focus {
-  
 }
 .btn-active {
   background: #000f93;
   border-radius: 20px;
   color: #fdfdfd;
+}
+@media (max-width: 1622px) {
+  .movie-list {
+    padding: 0 15px;
+    padding-top: 200px;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 1560px) {
+  .data-block__content-items {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px 15px;
+    justify-items: center;
+  }
+}
+@media (max-width: 1235px) {
+  .main-filter__category-checkboxes {
+    flex-wrap: nowrap;
+    height: 100%;
+  }
+  .main-filter__category-date {
+    flex-wrap: nowrap;
+  }
+  .by-date {
+    height: 243px;
+  }
+}
+@media (max-width: 1034px) {
+  .data-block__content-items {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 15px;
+    justify-items: center;
+  }
+}
+@media (max-width: 784px) {
+  .main-filter {
+    display: none;
+  }
+  .data-block__content-items {
+    justify-items: center;
+  }
+  .main-filter__mobile {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+  .main-filter__category {
+    flex-direction: row;
+    max-width: 100%;
+  }
+  .main-filter__category-item {
+    gap: 20px;
+  }
+  .by-date {
+    height: 70px;
+  }
+}
+@media (max-width: 528px) {
+  .data-block__content-items {
+    grid-template-columns: 1fr;
+  }
+  .main-filter__category {
+    gap: 15px;
+  }
+  .btn {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+  .pagination-container {
+    height: 58px;
+    justify-content: center;
+    align-items: center;
+  }
 }

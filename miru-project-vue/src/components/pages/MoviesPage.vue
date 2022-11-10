@@ -1,40 +1,41 @@
 <template>
   <section class="movie-list">
     <div class="movie-list__main conteiner">
-      <div class="movie-list__main-filter">
-        <h2 class="movie-list__main-filter-options">Filter Option</h2>
-        <div class="movie-list__main-filter-category">
-          <div class="movie-list__main-filter-category-item">
-            <h3 class="movie-list__main-filter-category-title">By Category</h3>
-            <div class="movie-list__main-filter-category-checkboxes">
+      <div class="main-filter">
+        <h2 class="main-filter__options">Filter Option</h2>
+        <div class="main-filter__category">
+          <div class="main-filter__category-item-wrapper">
+            <h3 class="main-filter__category-title">By Category</h3>
+            <div class="main-filter__category-checkboxes">
               <div
-                class="movie-list__main-filter-category-checkboxes-item"
+                class="main-filter__category-checkboxes-item"
                 v-for="genre in genresMovieList"
                 :key="genre.genresMovieList"
               >
                 <input
-                  class="movie-list__main-filter-category-checkbox-input"
+                  class="main-filter__category-checkbox-input"
                   type="checkbox"
                   v-bind:id="genresID + genre.id"
                   name="Action"
                   v-bind:value="genre.id"
                   v-model="checkboxValues"
                   @input="fromArrayToURL"
+                  @change="searchByGenre()"
                 />
                 <label
-                  class="movie-list__main-filter-category-checkbox-label"
+                  class="main-filter__category-checkbox-label"
                   v-bind:for="genresID + genre.id"
                   >{{ genre.name }}</label
                 >
               </div>
             </div>
           </div>
-          <div class="movie-list__main-filter-category-item by-date">
-            <h3 class="movie-list__main-filter-category-title">By Date</h3>
-            <div class="movie-list__main-filter-category-date">
-              <div class="movie-list__main-filter-category-date-item">
+          <div class="main-filter__category-item by-date">
+            <h3 class="main-filter__category-title">By Date</h3>
+            <div class="main-filter__category-date">
+              <div class="main-filter__category-date-item">
                 <input
-                  class="movie-list__main-filter-category-date-item-input"
+                  class="main-filter__category-date-item-input"
                   type="checkbox"
                   name="Today"
                   id="today"
@@ -43,15 +44,13 @@
                   @change="setOption($event)"
                   v-on:click="searchByToday()"
                 />
-                <label
-                  class="movie-list__main-filter-category-date-item-label"
-                  for="today"
+                <label class="main-filter__category-date-item-label" for="today"
                   >Today</label
                 >
               </div>
-              <div class="movie-list__main-filter-category-date-item">
+              <div class="main-filter__category-date-item">
                 <input
-                  class="movie-list__main-filter-category-date-item-input"
+                  class="main-filter__category-date-item-input"
                   type="checkbox"
                   name="This Week"
                   id="week"
@@ -60,15 +59,13 @@
                   @change="setOption($event)"
                   v-on:click="searchByWeek()"
                 />
-                <label
-                  class="movie-list__main-filter-category-date-item-label"
-                  for="week"
+                <label class="main-filter__category-date-item-label" for="week"
                   >This Week</label
                 >
               </div>
-              <div class="movie-list__main-filter-category-date-item">
+              <div class="main-filter__category-date-item">
                 <input
-                  class="movie-list__main-filter-category-date-item-input"
+                  class="main-filter__category-date-item-input"
                   type="checkbox"
                   name="This Month"
                   id="month"
@@ -77,15 +74,13 @@
                   @change="setOption($event)"
                   v-on:click="searchByMonth()"
                 />
-                <label
-                  class="movie-list__main-filter-category-date-item-label"
-                  for="month"
+                <label class="main-filter__category-date-item-label" for="month"
                   >This Month</label
                 >
               </div>
-              <div class="movie-list__main-filter-category-date-item">
+              <div class="main-filter__category-date-item">
                 <input
-                  class="movie-list__main-filter-category-date-item-input"
+                  class="main-filter__category-date-item-input"
                   type="checkbox"
                   name="This Year"
                   v-model="checkboxDate"
@@ -94,9 +89,7 @@
                   @change="setOption($event)"
                   v-on:click="searchByYear()"
                 />
-                <label
-                  class="movie-list__main-filter-category-date-item-label"
-                  for="year"
+                <label class="main-filter__category-date-item-label" for="year"
                   >This Year</label
                 >
               </div>
@@ -104,8 +97,8 @@
           </div>
           <button
             type="button"
-            class="movie-list__main-filter-category-button"
-            v-on:click="searchByGenre()"
+            class="main-filter__category-button"
+            v-on:click="moviesList()"
           >
             Search
           </button>
@@ -113,6 +106,122 @@
       </div>
       <div class="data-block">
         <h2 class="data-block__title">Movies</h2>
+        <div class="main-filter__mobile">
+          <div class="main-filter__category">
+            <div class="main-filter__category-item">
+              <div class="main-filter__category-item-wrapper first-level">
+                <h3 class="main-filter__category-title">Filter</h3>
+                <div class="main-filter__category-item-wrapper second-level">
+                  <h3 class="main-filter__category-title">By Genre</h3>
+                  <div class="main-filter__category-checkboxes third-level-one">
+                    <div
+                      class="main-filter__category-checkboxes-item"
+                      v-for="genre in genresMovieList"
+                      :key="genre.genresMovieList"
+                    >
+                      <input
+                        class="main-filter__category-checkbox-input"
+                        type="checkbox"
+                        v-bind:id="genresID + genre.id"
+                        name="Action"
+                        v-bind:value="genre.id"
+                        v-model="checkboxValues"
+                        @input="fromArrayToURL"
+                        @change="searchByGenre()"
+                      />
+                      <label
+                        class="main-filter__category-checkbox-label"
+                        v-bind:for="genresID + genre.id"
+                        >{{ genre.name }}</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="main-filter__category-item-wrapper by-date second-level-two">
+                  <h3 class="main-filter__category-title">By Date</h3>
+                  <div class="main-filter__category-date third-level">
+                    <div class="main-filter__category-date-item">
+                      <input
+                        class="main-filter__category-date-item-input"
+                        type="checkbox"
+                        name="Today"
+                        id="today"
+                        value="Today"
+                        v-model="checkboxDate"
+                        @change="setOption($event)"
+                        v-on:click="searchByToday()"
+                      />
+                      <label
+                        class="main-filter__category-date-item-label"
+                        for="today"
+                        >Today</label
+                      >
+                    </div>
+                    <div class="main-filter__category-date-item">
+                      <input
+                        class="main-filter__category-date-item-input"
+                        type="checkbox"
+                        name="This Week"
+                        id="week"
+                        value="Week"
+                        v-model="checkboxDate"
+                        @change="setOption($event)"
+                        v-on:click="searchByWeek()"
+                      />
+                      <label
+                        class="main-filter__category-date-item-label"
+                        for="week"
+                        >This Week</label
+                      >
+                    </div>
+                    <div class="main-filter__category-date-item">
+                      <input
+                        class="main-filter__category-date-item-input"
+                        type="checkbox"
+                        name="This Month"
+                        id="month"
+                        value="Month"
+                        v-model="checkboxDate"
+                        @change="setOption($event)"
+                        v-on:click="searchByMonth()"
+                      />
+                      <label
+                        class="main-filter__category-date-item-label"
+                        for="month"
+                        >This Month</label
+                      >
+                    </div>
+                    <div class="main-filter__category-date-item">
+                      <input
+                        class="main-filter__category-date-item-input"
+                        type="checkbox"
+                        name="This Year"
+                        v-model="checkboxDate"
+                        id="year"
+                        value="Year"
+                        @change="setOption($event)"
+                        v-on:click="searchByYear()"
+                      />
+                      <label
+                        class="main-filter__category-date-item-label"
+                        for="year"
+                        >This Year</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="main-filter__category-button"
+              v-on:click="moviesList()"
+            >
+              Search
+            </button>
+          </div>
+        </div>
         <div class="data-block__content">
           <div class="data-block__content-items">
             <div
@@ -120,11 +229,13 @@
               v-for="movie in movies"
               :key="movie.id"
             >
+            <router-link v-bind:to="'/movie/' + movie.id">
               <MovieItem
                 v-if="movies"
                 v-bind:movieID="movie.id"
                 v-bind:primaryReleaseDay="movie.release_date"
               />
+            </router-link>
             </div>
           </div>
           <div class="data-pagination">
@@ -132,7 +243,7 @@
               v-if="totalResults > totalResultLimit"
               :total-items="totalResultLimit"
               :items-per-page="20"
-              :max-pages-shown="5"
+              :max-pages-shown="1"
               v-model="currentPage"
               :on-click="onClickHandler"
               paginate-buttons-class="btn"
@@ -214,30 +325,45 @@ export default {
       checkboxString: "",
       checkboxID: null,
       genresID: "genre-",
-      current: "",
+      current: null,
       currentPage: 1,
       totalResults: null,
       currentDate: "",
-      firstDayWeek: "",
-      currentWeek: "",
-      currentMonth: "",
+      firstDayWeek: null,
+      currentWeek: null,
+      currentMonth: null,
       currentYear: "",
       releseDateFrom: "primary_release_date.gte=",
       releseDateTo: "primary_release_date.lte=",
-      thisMonth: "",
+      thisMonth: null,
       imgUrl: "https://image.tmdb.org/t/p/original",
       apiDiscoverUrl: "https://api.themoviedb.org/3/discover/movie/?",
       apiMovieGenres: "https://api.themoviedb.org/3/genre/movie/list?",
       apiKEY: "api_key=399190ed100bc4cf5960c22c0347d9aa",
       params: {
-        api_key: "399190ed100bc4cf5960c22c0347d9aa",
+        api_key: "api_key=399190ed100bc4cf5960c22c0347d9aa",
+        sort_by: "&sort_by=",
+        popularity: "popularity.desc&",
+        releseDateFilter: "",
+        primary_release_year: "",
+        with_genres: "",
+        page: "",
       },
     };
   },
   methods: {
     moviesList() {
       axios
-        .get(this.apiDiscoverUrl, { params: this.params })
+        .get(
+          this.apiDiscoverUrl +
+            this.params.api_key +
+            this.params.sort_by +
+            this.params.popularity +
+            this.params.releseDateFilter +
+            this.params.primary_release_year +
+            this.params.with_genres +
+            this.params.page
+        )
         .then((response) => {
           this.movies = response.data.results;
           this.totalResults = response.data.total_results;
@@ -248,7 +374,7 @@ export default {
     },
     movieGenresList() {
       axios
-        .get(this.apiMovieGenres, { params: this.params })
+        .get(this.apiMovieGenres + this.params.api_key)
         .then((response) => {
           this.genresMovieList = response.data.genres;
         })
@@ -257,36 +383,17 @@ export default {
         });
     },
     searchByGenre() {
-      this.checkboxString = this.checkboxValues.join();
-      this.params.with_genres = this.checkboxString;
-      axios
-        .get(this.apiDiscoverUrl, { params: this.params })
-        .then((response) => {
-          this.movies = response.data.results;
-          this.totalResults = response.data.total_results;
-          console.log(this.movies);
-        })
-        .catch((e) => {
-          this.error.push(e);
-        });
+      this.checkboxString = this.checkboxValues.join("|");
+      this.params.with_genres = "&with_genres=" + this.checkboxString;
+      console.log(this.params.with_genres);
     },
     searchByToday() {
       this.currentDate = new Date().toJSON().slice(0, 10);
-      this.releseDateFrom =
+      this.params.releseDateFilter =
         "&primary_release_date.gte=" +
         this.currentDate +
         "&primary_release_date.lte=" +
         this.currentDate;
-      axios
-        .get(this.apiDiscoverUrl + this.apiKEY + this.releseDateFrom)
-        .then((response) => {
-          this.movies = response.data.results;
-          this.totalResults = response.data.total_results;
-          console.log(this.movies);
-        })
-        .catch((e) => {
-          this.error.push(e);
-        });
     },
     searchByWeek() {
       this.currentDate = new Date().toJSON().slice(0, 10);
@@ -295,22 +402,12 @@ export default {
       this.diff = this.current.getDate() - this.day + (this.day == 0 ? -6 : 1);
       this.firstDayWeek = new Date(this.current.setDate(this.diff));
       this.firstDayWeek = new Date(this.firstDayWeek).toJSON().slice(0, 10);
-      console.log(this.firstDayWeek);
-      this.releseDateFrom =
+      this.params.releseDateFilter =
         "&primary_release_date.gte=" +
-        this.firstDayWeek +
+        this.currentDate +
         "&primary_release_date.lte=" +
         this.currentDate;
-      axios
-        .get(this.apiDiscoverUrl + this.apiKEY + this.releseDateFrom)
-        .then((response) => {
-          this.movies = response.data.results;
-          this.totalResults = response.data.total_results;
-          console.log(this.movies);
-        })
-        .catch((e) => {
-          this.error.push(e);
-        });
+      console.log(this.releseDateFilter);
     },
     searchByMonth() {
       this.currentDate = new Date().toJSON().slice(0, 10);
@@ -321,52 +418,32 @@ export default {
         2
       );
       this.currentMonth = new Date(this.currentMonth).toJSON().slice(0, 10);
-      this.releseDateFrom =
+      this.params.releseDateFilter =
         "&primary_release_date.gte=" +
         this.currentMonth +
         "&primary_release_date.lte=" +
         this.currentDate;
-      axios
-        .get(this.apiDiscoverUrl + this.apiKEY + this.releseDateFrom)
-        .then((response) => {
-          this.movies = response.data.results;
-          this.totalResults = response.data.total_results;
-          console.log(this.movies);
-        })
-        .catch((e) => {
-          this.error.push(e);
-        });
     },
     searchByYear() {
       this.currentYear = new Date().getFullYear();
-      this.params.primary_release_year = this.currentYear;
+      this.params.primary_release_year = "&year=" + this.currentYear;
+
       console.log(this.params.primary_release_year);
-      axios
-        .get(this.apiDiscoverUrl, { params: this.params })
-        .then((response) => {
-          this.movies = response.data.results;
-          this.totalResults = response.data.total_results;
-          console.log(this.movies);
-        })
-        .catch((e) => {
-          this.error.push(e);
-        });
     },
     onClickHandler(page) {
       this.currentPage = page;
-      this.params.page = this.currentPage;
+      this.params.page = "&page=" + this.currentPage;
       this.moviesList();
     },
     setOption(event) {
       this.checkedDate = event.target;
-      
       if (this.checkedDate.checked) {
         this.checkboxDate = [event.target.value];
       } else {
-        this.checkboxDate = []
+        this.checkboxDate = [];
+        this.params.releseDateFilter = "";
+        this.params.primary_release_year = "";
       }
-      
-      console.log(this.checkedDate);
     },
   },
   mounted() {

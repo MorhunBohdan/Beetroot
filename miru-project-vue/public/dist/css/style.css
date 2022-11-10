@@ -18,8 +18,6 @@
 
 .footer-main__content-moviecategori-list-item,
 .footer-main__content-qucklinks-list-item,
-.data-block__content-filter-item,
-.series-list__main-movies-content-filter-item,
 .top-movies__main-top-filter-item,
 .header-main__navbar-item {
   transition: all 0.4s;
@@ -27,23 +25,22 @@
 
 .footer-main__content-moviecategori-list-item:hover,
 .footer-main__content-qucklinks-list-item:hover,
-.data-block__content-filter-item:hover,
-.series-list__main-movies-content-filter-item:hover,
 .top-movies__main-top-filter-item:hover,
 .header-main__navbar-item:hover,
 .footer-main__content-moviecategori-list-item :focus,
 .footer-main__content-qucklinks-list-item :focus,
-.data-block__content-filter-item :focus,
-.series-list__main-movies-content-filter-item :focus,
 .top-movies__main-top-filter-item :focus,
 .header-main__navbar-item :focus {
   transform: scale(1.2);
   color: #ffffff;
 }
 
-.movie-list__main-filter-category-button,
+.data-item__content-leftside-cast-data-showmore,
+.main-filter__category-button,
 .movie-display__description-btn-wathclist,
 .movie-display__description-btn-wathch,
+.sidebar-top__login-btn-register,
+.sidebar-top__login-btn-signin,
 .header-login-mobile__link,
 .header-login-mobile__btn-watchlist,
 .header-login__btn-register,
@@ -61,9 +58,12 @@
   box-sizing: border-box;
 }
 
+.data-item__content-leftside-cast-data-showmore,
 .top-movies__main-content-right-watchlist,
 .movie-display__description-btn-wathclist,
 .movie-display__description-btn-wathch,
+.sidebar-top__login-btn-register,
+.sidebar-top__login-btn-signin,
 .header-login-mobile__btn-watchlist,
 .header-login__btn-register,
 .header-login__btn-signin,
@@ -71,16 +71,22 @@
   transition: all 0.4s;
 }
 
+.data-item__content-leftside-cast-data-showmore:hover,
 .top-movies__main-content-right-watchlist:hover,
 .movie-display__description-btn-wathclist:hover,
 .movie-display__description-btn-wathch:hover,
+.sidebar-top__login-btn-register:hover,
+.sidebar-top__login-btn-signin:hover,
 .header-login-mobile__btn-watchlist:hover,
 .header-login__btn-register:hover,
 .header-login__btn-signin:hover,
 .header-main__btn-watchlist:hover,
+.data-item__content-leftside-cast-data-showmore :focus,
 .top-movies__main-content-right-watchlist :focus,
 .movie-display__description-btn-wathclist :focus,
 .movie-display__description-btn-wathch :focus,
+.sidebar-top__login-btn-register :focus,
+.sidebar-top__login-btn-signin :focus,
 .header-login-mobile__btn-watchlist :focus,
 .header-login__btn-register :focus,
 .header-login__btn-signin :focus,
@@ -88,14 +94,15 @@
   transform: scale(1.1);
   background: #000f93;
   border: none;
+  color: #ffffff;
 }
 
-.movie-list__main-filter-category-button {
+.main-filter__category-button {
   transition: all 0.4s;
 }
 
-.movie-list__main-filter-category-button:hover,
-.movie-list__main-filter-category-button :focus {
+.main-filter__category-button:hover,
+.main-filter__category-button :focus {
   transform: scale(1.05);
   background: #000f93;
   border: none;
@@ -142,43 +149,36 @@
   border-radius: 20px;
 }
 
-.series-list__main-filter-category-checkbox-input,
-.movie-list__main-filter-category-date-item-input,
-.movie-list__main-filter-category-checkbox-input,
-.movie-list__main-filter-category-checkboxes-item {
+.main-filter__category-date-item-input,
+.main-filter__category-checkbox-input,
+.main-filter__category-checkboxes-item {
   transition: all 0.4s;
 }
 
-.series-list__main-filter-category-checkbox-input:checked,
-.movie-list__main-filter-category-date-item-input:checked,
-.movie-list__main-filter-category-checkbox-input:checked,
-.movie-list__main-filter-category-checkboxes-item:checked {
+.main-filter__category-date-item-input:checked,
+.main-filter__category-checkbox-input:checked,
+.main-filter__category-checkboxes-item:checked {
   color: #ffffff;
 }
 
-.series-list__main-filter-category-checkbox-input:checked::before,
-.movie-list__main-filter-category-date-item-input:checked::before,
-.movie-list__main-filter-category-checkbox-input:checked::before,
-.movie-list__main-filter-category-checkboxes-item:checked::before {
+.main-filter__category-date-item-input:checked::before,
+.main-filter__category-checkbox-input:checked::before,
+.main-filter__category-checkboxes-item:checked::before {
   display: block;
   color: #ffffff;
 }
 
-.series-list__main-filter-category-checkbox-input:checked + .movie-list__main-filter-category-checkbox-label,
-.movie-list__main-filter-category-date-item-input:checked + .movie-list__main-filter-category-checkbox-label,
-.movie-list__main-filter-category-checkbox-input:checked + .movie-list__main-filter-category-checkbox-label,
-.movie-list__main-filter-category-checkboxes-item:checked + .movie-list__main-filter-category-checkbox-label {
+.main-filter__category-date-item-input:checked + .movie-list__main-filter-category-checkbox-label,
+.main-filter__category-checkbox-input:checked + .movie-list__main-filter-category-checkbox-label,
+.main-filter__category-checkboxes-item:checked + .movie-list__main-filter-category-checkbox-label {
   color: #ffffff;
 }
 
-.series-list__main-movies-content-item,
 .data-block__content-item {
   transition: all 0.4s;
 }
 
-.series-list__main-movies-content-item:hover,
 .data-block__content-item:hover,
-.series-list__main-movies-content-item :focus,
 .data-block__content-item :focus {
   background: #2d2d2d;
   box-shadow: 0px 33px 32px rgba(0, 0, 0, 0.81);
@@ -186,13 +186,12 @@
   height: 538px;
 }
 
-.series-list__main-movies-content-item:hover .data-conteiner .data-block__content-item-info .data-block__content-item-info-title,
 .data-block__content-item:hover .data-conteiner .data-block__content-item-info .data-block__content-item-info-title {
   white-space: normal;
 }
 
-.movie-list__main-filter-category-date-item-input,
-.movie-list__main-filter-category-checkbox-input {
+.main-filter__category-date-item-input,
+.main-filter__category-checkbox-input {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -208,8 +207,8 @@
   transform: translateY(-0.075em);
 }
 
-.movie-list__main-filter-category-date-item-input::before,
-.movie-list__main-filter-category-checkbox-input::before {
+.main-filter__category-date-item-input::before,
+.main-filter__category-checkbox-input::before {
   content: "";
   display: none;
   font-family: "Font Awesome 5 Free";
@@ -217,8 +216,8 @@
   content: "\f00c";
 }
 
-.movie-list__main-filter-category-date-item-label,
-.movie-list__main-filter-category-checkbox-label {
+.main-filter__category-date-item-label,
+.main-filter__category-checkbox-label {
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
@@ -410,7 +409,7 @@
 }
 
 .header-burger {
-  display: none;
+  display: block;
   align-items: center;
   max-width: 45px;
   width: 100%;
@@ -447,6 +446,122 @@
   width: 40px;
   border-radius: 2px;
   margin-top: 10px;
+}
+
+.sidebar {
+  --nav-width: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--nav-width);
+  height: 100vh;
+  background: black;
+  transform: translateX(calc(-1 * var(--nav-width)));
+  transition: transform 0.25s;
+  z-index: 10;
+}
+
+.sidebar__item {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-decoration: none;
+  padding: 15px 10px;
+  --c: rgba(255, 255, 255, 0.6);
+  /* the color */
+  color: rgba(0, 0, 0, 0);
+  background: linear-gradient(90deg, #fff 50%, var(--c) 0) calc(100% - var(--_p, 0%))/200% 100%, linear-gradient(#000f93 0 0) 0% 100%/var(--_p, 0%) 100% no-repeat;
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  transition: 0.5s;
+}
+
+.sidebar__item:hover {
+  --_p: 100%;
+}
+
+.sidebar-top__logo {
+  padding: 30px 15px;
+}
+
+.sidebar-top__login {
+  width: 100%;
+  height: 100px;
+  background-color: #000f93;
+  padding: 30px 15px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.sidebar-top__login-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/3.popular-movies/mask-group.png) no-repeat center/cover;
+}
+
+.sidebar-top__login-user {
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-top__login-icon {
+  color: #fff;
+  font-size: 24px;
+}
+
+.sidebar-top__login-btn-signin {
+  width: 100px;
+  padding: 5px 0;
+  background: rgba(19, 19, 19, 0.42);
+  -webkit-backdrop-filter: blur(10.2px);
+          backdrop-filter: blur(10.2px);
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sidebar-top__login-btn-register {
+  width: 100px;
+  padding: 5px 0;
+  background: rgba(19, 19, 19, 0.42);
+  -webkit-backdrop-filter: blur(10.2px);
+          backdrop-filter: blur(10.2px);
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sidebar-open {
+  display: flex;
+  flex-direction: column;
+  transform: translateX(0);
+  box-sizing: border-box;
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.sidebar-overlay-open {
+  display: block;
 }
 
 .first-screen {
@@ -1105,14 +1220,35 @@
   gap: 40px;
 }
 
-.movie-list__main-filter {
+.by-date {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #151515;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 100%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  height: 172px;
+}
+
+.checked {
+  color: #ffffff;
+}
+
+.main-filter {
   max-width: 400px;
   width: 100%;
   box-sizing: border-box;
   position: relative;
 }
 
-.movie-list__main-filter-options {
+.main-filter__mobile {
+  display: none;
+}
+
+.main-filter__options {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
@@ -1123,17 +1259,22 @@
   margin-bottom: 20px;
 }
 
-.movie-list__main-filter-category {
+.main-filter__category {
   display: flex;
   flex-direction: column;
-  position: fixed;
+  position: relative;
   max-width: 400px;
   width: 100%;
   height: 100%;
   gap: 40px;
 }
 
-.movie-list__main-filter-category-item {
+.main-filter__category-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-filter__category-item-wrapper {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -1141,12 +1282,11 @@
   border-radius: 20px;
   max-width: 400px;
   width: 100%;
-  max-height: 500px;
   padding: 20px 30px;
   box-sizing: border-box;
 }
 
-.movie-list__main-filter-category-title {
+.main-filter__category-title {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
@@ -1155,7 +1295,7 @@
   color: #ffffff;
 }
 
-.movie-list__main-filter-category-checkboxes {
+.main-filter__category-checkboxes {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -1163,19 +1303,20 @@
   gap: 18px;
   box-sizing: border-box;
   transition: all 0.4s;
+  height: 500px;
 }
 
-.movie-list__main-filter-category-checkboxes :hover {
+.main-filter__category-checkboxes :hover {
   cursor: pointer;
   color: #ffffff;
 }
 
-.movie-list__main-filter-category-checkboxes-item {
+.main-filter__category-checkboxes-item {
   display: flex;
   gap: 20px;
 }
 
-.movie-list__main-filter-category-date {
+.main-filter__category-date {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -1185,17 +1326,17 @@
   transition: all 0.4s;
 }
 
-.movie-list__main-filter-category-date :hover {
+.main-filter__category-date :hover {
   cursor: pointer;
   color: #ffffff;
 }
 
-.movie-list__main-filter-category-date-item {
+.main-filter__category-date-item {
   display: flex;
   gap: 20px;
 }
 
-.movie-list__main-filter-category-button {
+.main-filter__category-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1212,14 +1353,6 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(255, 255, 255, 0);
   box-sizing: border-box;
-}
-
-.by-date {
-  height: 172px;
-}
-
-.checked {
-  color: #ffffff;
 }
 
 .data-block {
@@ -1263,10 +1396,11 @@
 
 .data-block__content-item {
   background: #131313;
+  max-width: 275px;
+  width: 100%;
   height: 448px;
   border-radius: 20px;
   border-radius: 20px;
-  padding: 20px 23px;
   box-sizing: border-box;
 }
 
@@ -1341,6 +1475,95 @@
   line-height: 24px;
   color: rgba(255, 255, 255, 0.6);
   text-transform: uppercase;
+}
+
+.data-conteiner {
+  padding: 20px 23px;
+  box-sizing: border-box;
+}
+
+.first-level {
+  position: relative;
+}
+
+.second-level {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  z-index: 10;
+}
+
+.second-level-two {
+  display: none;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  z-index: 10;
+}
+
+.third-level,
+.third-level-one {
+  position: absolute;
+  display: none;
+  top: 75%;
+  left: 0;
+  z-index: 10;
+  background: #151515;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  max-width: 400px;
+  width: 100%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.first-level {
+  width: 220px;
+  height: 58px;
+  padding: 10px 0px;
+  align-items: center;
+}
+
+.second-level {
+  align-items: center;
+}
+
+.second-level-two {
+  align-items: center;
+}
+
+.first-level:hover {
+  height: 200px;
+  cursor: pointer;
+}
+
+.second-level:hover {
+  height: 200px;
+  cursor: pointer;
+}
+
+.first-level:hover .second-level {
+  display: flex;
+  cursor: pointer;
+}
+
+.first-level:hover .second-level-two {
+  display: flex;
+  cursor: pointer;
+}
+
+.second-level:hover .third-level-one {
+  display: flex;
+  height: 830px;
+  cursor: pointer;
+}
+
+.second-level-two:hover > .third-level {
+  display: flex;
+  height: 193px;
+  cursor: pointer;
 }
 
 .data-pagination {
@@ -1430,8 +1653,11 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 80px;
   padding-bottom: 100px;
+  height: 100%;
 }
 
 .data-item__content-leftside-video {
@@ -1440,6 +1666,24 @@
   height: 660px;
   background: #8d8d8d;
   border-radius: 20px;
+}
+
+.data-item__content-leftside-video-iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.data-item__content-leftside-video-novideo {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.data-item__content-leftside-info {
+  width: 100%;
 }
 
 .data-item__content-leftside-info-top {
@@ -1535,6 +1779,7 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+  height: 515px;
 }
 
 .data-item__content-leftside-cast-title {
@@ -1550,6 +1795,16 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 50px;
+  overflow: hidden;
+}
+
+.data-item__content-leftside-cast-data-showmore {
+  max-width: 143px;
+  height: 58px;
+  color: #ffffff;
+  border-radius: 20px;
+  background-color: hsla(234deg, 100%, 29%, 0.44);
+  border: none;
 }
 
 .data-item__content-leftside-cast-data-item {
@@ -1590,7 +1845,8 @@
 }
 
 .data-item__content-rightside-poster {
-  padding: 40px 100px;
+  width: 100%;
+  padding: 30px 0;
   background: #151515;
   border-radius: 20px;
   display: flex;
@@ -1598,16 +1854,25 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  gap: 30px;
+  gap: 50px;
 }
 
 .data-item__content-rightside-poster-img {
-  max-width: 285px;
+  max-width: 337px;
   width: 100%;
-  height: 400px;
+  height: 513px;
   background: #c4c4c4;
   box-shadow: 0px 20px 31px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+}
+
+.data-item__content-rightside-poster-genres {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .data-item__content-rightside-poster-genre {
@@ -1616,6 +1881,7 @@
   height: 35px;
   border: 1px solid #000f93;
   border-radius: 11px;
+  padding: 5px 5px;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
@@ -1636,339 +1902,8 @@
   color: #ffffff;
 }
 
-.series-list {
-  padding-top: 200px;
-  background: #080808;
-}
-
-.series-list__main {
-  display: flex;
-  gap: 40px;
-}
-
-.series-list__main-filter {
-  max-width: 400px;
-  width: 100%;
-  position: relative;
-}
-
-.series-list__main-filter-options {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
-  margin: 0;
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-
-.series-list__main-filter-category {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  background: #151515;
-  border-radius: 20px;
-  max-width: 400px;
-  width: 100%;
-  max-height: 500px;
+.show-more {
   height: 100%;
-  padding: 20px 30px;
-  box-sizing: border-box;
-  position: fixed;
-}
-
-.series-list__main-filter-category-title {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
-  color: #ffffff;
-}
-
-.series-list__main-filter-category-checkboxes {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 90%;
-  gap: 18px;
-  box-sizing: border-box;
-}
-
-.series-list__main-filter-category-checkboxes-item {
-  display: flex;
-  gap: 20px;
-}
-
-.series-list__main-filter-category-checkbox-label {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color: rgba(255, 255, 255, 0.5);
-  gap: 18px;
-}
-
-.series-list__main-filter-category-checkbox-input {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-       appearance: none;
-  font: inherit;
-  color: rgba(255, 255, 255, 0.5);
-  width: 24px;
-  height: 24px;
-  border: 2px solid currentColor;
-  border-radius: 6px;
-  transform: translateY(-0.075em);
-}
-
-.series-list__main-filter-category-checkbox-input::before {
-  content: "";
-  display: none;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f00c";
-}
-
----------------------------------------------- .series-list__main-movies {
-  width: 100%;
-}
-
-.series-list__main-movies-title {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-
-.series-list__main-movies-content-filter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 20px 20px;
-  box-sizing: border-box;
-  background: #151515;
-  border-radius: 20px;
-}
-
-.series-list__main-movies-content-filter-item {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: rgba(255, 255, 255, 0.2);
-  text-decoration: none;
-}
-
-.series-list__main-movies-content-items {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 35px 30px;
-  padding: 30px 0;
-  box-sizing: border-box;
-}
-
-.series-list__main-movies-content-item {
-  background: #131313;
-  height: 448px;
-  border-radius: 20px;
-  border-radius: 20px;
-  padding: 20px 23px;
-  box-sizing: border-box;
-}
-
-.series-list__main-movies-content-item-poster {
-  background: #c4c4c4;
-  border-radius: 20px;
-  max-width: 230px;
-  width: 100%;
-  height: 320px;
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.series-list__main-movies-content-item-ganre {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #000f93;
-  width: 88px;
-  border-radius: 0px 0px 11px 11px;
-  position: absolute;
-  top: 0;
-  left: 31%;
-}
-
-.series-list__main-movies-content-item-ganre-text {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
-  text-transform: uppercase;
-  color: #ffffff;
-}
-
-.series-list__main-movies-content-item-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.series-list__main-movies-content-item-info-title {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 30px;
-  text-align: center;
-  color: #ffffff;
-}
-
-.series-list__main-movies-content-item-info-caption {
-  display: flex;
-  gap: 12px;
-}
-
-.series-list__main-movies-content-item-info-caption-item {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: rgba(255, 255, 255, 0.6);
-  text-transform: uppercase;
-}
-
-.checked {
-  color: #ffffff;
-}
-
-.data-block {
-  width: 100%;
-}
-
-.data-block__title {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
-  color: #ffffff;
-  margin-bottom: 20px;
-}
-
-.data-block__content-filter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 20px 20px;
-  box-sizing: border-box;
-  background: #151515;
-  border-radius: 20px;
-}
-
-.data-block__content-filter-item {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: rgba(255, 255, 255, 0.2);
-  text-decoration: none;
-}
-
-.data-block__content-items {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 35px 30px;
-  box-sizing: border-box;
-}
-
-.data-block__content-item {
-  background: #131313;
-  height: 448px;
-  border-radius: 20px;
-  border-radius: 20px;
-  padding: 20px 23px;
-  box-sizing: border-box;
-}
-
-.data-block__content-item-poster {
-  background: #c4c4c4;
-  border-radius: 20px;
-  max-width: 230px;
-  width: 100%;
-  height: 320px;
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.data-block__content-item-ganre {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #000f93;
-  width: 128px;
-  border-radius: 0px 0px 11px 11px;
-  position: absolute;
-  top: 0;
-  left: 22%;
-}
-
-.data-block__content-item-ganre-text {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
-  text-transform: uppercase;
-  color: #ffffff;
-}
-
-.data-block__content-item-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.data-block__content-item-info-title {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 30px;
-  text-align: center;
-  color: #ffffff;
-}
-
-.data-block__content-item-info-caption {
-  display: flex;
-  gap: 12px;
-}
-
-.data-block__content-item-info-caption-item {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: rgba(255, 255, 255, 0.6);
-  text-transform: uppercase;
 }
 
 .footer {
@@ -2116,11 +2051,48 @@
     padding: 0 15px;
     box-sizing: border-box;
   }
+
+  .movie-list {
+    padding: 0 15px;
+    padding-top: 200px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 1560px) {
+  .data-block__content-items {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px 15px;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 1235px) {
+  .main-filter__category-checkboxes {
+    flex-wrap: nowrap;
+    height: 100%;
+  }
+
+  .main-filter__category-date {
+    flex-wrap: nowrap;
+  }
+
+  .by-date {
+    height: 243px;
+  }
 }
 
 @media (max-width: 1092px) {
   .header-main__search-icon {
     padding-right: 15px;
+  }
+}
+
+@media (max-width: 1034px) {
+  .data-block__content-items {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 15px;
+    justify-items: center;
   }
 }
 
@@ -2134,6 +2106,35 @@
   .header-login-mobile__login-icon,
   .header-login-mobile__btn-watchlist {
     display: flex;
+  }
+}
+
+@media (max-width: 784px) {
+  .main-filter {
+    display: none;
+  }
+
+  .data-block__content-items {
+    justify-items: center;
+  }
+
+  .main-filter__mobile {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+
+  .main-filter__category {
+    flex-direction: row;
+    max-width: 100%;
+  }
+
+  .main-filter__category-item {
+    gap: 20px;
+  }
+
+  .by-date {
+    height: 70px;
   }
 }
 
@@ -2151,6 +2152,29 @@
 @media (max-width: 555px) {
   .header-main__logo {
     display: none;
+  }
+}
+
+@media (max-width: 528px) {
+  .data-block__content-items {
+    grid-template-columns: 1fr;
+  }
+
+  .main-filter__category {
+    gap: 15px;
+  }
+
+  .btn {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .pagination-container {
+    height: 58px;
+    justify-content: center;
+    align-items: center;
   }
 }
 

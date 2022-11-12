@@ -20,7 +20,7 @@
           {{ primaryReleaseDay }}
         </p>
         <p class="data-block__content-item-info-caption-item">
-          {{ movie.status }}
+          {{ movie.last_air_date }}
         </p>
         <p class="data-block__content-item-info-caption-item">{{movie.number_of_seasons  + "S" + " " +  movie.number_of_episodes + "E"}}</p>
       </div>

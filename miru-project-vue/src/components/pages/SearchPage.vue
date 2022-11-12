@@ -4,7 +4,7 @@
       <div class="main-filter">
         <h2 class="main-filter__options">Filter Option</h2>
         <div class="main-filter__category">
-          <div class="main-filter__category-item-wrapper">
+          <div v-if="typeSearch == 'movie?'" class="main-filter__category-item-wrapper">
             <h3 class="main-filter__category-title">By Category</h3>
             <div class="main-filter__category-checkboxes">
               <div
@@ -30,7 +30,33 @@
               </div>
             </div>
           </div>
-          <div class="main-filter__category-item by-date">
+          <div v-else class="main-filter__category-item-wrapper">
+            <h3 class="main-filter__category-title">By Category</h3>
+            <div class="main-filter__category-checkboxes tv">
+              <div
+                class="main-filter__category-checkboxes-item"
+                v-for="genre in genresTvList"
+                :key="genre.genresTvList"
+              >
+                <input
+                  class="main-filter__category-checkbox-input"
+                  type="checkbox"
+                  v-bind:id="genresID + genre.id"
+                  name="Action"
+                  v-bind:value="genre.id"
+                  v-model="checkboxValues"
+                  @input="fromArrayToURL"
+                  @change="searchByGenre()"
+                />
+                <label
+                  class="main-filter__category-checkbox-label"
+                  v-bind:for="genresID + genre.id"
+                  >{{ genre.name }}</label
+                >
+              </div>
+            </div>
+          </div>
+          <div v-if="typeSearch == 'movie?'" class="main-filter__category-item by-date">
             <h3 class="main-filter__category-title">By Date</h3>
             <div class="main-filter__category-date">
               <div class="main-filter__category-date-item">
@@ -95,8 +121,73 @@
               </div>
             </div>
           </div>
+          <div v-else class="main-filter__category-item by-date">
+            <h3 class="main-filter__category-title">By Date2</h3>
+            <div class="main-filter__category-date">
+              <div class="main-filter__category-date-item">
+                <input
+                  class="main-filter__category-date-item-input"
+                  type="checkbox"
+                  name="Today"
+                  id="today"
+                  value="Today"
+                  v-model="checkboxDate"
+                  @change="setOption($event)"
+                  v-on:click="searchByTodayTV()"
+                />
+                <label class="main-filter__category-date-item-label" for="today"
+                  >Today</label
+                >
+              </div>
+              <div class="main-filter__category-date-item">
+                <input
+                  class="main-filter__category-date-item-input"
+                  type="checkbox"
+                  name="This Week"
+                  id="week"
+                  value="Week"
+                  v-model="checkboxDate"
+                  @change="setOption($event)"
+                  v-on:click="searchByWeekTV()"
+                />
+                <label class="main-filter__category-date-item-label" for="week"
+                  >This Week</label
+                >
+              </div>
+              <div class="main-filter__category-date-item">
+                <input
+                  class="main-filter__category-date-item-input"
+                  type="checkbox"
+                  name="This Month"
+                  id="month"
+                  value="Month"
+                  v-model="checkboxDate"
+                  @change="setOption($event)"
+                  v-on:click="searchByMonthTV()"
+                />
+                <label class="main-filter__category-date-item-label" for="month"
+                  >This Month</label
+                >
+              </div>
+              <div class="main-filter__category-date-item">
+                <input
+                  class="main-filter__category-date-item-input"
+                  type="checkbox"
+                  name="This Year"
+                  v-model="checkboxDate"
+                  id="year"
+                  value="Year"
+                  @change="setOption($event)"
+                  v-on:click="searchByYearTV()"
+                />
+                <label class="main-filter__category-date-item-label" for="year"
+                  >This Year</label
+                >
+              </div>
+            </div>
+          </div>
           <div class="main-filter__category-item by-type">
-            <h3 class="main-filter__category-title">By Type</h3>
+            <h3 class="main-filter__category-title">By Type1</h3>
             <div class="main-filter__category-type">
               <div class="main-filter__category-type-item">
                 <input
@@ -135,7 +226,7 @@
           <button
             type="button"
             class="main-filter__category-button"
-            v-on:click="moviesList()"
+            v-on:click="discoverByCategory()"
           >
             Search
           </button>
@@ -255,7 +346,7 @@
             <button
               type="button"
               class="main-filter__category-button"
-              v-on:click="moviesList()"
+              v-on:click="discoverByCategory()"
             >
               Search
             </button>
@@ -268,12 +359,22 @@
               v-for="movie in movies"
               :key="movie.id"
             >
-              <router-link v-if="movies" v-bind:to="'/movie/' + movie.id">
-                <MovieItem
-                  v-bind:movieID="movie.id"
-                  v-bind:primaryReleaseDay="movie.release_date"
-                />
-              </router-link>
+              <div class="wrapper" v-if="typeSearch == 'movie?'" >
+                <router-link v-if="movies" v-bind:to="'/movie/' + movie.id">
+                  <MovieItem
+                    v-bind:movieID="movie.id"
+                    v-bind:primaryReleaseDay="movie.release_date"
+                  />
+                </router-link>
+              </div>
+              <div class="wrapper" v-else >
+                <router-link v-if="movies" v-bind:to="'/movie/' + movie.id">
+                  <SeriesItem
+                    v-bind:movieID="movie.id"
+                    v-bind:primaryReleaseDay="movie.release_date"
+                  />
+                </router-link>
+              </div>
             </div>
           </div>
           <div class="data-pagination">
@@ -346,14 +447,13 @@
 import axios from "axios";
 import MovieItem from "@/components/pages/MovieItem.vue";
 import { useRoute } from "vue-router";
-
-/* import SeriesItem from "@/components/pages/SearchPage.vue"; */
+import SeriesItem from "@/components/pages/SeriesItem.vue";
 
 export default {
   name: "SearchPage",
   components: {
     MovieItem,
-    /* SeriesItem, */
+    SeriesItem,
   },
   data() {
     return {
@@ -361,8 +461,9 @@ export default {
       movies: null,
       error: null,
       genresMovieList: null,
+      genresTvList: null,
       checkboxType: [],
-      searchType: "movie/",
+      typeSearch: "movie?",
       checkboxDate: [],
       checkboxValues: [],
       checkboxInput: null,
@@ -380,10 +481,12 @@ export default {
       releseDateFrom: "primary_release_date.gte=",
       releseDateTo: "primary_release_date.lte=",
       thisMonth: null,
+      discoverType: "movie",
       imgUrl: "https://image.tmdb.org/t/p/original",
-      apiDiscoverUrl: "https://api.themoviedb.org/3/discover/movie/?",
+      apiDiscoverUrl: "https://api.themoviedb.org/3/discover/" +  this.discoverType + "/?",
       apiSearchUrl: "https://api.themoviedb.org/3/search/",
       apiMovieGenres: "https://api.themoviedb.org/3/genre/movie/list?",
+      apiTvGenres: "https://api.themoviedb.org/3/genre/tv/list?",
       apiKEY: "api_key=399190ed100bc4cf5960c22c0347d9aa",
       params: {
         type: "movie?",
@@ -401,14 +504,14 @@ export default {
   watch: {
     "$route.params.query": {
       handler: function (query) {
-       this.params.query = "&query=" + query
-       console.log(query)
-       this.moviesList();
+        this.params.query = "&query=" + query;
+        console.log(query);
+        this.moviesList();
       },
       deep: true,
       immediate: true,
     },
-  },  
+  },
   methods: {
     moviesList() {
       axios
@@ -443,6 +546,16 @@ export default {
         .catch((e) => {
           this.error.push(e);
         });
+    }, 
+    tvGenresList() {
+      axios
+        .get(this.apiTvGenres + this.params.api_key)
+        .then((response) => {
+          this.genresTvList = response.data.genres;
+        })
+        .catch((e) => {
+          this.error.push(e);
+        });
     },
     searchByGenre() {
       this.checkboxString = this.checkboxValues.join("|");
@@ -466,7 +579,7 @@ export default {
       this.firstDayWeek = new Date(this.firstDayWeek).toJSON().slice(0, 10);
       this.params.releseDateFilter =
         "&primary_release_date.gte=" +
-        this.currentDate +
+        this.firstDayWeek +
         "&primary_release_date.lte=" +
         this.currentDate;
       console.log(this.releseDateFilter);
@@ -492,6 +605,51 @@ export default {
 
       console.log(this.params.primary_release_year);
     },
+    searchByTodayTV() {
+      this.currentDate = new Date().toJSON().slice(0, 10);
+      this.params.releseDateFilter =
+        "&first_air_date.gte=" +
+        this.currentDate +
+        "&first_air_date.lte=" +
+        this.currentDate;
+    },
+    searchByWeekTV() {
+      this.currentDate = new Date().toJSON().slice(0, 10);
+      console.log(this.currentDate)
+      this.current = new Date();
+      this.day = this.current.getDay();
+      this.diff = this.current.getDate() - this.day + (this.day == 0 ? -6 : 1);
+      this.firstDayWeek = new Date(this.current.setDate(this.diff));
+      this.firstDayWeek = new Date(this.firstDayWeek).toJSON().slice(0, 10);
+      console.log(this.firstDayWeek)
+      this.params.releseDateFilter =
+        "&first_air_date.gte=" +
+        this.firstDayWeek +
+        "&first_air_date.lte=" +
+        this.currentDate;
+      console.log(this.releseDateFilter);
+    },
+    searchByMonthTV() {
+      this.currentDate = new Date().toJSON().slice(0, 10);
+      this.current = new Date();
+      this.currentMonth = new Date(
+        this.current.getFullYear(),
+        this.current.getMonth(),
+        2
+      );
+      this.currentMonth = new Date(this.currentMonth).toJSON().slice(0, 10);
+      this.params.releseDateFilter =
+        "&first_air_date.gte=" +
+        this.currentMonth +
+        "&first_air_date.lte=" +
+        this.currentDate;
+    },
+    searchByYearTV() {
+      this.currentYear = new Date().getFullYear();
+      this.params.primary_release_year = "&first_air_date_year=" + this.currentYear;
+
+      console.log(this.params.primary_release_year);
+    },
     onClickHandler(page) {
       this.currentPage = page;
       this.params.page = "&page=" + this.currentPage;
@@ -499,18 +657,20 @@ export default {
     },
     searchByType() {
       this.params.type = this.checkboxType[0] + "?";
-      console.log(this.params.type);
+      console.log(this.checkboxType)
+      this.typeSearch = this.params.type
+      this.moviesList();
     },
     setOptionType(event) {
       this.checkedType = event.target;
+      console.log(this.checkboxType)
       if (this.checkedType.checked) {
         this.checkboxType = [event.target.value];
-        console.log(this.checkboxType);
         this.searchByType();
       } else {
         this.checkboxType = [];
-        this.params.type = "";
-        this.params.type = "";
+        this.params.type = "movie?";
+        
       }
     },
     setOption(event) {
@@ -521,12 +681,40 @@ export default {
         this.checkboxDate = [];
         this.params.releseDateFilter = "";
         this.params.primary_release_year = "";
+
       }
     },
+    discoverByCategory() {
+      this.discoverType = this.checkboxType[0],
+      this.apiDiscoverUrl = "https://api.themoviedb.org/3/discover/" +  this.discoverType + "/?",
+      axios
+        .get(
+          this.apiDiscoverUrl +
+            this.params.api_key +
+            this.params.sort_by +
+            this.params.popularity +
+            this.params.releseDateFilter +
+            this.params.primary_release_year +
+            this.params.with_genres +
+            this.params.page +
+            this.params.query
+        )
+        .then((response) => {
+          this.movies = response.data.results;
+          console.log(this.params.query);
+          this.check = response;
+          this.totalResults = response.data.total_results;
+        })
+        .catch((e) => {
+          this.error.push(e);
+        });
+    }
   },
   mounted() {
     this.moviesList();
+    this.discoverByCategory();
     this.movieGenresList();
+    this.tvGenresList();
   },
 };
 </script>

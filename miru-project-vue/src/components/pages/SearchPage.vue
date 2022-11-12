@@ -192,13 +192,13 @@
               <div class="main-filter__category-type-item">
                 <input
                   class="main-filter__category-type-item-input"
-                  type="checkbox"
+                  type="radio"
                   name="Movies"
                   id="Movies"
                   value="movie"
                   v-model="checkboxType"
-                  @change="setOptionType($event)"
-                  @input="searchByType()"
+                  @change="setOptionTypeRadio($event)"
+                 
                 />
                 <label
                   class="main-filter__category-type-item-label"
@@ -209,13 +209,13 @@
               <div class="main-filter__category-type-item">
                 <input
                   class="main-filter__category-type-item-input"
-                  type="checkbox"
+                  type="radio"
                   name="tv"
                   id="tv"
                   value="tv"
                   v-model="checkboxType"
-                  @change="setOptionType($event)"
-                  @input="searchByType()"
+                  @change="setOptionTypeRadio($event)"
+                  
                 />
                 <label class="main-filter__category-type-item-label" for="tv"
                   >TV Series</label
@@ -655,22 +655,39 @@ export default {
       this.params.page = "&page=" + this.currentPage;
       this.moviesList();
     },
-    searchByType() {
+   /*  searchByType() {
       this.params.type = this.checkboxType[0] + "?";
       console.log(this.checkboxType)
       this.typeSearch = this.params.type
       this.moviesList();
-    },
+    }, */
     setOptionType(event) {
       this.checkedType = event.target;
       console.log(this.checkboxType)
       if (this.checkedType.checked) {
         this.checkboxType = [event.target.value];
+        console.log("checked")
         this.searchByType();
       } else {
         this.checkboxType = [];
         this.params.type = "movie?";
+        console.log("false")
         
+      }
+    },
+    setOptionTypeRadio(event) {
+      this.checkedType = event.target;
+      console.log(this.checkboxType)
+      if (this.checkboxType == "movie") {
+        this.params.type = this.checkboxType + "?";
+        this.typeSearch = this.params.type
+        this.moviesList();
+        console.log(this.params.type)
+      } else {
+        this.params.type = this.checkboxType + "?";
+        this.typeSearch = this.params.type
+        this.moviesList();
+        console.log(this.params.type)
       }
     },
     setOption(event) {
@@ -685,7 +702,7 @@ export default {
       }
     },
     discoverByCategory() {
-      this.discoverType = this.checkboxType[0],
+      this.discoverType = this.checkboxType,
       this.apiDiscoverUrl = "https://api.themoviedb.org/3/discover/" +  this.discoverType + "/?",
       axios
         .get(

@@ -11,13 +11,17 @@
       />
       <div class="header-main__search">
         <i class="fa-solid fa-magnifying-glass header-main__search-icon"></i>
-        <input
-          :value="searchInput"
-          @input="searchValue"
+        <router-link to="">
+          <input
+          v-model="searchInput"
+          v-on:keyup.enter="searchValue(e)"
           class="header-main__search-textarea"
           placeholder="Search titles here..."
           maxlength="50"
+          role="link"
         />
+        </router-link>
+        
       </div>
       <nav class="header-main__navbar">
         <router-link
@@ -92,11 +96,14 @@
 </template>
 
 <script>
+
 export default {
   name: "HeaderComponent",
   data() {
     return {
       searchInput: "",
+      searchRoute: "",
+      query: "",
       navmenu: [
         { id: 1, name: "Home", url: "/Home" },
         { id: 2, name: "Movies", url: "/Movies" },
@@ -110,8 +117,9 @@ export default {
     };
   },
   methods: {
-    searchValue(e) {
-      this.searchInput = e.target.value;
+    searchValue() {
+      this.query = this.searchInput
+      this.$router.push({ path: `/Search/${this.query}` })
     },
     navbar() {
       {

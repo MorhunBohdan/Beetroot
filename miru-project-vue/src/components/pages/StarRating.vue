@@ -3,7 +3,7 @@
     <div class="stars-outer">
       <div class="stars-inner"></div>
     </div>
-    <span class="number-rating">{{ ratingValue }}</span>
+    <span class="number-rating">{{ roundedNumber }}</span>
   </div>
 </template>
 
@@ -23,13 +23,15 @@ export default {
       ratingStar: "",
       width: 0,
       widthTwo: "width=",
-      ratingValueTwo: "",
+      ratingNumber: "",
+      roundedNumber: "",
     };
   },
   watch: {
     ratingValue: function(value) {
       this.pasedRatingValue = value
-      console.log(this.ratingValueTwo)
+      this.ratingNumber = value
+      this.roundedNumber = Math.round(this.ratingNumber * 10)/10;
       this.starPercentage = (this.pasedRatingValue / this.starsTotal) * 100;
       this.starPercentageRounded = `${
         Math.round(this.starPercentage / 10) * 10
@@ -70,12 +72,14 @@ export default {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   color: #151515;
+  font-size: 20px;
 }
 .stars-inner::before {
   content: "\f005 \f005 \f005 \f005 \f005";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   color: #f8ce0b;
+  font-size: 20px;
 }
 .stars-inner {
   position: absolute;

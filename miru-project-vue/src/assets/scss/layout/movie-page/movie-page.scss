@@ -81,6 +81,10 @@
     font-size: 16px;
     line-height: 24px;
     color: #ffffff;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
   }
   &__content-leftside-info-top-right-rating-likes {
     display: flex;
@@ -217,6 +221,7 @@
     width: 100%;
     height: 35px;
     border: 1px solid #000f93;
+    background-color: #000f93;
     border-radius: 11px;
     padding: 5px 5px;
     font-family: "Poppins";
@@ -224,11 +229,12 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
-    color: #1328e3;
+    color: #ffffff;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
 }
 .conteiner {

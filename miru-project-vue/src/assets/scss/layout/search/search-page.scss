@@ -1,0 +1,50 @@
+.main-filter {
+  &__category-item {
+    display: flex;
+    flex-direction: column;
+  }
+  &__category-title {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+  }
+  &__category-type {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 50%;
+    gap: 18px;
+    box-sizing: border-box;
+    transition: all 0.4s;
+    :hover {
+      cursor: pointer;
+      color: #ffffff;
+    }
+  }
+  &__category-type-item {
+    display: flex;
+    gap: 20px;
+  }
+  &__category-type-item-label {
+    @extend %checkbox-label;
+  }
+  &__category-type-item-input {
+    @extend %checkbox-input;
+    @extend %checkbox-checked;
+  }
+}
+.by-type {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #151515;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 100%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  height: 5%;
+}

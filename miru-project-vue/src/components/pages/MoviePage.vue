@@ -46,12 +46,10 @@
                 <div
                   class="data-item__content-leftside-info-top-right-rating-viewers"
                 >
-                  <i class="fa-solid fa-eye"></i>
                   <div
                     class="data-item__content-leftside-info-top-right-rating-viewers-number"
                   >
-                   <StarRating v-bind:ratingValue="movie.vote_average /2"/>
-                    <span class="number-rating"></span>
+                    <StarRating v-bind:ratingValue="movie.vote_average / 2" />
                   </div>
                 </div>
                 <div
@@ -64,17 +62,7 @@
                     <p
                       class="data-item__content-leftside-info-top-right-rating-likes-number"
                     >
-                      45k Liked
-                    </p>
-                  </div>
-                  <div
-                    class="data-item__content-leftside-info-top-right-rating-likes-down"
-                  >
-                    <i class="fa-solid fa-thumbs-down"></i>
-                    <p
-                      class="data-item__content-leftside-info-top-right-rating-likes-number"
-                    >
-                      326 Dislike
+                      {{movie.vote_count + " " +"Votes"}}
                     </p>
                   </div>
                 </div>
@@ -163,12 +151,13 @@
 import axios from "axios";
 import { useRoute } from "vue-router";
 import $ from "jquery";
-import StarRating from '@/components/pages/StarRating.vue'
+import StarRating from "@/components/pages/StarRating.vue";
+
 
 export default {
   name: "MoviePage",
   components: {
-    StarRating
+    StarRating,
   },
   data() {
     return {
@@ -232,14 +221,15 @@ export default {
         )
         .then((response) => {
           this.trailer = response.data.results;
-          this.trailer.forEach((video) => {
-            console.log(video.name)
-            if (video.name == "Official Teaser [Subtitled]") {
-              this.trailer = this.youtube + video.key;
-            } else if (video.name == "Trailer") {
-              this.trailer = this.youtube + video.key;
-            } 
+          if(this.trailer.length == 0 ) {
+            this.trailer = false;
+          } else {
+            this.trailer.forEach((results) => {
+            if (results.lenght !== 0|| results.name.include("Official Trailer")) {
+              this.trailer = this.youtube + results.key
+            }
           });
+          }
         })
         .catch((e) => {
           this.error.push(e);
@@ -255,7 +245,6 @@ export default {
         );
       }
     },
-    
   },
   mounted() {
     this.movieItem();
@@ -264,4 +253,3 @@ export default {
   },
 };
 </script>
-

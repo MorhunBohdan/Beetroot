@@ -6,7 +6,7 @@
         <div class="main-filter__category">
           <div class="main-filter__category-item-wrapper">
             <h3 class="main-filter__category-title">By Category</h3>
-            <div class="main-filter__category-checkboxes tv">
+            <div class="main-filter__category-checkboxes">
               <div
                 class="main-filter__category-checkboxes-item"
                 v-for="genre in genresMovieList"
@@ -95,6 +95,43 @@
               </div>
             </div>
           </div>
+          <div class="main-filter__category-item by-type">
+            <h3 class="main-filter__category-title">By Type</h3>
+            <div class="main-filter__category-type">
+              <div class="main-filter__category-type-item">
+                <input
+                  class="main-filter__category-type-item-input"
+                  type="checkbox"
+                  name="Movies"
+                  id="Movies"
+                  value="movie"
+                  v-model="checkboxType"
+                  @change="setOptionType($event)"
+                  @input="searchByType()"
+                />
+                <label
+                  class="main-filter__category-type-item-label"
+                  for="Movies"
+                  >Movies</label
+                >
+              </div>
+              <div class="main-filter__category-type-item">
+                <input
+                  class="main-filter__category-type-item-input"
+                  type="checkbox"
+                  name="tv"
+                  id="tv"
+                  value="tv"
+                  v-model="checkboxType"
+                  @change="setOptionType($event)"
+                  @input="searchByType()"
+                />
+                <label class="main-filter__category-type-item-label" for="tv"
+                  >TV Series</label
+                >
+              </div>
+            </div>
+          </div>
           <button
             type="button"
             class="main-filter__category-button"
@@ -137,7 +174,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="main-filter__category-item-wrapper by-date second-level-two">
+                <div
+                  class="main-filter__category-item-wrapper by-date second-level-two"
+                >
                   <h3 class="main-filter__category-title">By Date</h3>
                   <div class="main-filter__category-date third-level">
                     <div class="main-filter__category-date-item">
@@ -229,13 +268,12 @@
               v-for="movie in movies"
               :key="movie.id"
             >
-            <router-link v-bind:to="'/series/' + movie.id">
-              <SeriesItem
-                v-if="movies"
-                v-bind:movieID="movie.id"
-                v-bind:primaryReleaseDay="movie.release_date"
-              />
-            </router-link>
+              <router-link v-if="movies" v-bind:to="'/movie/' + movie.id">
+                <MovieItem
+                  v-bind:movieID="movie.id"
+                  v-bind:primaryReleaseDay="movie.release_date"
+                />
+              </router-link>
             </div>
           </div>
           <div class="data-pagination">
@@ -306,12 +344,16 @@
 
 <script>
 import axios from "axios";
-import SeriesItem from "@/components/pages/SeriesItem.vue";
+import MovieItem from "@/components/pages/MovieItem.vue";
+import { useRoute } from "vue-router";
+
+/* import SeriesItem from "@/components/pages/SearchPage.vue"; */
 
 export default {
-  name: "MoviesPage",
+  name: "SearchPage",
   components: {
-    SeriesItem,
+    MovieItem,
+    /* SeriesItem, */
   },
   data() {
     return {
@@ -319,6 +361,8 @@ export default {
       movies: null,
       error: null,
       genresMovieList: null,
+      checkboxType: [],
+      searchType: "movie/",
       checkboxDate: [],
       checkboxValues: [],
       checkboxInput: null,
@@ -337,36 +381,53 @@ export default {
       releseDateTo: "primary_release_date.lte=",
       thisMonth: null,
       imgUrl: "https://image.tmdb.org/t/p/original",
-      apiDiscoverUrl: "https://api.themoviedb.org/3/discover/tv?",
-      apiMovieGenres: "https://api.themoviedb.org/3/genre/tv/list?",
+      apiDiscoverUrl: "https://api.themoviedb.org/3/discover/movie/?",
+      apiSearchUrl: "https://api.themoviedb.org/3/search/",
+      apiMovieGenres: "https://api.themoviedb.org/3/genre/movie/list?",
       apiKEY: "api_key=399190ed100bc4cf5960c22c0347d9aa",
       params: {
+        type: "movie?",
         api_key: "api_key=399190ed100bc4cf5960c22c0347d9aa",
         sort_by: "&sort_by=",
         popularity: "popularity.desc&",
-        vote_avarege: "vote_average.desc&",
         releseDateFilter: "",
         primary_release_year: "",
         with_genres: "",
         page: "",
+        query: "&query=" + useRoute().params.query,
       },
     };
   },
+  watch: {
+    "$route.params.query": {
+      handler: function (query) {
+       this.params.query = "&query=" + query
+       console.log(query)
+       this.moviesList();
+      },
+      deep: true,
+      immediate: true,
+    },
+  },  
   methods: {
     moviesList() {
       axios
         .get(
-          this.apiDiscoverUrl +
+          this.apiSearchUrl +
+            this.params.type +
             this.params.api_key +
             this.params.sort_by +
             this.params.popularity +
             this.params.releseDateFilter +
             this.params.primary_release_year +
             this.params.with_genres +
-            this.params.page
+            this.params.page +
+            this.params.query
         )
         .then((response) => {
           this.movies = response.data.results;
+          console.log(this.params.query);
+          this.check = response;
           this.totalResults = response.data.total_results;
         })
         .catch((e) => {
@@ -436,6 +497,22 @@ export default {
       this.params.page = "&page=" + this.currentPage;
       this.moviesList();
     },
+    searchByType() {
+      this.params.type = this.checkboxType[0] + "?";
+      console.log(this.params.type);
+    },
+    setOptionType(event) {
+      this.checkedType = event.target;
+      if (this.checkedType.checked) {
+        this.checkboxType = [event.target.value];
+        console.log(this.checkboxType);
+        this.searchByType();
+      } else {
+        this.checkboxType = [];
+        this.params.type = "";
+        this.params.type = "";
+      }
+    },
     setOption(event) {
       this.checkedDate = event.target;
       if (this.checkedDate.checked) {
@@ -454,3 +531,5 @@ export default {
 };
 </script>
 <style></style>
+https://api.themoviedb.org/3/search/movie?api_key=399190ed100bc4cf5960c22c0347d9aa&query=Frinds
+https://api.themoviedb.org/3/search/movie?api_key=399190ed100bc4cf5960c22c0347d9aa&query=Friends

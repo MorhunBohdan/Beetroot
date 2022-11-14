@@ -118,6 +118,9 @@
       </div>
       <div class="data-item__content-rightside">
         <div class="data-item__content-rightside-poster">
+          <h2 class="data-item__content-leftside-info-top-left-title">
+                {{ movie.title }}
+              </h2>
           <div class="data-item__content-rightside-poster-img">
             <img
               v-if="movie.poster_path"

@@ -122,7 +122,7 @@
             </div>
           </div>
           <div v-else class="main-filter__category-item by-date">
-            <h3 class="main-filter__category-title">By Date2</h3>
+            <h3 class="main-filter__category-title">By Date</h3>
             <div class="main-filter__category-date">
               <div class="main-filter__category-date-item">
                 <input
@@ -187,7 +187,7 @@
             </div>
           </div>
           <div class="main-filter__category-item by-type">
-            <h3 class="main-filter__category-title">By Type1</h3>
+            <h3 class="main-filter__category-title">By Type</h3>
             <div class="main-filter__category-type">
               <div class="main-filter__category-type-item">
                 <input

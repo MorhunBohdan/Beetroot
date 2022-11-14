@@ -6,7 +6,6 @@
     gap: 40px;
   }
   &__content-leftside {
-    max-width: 1074px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -17,7 +16,6 @@
     height: 100%;
   }
   &__content-leftside-video {
-    max-width: 1074px;
     width: 100%;
     height: 660px;
     background: #8d8d8d;
@@ -267,6 +265,7 @@
     height: 100%;
   }
 }
+
 @media (max-width: 1360px) {
   .data-item__content-leftside-cast {
     height: 560px;

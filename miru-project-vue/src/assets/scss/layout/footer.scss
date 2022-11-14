@@ -72,7 +72,6 @@
     font-size: 16px;
     line-height: 24px;
     color: #9498b7;
-    @extend %link-hover;
   }
   &__content-moviecategori {
     display: flex;
@@ -151,7 +150,6 @@
   }
   .footer-main__content {
     flex-direction: column;
-   
     gap: 30px;
   }
 }

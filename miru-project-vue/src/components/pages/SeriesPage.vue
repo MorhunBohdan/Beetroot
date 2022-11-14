@@ -137,7 +137,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="main-filter__category-item-wrapper by-date second-level-two">
+                <div
+                  class="main-filter__category-item-wrapper by-date second-level-two"
+                >
                   <h3 class="main-filter__category-title">By Date</h3>
                   <div class="main-filter__category-date third-level">
                     <div class="main-filter__category-date-item">
@@ -229,13 +231,13 @@
               v-for="movie in movies"
               :key="movie.id"
             >
-            <router-link v-bind:to="'/series/' + movie.id">
-              <SeriesItem
-                v-if="movies"
-                v-bind:movieID="movie.id"
-                v-bind:primaryReleaseDay="movie.release_date"
-              />
-            </router-link>
+              <router-link v-bind:to="'/series/' + movie.id">
+                <SeriesItem
+                  v-if="movies"
+                  v-bind:movieID="movie.id"
+                  v-bind:primaryReleaseDay="movie.release_date"
+                />
+              </router-link>
             </div>
           </div>
           <div class="data-pagination">
@@ -391,9 +393,9 @@ export default {
     searchByToday() {
       this.currentDate = new Date().toJSON().slice(0, 10);
       this.params.releseDateFilter =
-        "&primary_release_date.gte=" +
+        "&first_air_date.gte=" +
         this.currentDate +
-        "&primary_release_date.lte=" +
+        "&first_air_date.lte=" +
         this.currentDate;
     },
     searchByWeek() {
@@ -404,9 +406,9 @@ export default {
       this.firstDayWeek = new Date(this.current.setDate(this.diff));
       this.firstDayWeek = new Date(this.firstDayWeek).toJSON().slice(0, 10);
       this.params.releseDateFilter =
-        "&primary_release_date.gte=" +
-        this.currentDate +
-        "&primary_release_date.lte=" +
+        "&first_air_date.gte=" +
+        this.firstDayWeek +
+        "&first_air_date.lte=" +
         this.currentDate;
       console.log(this.releseDateFilter);
     },
@@ -420,9 +422,9 @@ export default {
       );
       this.currentMonth = new Date(this.currentMonth).toJSON().slice(0, 10);
       this.params.releseDateFilter =
-        "&primary_release_date.gte=" +
+        "&first_air_date.gte=" +
         this.currentMonth +
-        "&primary_release_date.lte=" +
+        "&first_air_date.lte=" +
         this.currentDate;
     },
     searchByYear() {
@@ -435,7 +437,7 @@ export default {
       this.currentPage = page;
       this.params.page = "&page=" + this.currentPage;
       this.moviesList();
-      window.scrollTo(0,0)
+      window.scrollTo(0, 0);
     },
     setOption(event) {
       this.checkedDate = event.target;

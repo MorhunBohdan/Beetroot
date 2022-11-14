@@ -53,7 +53,8 @@
                 {{ item.overview }}
               </p>
               <div class="movie-display__description-main-buttons">
-                <button
+                <router-link  class="movie-display__description-btn-wathch-router" v-bind:to="'/movie/' + item.id">
+                  <button
                   class="movie-display__description-btn-wathch"
                   type="button"
                 >
@@ -64,6 +65,7 @@
                     alt="login-icon"
                   />
                 </button>
+                </router-link>
                 <button
                   class="movie-display__description-btn-wathclist"
                   type="button"
@@ -188,7 +190,7 @@ export default {
             this.imgTeg = document.querySelector(".mask-img-img")
             this.imgTeg.setAttribute("src", value)
             this.bg = value
-          },index * 7000);
+          },index * 6900);
         });
         
       }

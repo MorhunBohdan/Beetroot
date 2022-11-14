@@ -135,7 +135,9 @@
     @extend %button;
     @extend %button-hover;
   }
-
+  &__description-btn-wathch-router {
+    @extend %button;
+  }
   &__description-btn-wathch-icon {
   }
   &__description-btn-wathclist {

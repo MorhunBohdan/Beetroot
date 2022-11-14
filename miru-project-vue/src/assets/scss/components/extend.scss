@@ -1,0 +1,139 @@
+%link-hover {
+  transition: all 0.4s;
+  &:hover,
+  :focus {
+    transform: scale(1.2);
+    color: #ffffff;
+  }
+}
+%button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+%button-hover {
+  transition: all 0.4s;
+  &:hover,
+  :focus {
+    transform: scale(1.1);
+    background: #000f93;
+    border: none;
+    color: #ffffff;
+  }
+}
+%button-search-hover {
+  transition: all 0.4s;
+  &:hover,
+  :focus {
+    transform: scale(1.05);
+    background: #000f93;
+    border: none;
+  }
+}
+%icon-hover {
+  transition: all 0.4s;
+  &:hover,
+  :focus {
+    transform: scale(1.1);
+    color: #000f93;
+  }
+}
+%top-movie-hover {
+  transition: all 0.8s;
+  &:hover {
+    height: 195px;
+    background: linear-gradient(
+      90deg,
+      #303030 46.79%,
+      rgba(21, 21, 21, 0.62) 102.99%
+    );
+  }
+  &:hover .top-movies__main-content-right-info {
+    display: flex;
+    animation: fade-in 3000ms forwards;
+    height: 85px;
+  }
+  &:hover .top-movies__main-content-right-watchlist {
+    display: block;
+    animation: fade-in 3000ms forwards;
+  }
+}
+%social-hover {
+  transition: all 0.4s;
+  &:hover,
+  :focus {
+    transform: scale(1.2);
+    background: #000f93;
+    border-radius: 20px;
+  }
+}
+%checkbox-checked {
+  transition: all 0.4s;
+  &:checked {
+    color: #ffffff;
+  }
+  &:checked::before {
+    display: block;
+    color: #ffffff;
+  }
+  &:checked + .movie-list__main-filter-category-checkbox-label {
+    color: #ffffff;
+  }
+}
+%movie-item-hover {
+  transition: all 0.4s;
+  &:hover,
+  :focus {
+    background: #2d2d2d;
+    box-shadow: 0px 33px 32px rgba(0, 0, 0, 0.81);
+    border-radius: 20px;
+    height: 538px;
+  }
+  &:hover
+    .data-conteiner
+    .data-block__content-item-info
+    .data-block__content-item-info-title {
+    white-space: normal;
+  }
+}
+%checkbox-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-appearance: none;
+  appearance: none;
+  font: inherit;
+  color: rgba(255, 255, 255, 0.5);
+  width: 24px;
+  height: 24px;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+  transform: translateY(-0.075em);
+  &::before {
+    content: "";
+    display: none;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00c";
+  }
+}
+%checkbox-label {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.5);
+  gap: 18px;
+}

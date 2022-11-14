@@ -1,0 +1,361 @@
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  background: rgba(19, 19, 19, 0.42);
+  box-shadow: 0px 29px 39px rgba(0, 0, 0, 0.01);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.2px);
+  -webkit-backdrop-filter: blur(10.2px);
+}
+.conteiner {
+  max-width: 1622px;
+  width: 100%;
+  margin: auto;
+}
+.header-main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  height: 130px;
+  &__logo {
+  }
+  &__search {
+    display: flex;
+    align-items: center;
+    max-width: 385px;
+    width: 100%;
+    height: 58px;
+    background: #000000;
+    border: 1px solid #141414;
+    border-radius: 20px;
+    padding: 17px 32px;
+    box-sizing: border-box;
+  }
+  &__search-icon {
+    font-size: 24px;
+    color: #fff;
+    height: 24px;
+    padding-right: 32px;
+  }
+  &__search-textarea {
+    width: 100%;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.4);
+    border: none;
+    overflow: auto;
+    outline: none;
+    background: #000000;
+    resize: none;
+    white-space: nowrap;
+    height: 24px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &__navbar {
+    max-width: 430px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+  }
+  &__navbar-item {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    @extend %link-hover;
+  }
+  &__btn-watchlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 172px;
+    width: 100%;
+    height: 58px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    @extend %button-hover;
+  }
+  &__btn-watchlist-icon {
+    padding-right: 12px;
+  }
+}
+.header-main__btn-watchlist:hover .icon-heart:before {
+  transition: all 0, 4s;
+  color: red;
+}
+.icon-heart:before {
+  font-size: 24px;
+}
+.header-login {
+  max-width: 256px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  &__btn-signin {
+    max-width: 102px;
+    height: 58px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0);
+    @extend %button;
+    @extend %button-hover;
+  }
+  &__btn-register {
+    max-width: 143px;
+    height: 58px;
+    color: #ffffff;
+    border-radius: 20px;
+    background-color: hsla(234, 100%, 29%, 0.44);
+    border: none;
+    @extend %button;
+    @extend %button-hover;
+  }
+}
+.header-login-mobile {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  &__btn-watchlist {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    max-width: 172px;
+    height: 58px;
+    color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    box-sizing: border-box;
+    @extend %button;
+    @extend %button-hover;
+  }
+  &__btn-watchlist-icon {
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height: 58px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    @extend %button;
+  }
+  &__login-icon {
+    display: none;
+    font-size: 40px;
+    color: #fff;
+    @extend %icon-hover;
+  }
+}
+.header-burger {
+  display: flex;
+  align-items: center;
+  max-width: 45px;
+  width: 100%;
+  height: 45px;
+  position: relative;
+  &__item {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 20px;
+    border-radius: 2px;
+    &::before {
+      content: "";
+      display: block;
+      background-color: #fff;
+      position: absolute;
+      height: 4px;
+      width: 40px;
+      border-radius: 2px;
+      margin-top: -10px;
+    }
+    &::after {
+      content: "";
+      display: block;
+      background-color: #fff;
+      position: absolute;
+      height: 4px;
+      width: 40px;
+      border-radius: 2px;
+      margin-top: 10px;
+    }
+  }
+}
+
+
+.sidebar {
+  --nav-width: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--nav-width);
+  height: 100vh;
+  background: black;
+  transform: translateX(calc(-1 * var(--nav-width)));
+  transition: transform 0.25s;
+  z-index: 10;
+  &__item {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    text-decoration: none;
+    padding: 15px 10px;
+    --c: rgba(255, 255, 255, 0.6); /* the color */
+    color: #0000;
+    background: linear-gradient(90deg, #fff 50%, var(--c) 0)
+        calc(100% - var(--_p, 0%)) / 200% 100%,
+      linear-gradient(#000f93 0 0) 0% 100% / var(--_p, 0%) 100% no-repeat;
+    -webkit-background-clip: text, padding-box;
+    background-clip: text, padding-box;
+    transition: 0.5s;
+    &:hover {
+      --_p: 100%;
+    }
+  }
+}
+.sidebar-top {
+  &__logo {
+    padding: 30px 15px;
+  }
+  &__login {
+    width: 100%;
+    height: 100px;
+    background-color: #000f93;
+    padding: 30px 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+  }
+  &__login-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:  url(../img/3.popular-movies/mask-group.png) no-repeat  center / cover;;
+  }
+  &__login-user {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__login-icon {
+    color: #fff;
+    font-size: 24px;
+  }
+  &__login-btn-signin {
+    @extend %button;
+    width: 100px;
+    padding: 5px 0;
+    background: rgba(19, 19, 19, 0.42);
+    backdrop-filter: blur(10.2px);
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    @extend %button-hover;
+  }
+  &__login-btn-register {
+    @extend %button;
+    width: 100px;
+    padding: 5px 0;
+    background: rgba(19, 19, 19, 0.42);
+    backdrop-filter: blur(10.2px);
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    @extend %button-hover;
+  }
+}
+
+.sidebar-open {
+  display: flex;
+  flex-direction: column;
+  transform: translateX(0);
+  box-sizing: border-box;
+}
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.sidebar-overlay-open {
+  display: block;
+}
+@media (max-width: 1622px) {
+  .header-main {
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 1092px) {
+  .header-main__search-icon {
+    padding-right: 15px;
+  }
+}
+@media (max-width: 980px) {
+  .header-main__btn-watchlist,
+  .header-login {
+    display: none;
+  }
+  .header-login-mobile,
+  .header-login-mobile__login-icon,
+  .header-login-mobile__btn-watchlist {
+    display: flex;
+  }
+}
+@media (max-width: 768px) {
+  .header-burger {
+    display: flex;
+  }
+  .header-main__navbar,
+  .header-login-mobile {
+    display: none;
+  }
+}
+@media (max-width: 555px) {
+  .header-main__logo {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  .header-login-mobile__btn-watchlist {
+    display: none;
+  }
+}

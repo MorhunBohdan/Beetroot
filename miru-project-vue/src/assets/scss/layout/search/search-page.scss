@@ -1,0 +1,134 @@
+.main-filter {
+  &__category-item {
+    display: flex;
+    flex-direction: column;
+  }
+  &__category-title {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+  }
+  &__category-type {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 50%;
+    gap: 18px;
+    box-sizing: border-box;
+    transition: all 0.4s;
+    :hover {
+      cursor: pointer;
+      color: #ffffff;
+    }
+  }
+  &__category-type-item {
+    display: flex;
+    gap: 20px;
+  }
+  &__category-type-item-label {
+    @extend %checkbox-label;
+  }
+  &__category-type-item-input {
+    @extend %checkbox-input;
+    @extend %checkbox-checked;
+  }
+}
+.by-type {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #151515;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 100%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  height: 5%;
+}
+@media (max-width: 1622px) {
+  .movie-list {
+    padding: 0 15px;
+    padding-top: 200px;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 1560px) {
+  .data-block__content-items {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px 15px;
+    justify-items: center;
+  }
+}
+@media (max-width: 1235px) {
+  .main-filter__category-checkboxes {
+    flex-wrap: nowrap;
+    height: 100%;
+  }
+  .main-filter__category-date {
+    flex-wrap: nowrap;
+  }
+  .by-date {
+    height: 243px;
+  }
+}
+@media (max-width: 1034px) {
+  .data-block__content-items {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 15px;
+    justify-items: center;
+  }
+}
+@media (max-width: 784px) {
+  .main-filter {
+    display: none;
+  }
+  .data-block__content-items {
+    justify-items: center;
+  }
+  .main-filter__mobile {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+  .main-filter__category {
+    flex-direction: row;
+    max-width: 100%;
+  }
+  .main-filter__category-item {
+    gap: 20px;
+  }
+  .by-date {
+    height: 70px;
+  }
+}
+@media (max-width: 528px) {
+  .data-block__content-items {
+    grid-template-columns: 1fr;
+  }
+  .main-filter__category {
+    gap: 15px;
+  }
+  .btn {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+  .pagination-container {
+    height: 58px;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-filter__category {
+    flex-wrap: wrap-reverse;
+  }
+  .main-filter__category-item {
+    width: 100%;
+  }
+  .first-level {
+    width: 100%;
+  }
+}

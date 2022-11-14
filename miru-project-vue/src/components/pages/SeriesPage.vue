@@ -435,6 +435,7 @@ export default {
       this.currentPage = page;
       this.params.page = "&page=" + this.currentPage;
       this.moviesList();
+      window.scrollTo(0,0)
     },
     setOption(event) {
       this.checkedDate = event.target;

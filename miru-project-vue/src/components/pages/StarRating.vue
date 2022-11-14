@@ -37,10 +37,10 @@ export default {
         Math.round(this.starPercentage / 10) * 10
       }%`;
       document.querySelector(
-        `.data-item__content-leftside-info-top-right-rating-viewers-number .stars-inner`
+        `.stars-inner`
       ).style.width = this.starPercentageRounded;
     }
-  },
+  }, 
   methods: {
     starsCalc() {
       this.starsTotal = 5;

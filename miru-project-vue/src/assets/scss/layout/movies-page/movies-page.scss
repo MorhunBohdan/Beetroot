@@ -196,6 +196,9 @@
     height: 320px;
     position: relative;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   &__content-item-img {
     object-fit: cover;
@@ -208,20 +211,22 @@
     justify-content: center;
     align-items: center;
     background: #000f93;
-    width: 128px;
+    max-width: 160px;
+    width: 100%;
     border-radius: 0px 0px 11px 11px;
-    position: absolute;
     top: 0;
-    left: 22%;
+    position: absolute;
   }
   &__content-item-ganre-text {
     font-family: "Poppins";
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 21px;
     text-transform: uppercase;
     color: #ffffff;
+    text-align: center;
+    box-sizing: border-box;
   }
   &__content-item-info {
     display: flex;
@@ -476,5 +481,14 @@ a {
     height: 58px;
     justify-content: center;
     align-items: center;
+  }
+  .main-filter__category {
+    flex-wrap: wrap-reverse;
+  }
+  .main-filter__category-item {
+    width: 100%;
+  }
+  .first-level {
+    width: 100%;
   }
 }

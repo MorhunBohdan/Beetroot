@@ -4,7 +4,7 @@
 .footer-main {
   &__content {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 100px 0;
   }
   &__content-miru {
@@ -137,4 +137,21 @@
   line-height: 21px;
   text-align: right;
   color: #464b70;
+}
+@media (max-width: 1622px) {
+  .footer {
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 768px) {
+  .footer {
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  .footer-main__content {
+    flex-direction: column;
+   
+    gap: 30px;
+  }
 }

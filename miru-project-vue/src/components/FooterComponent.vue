@@ -38,15 +38,15 @@
         <div class="footer-main__content-qucklinks">
           <h3 class="footer-main__content-title">Quick Links</h3>
           <div class="footer-main__content-qucklinks-list">
-            <a class="footer-main__content-qucklinks-list-item" href=""
-              >About us</a
-            >
-            <a class="footer-main__content-qucklinks-list-item" href=""
-              >Contact us</a
-            >
-            <a class="footer-main__content-qucklinks-list-item" href=""
-              >Products</a
-            >
+            <router-link class="footer-main__content-qucklinks-list-item" to="/Home">
+              Home
+            </router-link>
+            <router-link class="footer-main__content-qucklinks-list-item" to="/Movies">
+              Movies
+            </router-link>
+            <router-link class="footer-main__content-qucklinks-list-item" to="/Series">
+              Series
+            </router-link>
             <a class="footer-main__content-qucklinks-list-item" href=""
               >Login</a
             >
@@ -55,44 +55,10 @@
             >
           </div>
         </div>
-        <div class="footer-main__content-moviecategori">
-          <h3 class="footer-main__content-title">Movie Categories +</h3>
-          <div class="footer-main__content-moviecategori-list">
-            <a class="footer-main__content-moviecategori-list-item" href=""
-              >Action</a
-            >
-            <a class="footer-main__content-moviecategori-list-item" href=""
-              >Action</a
-            >
-            <a class="footer-main__content-moviecategori-list-item" href=""
-              >Action</a
-            >
-            <a class="footer-main__content-moviecategori-list-item" href=""
-              >Action</a
-            >
-            <a class="footer-main__content-moviecategori-list-item" href=""
-              >Action</a
-            >
-            <a class="footer-main__content-moviecategori-list-item" href=""
-              >Action</a
-            >
-            <a class="footer-main__content-moviecategori-list-item" href=""
-              >Action</a
-            >
-            <a class="footer-main__content-moviecategori-list-item" href=""
-              >Action</a
-            >
-            <a class="footer-main__content-moviecategori-list-item" href=""
-              >Action</a
-            >
-            <a class="footer-main__content-moviecategori-list-item" href=""
-              >Action</a
-            >
-          </div>
-        </div>
       </div>
     </div>
-    <div class="footer-copyright">
+  </footer>
+  <div class="footer-copyright">
       <div class="footer-copyright__main conteiner">
         <p class="footer-copyright-text">
           MIRU VIDEO STREAMING - © 2020 All Rights Reserved
@@ -100,7 +66,6 @@
         <p class="footer-copyright-author">Made with ♥ by Peterdraw</p>
       </div>
     </div>
-  </footer>
 </template>
 
 <script>

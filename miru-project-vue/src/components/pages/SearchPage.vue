@@ -187,7 +187,7 @@
             </div>
           </div>
           <div class="main-filter__category-item by-type">
-            <h3 class="main-filter__category-title">By Type1</h3>
+            <h3 class="main-filter__category-title">By Type</h3>
             <div class="main-filter__category-type">
               <div class="main-filter__category-type-item">
                 <input
@@ -239,30 +239,41 @@
             <div class="main-filter__category-item">
               <div class="main-filter__category-item-wrapper first-level">
                 <h3 class="main-filter__category-title">Filter</h3>
-                <div class="main-filter__category-item-wrapper second-level">
-                  <h3 class="main-filter__category-title">By Genre</h3>
+                <div class="main-filter__category-item-wrapper second-level-search">
+                  <h3 class="main-filter__category-title">By Type</h3>
                   <div class="main-filter__category-checkboxes third-level-one">
-                    <div
-                      class="main-filter__category-checkboxes-item"
-                      v-for="genre in genresMovieList"
-                      :key="genre.genresMovieList"
-                    >
-                      <input
-                        class="main-filter__category-checkbox-input"
-                        type="checkbox"
-                        v-bind:id="genresID + genre.id"
-                        name="Action"
-                        v-bind:value="genre.id"
-                        v-model="checkboxValues"
-                        @input="fromArrayToURL"
-                        @change="searchByGenre()"
-                      />
-                      <label
-                        class="main-filter__category-checkbox-label"
-                        v-bind:for="genresID + genre.id"
-                        >{{ genre.name }}</label
-                      >
-                    </div>
+                    <div class="main-filter__category-type-item">
+                <input
+                  class="main-filter__category-type-item-input"
+                  type="radio"
+                  name="Movies"
+                  id="Movies"
+                  value="movie"
+                  v-model="checkboxType"
+                  @change="setOptionTypeRadio($event)"
+                 
+                />
+                <label
+                  class="main-filter__category-type-item-label"
+                  for="Movies"
+                  >Movies</label
+                >
+              </div>
+              <div class="main-filter__category-type-item">
+                <input
+                  class="main-filter__category-type-item-input"
+                  type="radio"
+                  name="tv"
+                  id="tv"
+                  value="tv"
+                  v-model="checkboxType"
+                  @change="setOptionTypeRadio($event)"
+                  
+                />
+                <label class="main-filter__category-type-item-label" for="tv"
+                  >TV Series</label
+                >
+              </div>
                   </div>
                 </div>
                 <div
@@ -654,13 +665,8 @@ export default {
       this.currentPage = page;
       this.params.page = "&page=" + this.currentPage;
       this.moviesList();
+      window.scrollTo(0,0)
     },
-   /*  searchByType() {
-      this.params.type = this.checkboxType[0] + "?";
-      console.log(this.checkboxType)
-      this.typeSearch = this.params.type
-      this.moviesList();
-    }, */
     setOptionType(event) {
       this.checkedType = event.target;
       console.log(this.checkboxType)
@@ -735,6 +741,32 @@ export default {
   },
 };
 </script>
-<style></style>
-https://api.themoviedb.org/3/search/movie?api_key=399190ed100bc4cf5960c22c0347d9aa&query=Frinds
-https://api.themoviedb.org/3/search/movie?api_key=399190ed100bc4cf5960c22c0347d9aa&query=Friends
+<style>
+.second-level-search {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  z-index: 10;
+}
+.second-level-search {
+  align-items: center;
+}
+.second-level-search:hover {
+  height: 200px;
+  cursor: pointer;
+}
+.second-level-search:hover .third-level-one {
+  display: flex;
+  height: 830px;
+  cursor: pointer;
+}
+.first-level:hover .second-level-search {
+  display: flex;
+  cursor: pointer;
+}
+.second-level-search:hover .third-level-one {
+  height: 60%;
+}
+</style>
+

@@ -3,281 +3,123 @@
     <div class="top-movies__main conteiner">
       <div class="top-movies__main-top">
         <h2 class="top-movies__main-top-title">Top 5 Movies</h2>
+        <div class="top-movies__main-top-filter-mobile">
+          Genre
+          <div class="first-level-top-menu">
+            <div
+              class="top-movies__main-top-filter-item-mobile"
+              v-for="genre in slisedGenresList"
+              :key="genre.slisedGenresList"
+            >
+              <input
+                class="top-movies__main-top-filter-item-input"
+                type="radio"
+                v-bind:id="genresID + genre.id"
+                name="All"
+                v-bind:value="genre.id"
+                v-model="checkboxDate"
+                @change="setOption($event)"
+                @input="fromArrayToURL"
+              />
+              <label
+                class="top-movies__main-top-filter-item-label"
+                v-bind:for="genresID + genre.id"
+                >{{ genre.name }}</label
+              >
+            </div>
+          </div>
+        </div>
         <div class="top-movies__main-top-filter">
-          <a class="top-movies__main-top-filter-item" href="#">All Genre</a>
-          <a class="top-movies__main-top-filter-item" href="#">Action</a>
-          <a class="top-movies__main-top-filter-item" href="#">Comedy</a>
-          <a class="top-movies__main-top-filter-item" href="#">Drama</a>
-          <a class="top-movies__main-top-filter-item" href="#">Horror</a>
-          <a class="top-movies__main-top-filter-item" href="#">Romance</a>
-          <a class="top-movies__main-top-filter-item" href="#">Kids</a>
-        </div>
-      </div>
-      <div class="top-movies__main-content">
-        <div class="top-movies__main-content-left">
-          <div class="top-movies__main-content-left-itme one">
-            <img
-              class="top-movies__main-content-left-itme-img"
-              src="../../public/dist/img/2.first-screen/dune.webp"
-              alt=""
+          <div
+            class="top-movies__main-top-filter-item"
+            v-for="genre in slisedGenresList"
+            :key="genre.slisedGenresList"
+          >
+            <input
+              class="top-movies__main-top-filter-item-input"
+              type="radio"
+              v-bind:id="genresID + genre.id"
+              name="All"
+              v-bind:value="genre.id"
+              v-model="checkboxDate"
+              @change="setOption($event)"
+              @input="fromArrayToURL"
             />
-          </div>
-          <div class="top-movies__main-content-left-itme two">
-            <img
-              class="top-movies__main-content-left-itme-img"
-              src="../../public/dist/img/2.first-screen/dune.webp"
-              alt=""
-            />
-          </div>
-          <div class="top-movies__main-content-left-itme three">
-            <img
-              class="top-movies__main-content-left-itme-img"
-              src="../../public/dist/img/2.first-screen/dune.webp"
-              alt=""
-            />
-          </div>
-          <div class="top-movies__main-content-left-itme four">
-            <img
-              class="top-movies__main-content-left-itme-img"
-              src="../../public/dist/img/2.first-screen/dune.webp"
-              alt=""
-            />
-          </div>
-        </div>
-        <div class="top-movies__main-content-right">
-          <div class="top-movies__main-content-right-item">
-            <div class="top-movies__main-content-right-item-content">
-              <div class="top-movies__main-content-right-item-top">
-                <p class="top-movies__main-content-right-item-top-number">#1</p>
-                <h3 class="top-movies__main-content-right-itme-top-title">
-                  Thunder Stunt
-                </h3>
-              </div>
-              <div class="top-movies__main-content-right-info">
-                <div class="top-movies__main-content-right-info-text">
-                  <div class="top-movies__main-content-right-info-caption">
-                    <p class="top-movies__main-content-right-info-caption-item">
-                      2018
-                    </p>
-                    <p class="top-movies__main-content-right-info-caption-item">
-                      ENGLISH
-                    </p>
-                    <p class="top-movies__main-content-right-info-caption-item">
-                      1hr 2min
-                    </p>
-                  </div>
-                  <div class="top-movies__main-content-right-info-rating">
-                    <div
-                      class="top-movies__main-content-right-info-rating-stars"
-                    >
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div
-                      class="top-movies__main-content-right-info-title-rating-number"
-                    >
-                      457k Viewers
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button class="top-movies__main-content-right-watchlist" type="button">
-              <span class="top-movies__main-content-right-icon icon-heart"></span
-              >
-            </button>
-          </div>
-          <div class="top-movies__main-content-right-item">
-            <div class="top-movies__main-content-right-item-content">
-              <div class="top-movies__main-content-right-item-top">
-                <p class="top-movies__main-content-right-item-top-number">#1</p>
-                <h3 class="top-movies__main-content-right-itme-top-title">
-                  Thunder Stunt
-                </h3>
-              </div>
-              <div class="top-movies__main-content-right-info">
-                <div class="top-movies__main-content-right-info-text">
-                  <div class="top-movies__main-content-right-info-caption">
-                    <p class="top-movies__main-content-right-info-caption-item">
-                      2018
-                    </p>
-                    <p class="top-movies__main-content-right-info-caption-item">
-                      ENGLISH
-                    </p>
-                    <p class="top-movies__main-content-right-info-caption-item">
-                      1hr 2min
-                    </p>
-                  </div>
-                  <div class="top-movies__main-content-right-info-rating">
-                    <div
-                      class="top-movies__main-content-right-info-rating-stars"
-                    >
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div
-                      class="top-movies__main-content-right-info-title-rating-number"
-                    >
-                      457k Viewers
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button class="top-movies__main-content-right-watchlist" type="button">
-              <span class="top-movies__main-content-right-icon icon-heart"></span
-              >
-            </button>
-          </div>
-          <div class="top-movies__main-content-right-item">
-            <div class="top-movies__main-content-right-item-content">
-              <div class="top-movies__main-content-right-item-top">
-                <p class="top-movies__main-content-right-item-top-number">#1</p>
-                <h3 class="top-movies__main-content-right-itme-top-title">
-                  Thunder Stunt
-                </h3>
-              </div>
-              <div class="top-movies__main-content-right-info">
-                <div class="top-movies__main-content-right-info-text">
-                  <div class="top-movies__main-content-right-info-caption">
-                    <p class="top-movies__main-content-right-info-caption-item">
-                      2018
-                    </p>
-                    <p class="top-movies__main-content-right-info-caption-item">
-                      ENGLISH
-                    </p>
-                    <p class="top-movies__main-content-right-info-caption-item">
-                      1hr 2min
-                    </p>
-                  </div>
-                  <div class="top-movies__main-content-right-info-rating">
-                    <div
-                      class="top-movies__main-content-right-info-rating-stars"
-                    >
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div
-                      class="top-movies__main-content-right-info-title-rating-number"
-                    >
-                      457k Viewers
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button class="top-movies__main-content-right-watchlist" type="button">
-              <span class="top-movies__main-content-right-icon icon-heart"></span
-              >
-            </button>
-          </div>
-          <div class="top-movies__main-content-right-item">
-            <div class="top-movies__main-content-right-item-content">
-              <div class="top-movies__main-content-right-item-top">
-                <p class="top-movies__main-content-right-item-top-number">#1</p>
-                <h3 class="top-movies__main-content-right-itme-top-title">
-                  Thunder Stunt
-                </h3>
-              </div>
-              <div class="top-movies__main-content-right-info">
-                <div class="top-movies__main-content-right-info-text">
-                  <div class="top-movies__main-content-right-info-caption">
-                    <p class="top-movies__main-content-right-info-caption-item">
-                      2018
-                    </p>
-                    <p class="top-movies__main-content-right-info-caption-item">
-                      ENGLISH
-                    </p>
-                    <p class="top-movies__main-content-right-info-caption-item">
-                      1hr 2min
-                    </p>
-                  </div>
-                  <div class="top-movies__main-content-right-info-rating">
-                    <div
-                      class="top-movies__main-content-right-info-rating-stars"
-                    >
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div
-                      class="top-movies__main-content-right-info-title-rating-number"
-                    >
-                      457k Viewers
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button class="top-movies__main-content-right-watchlist" type="button">
-              <span class="top-movies__main-content-right-icon icon-heart"></span
-              >
-            </button>
-          </div>
-          <div class="top-movies__main-content-right-item">
-            <div class="top-movies__main-content-right-item-content">
-              <div class="top-movies__main-content-right-item-top">
-                <p class="top-movies__main-content-right-item-top-number">#1</p>
-                <h3 class="top-movies__main-content-right-itme-top-title">
-                  Thunder Stunt
-                </h3>
-              </div>
-              <div class="top-movies__main-content-right-info">
-                <div class="top-movies__main-content-right-info-text">
-                  <div class="top-movies__main-content-right-info-caption">
-                    <p class="top-movies__main-content-right-info-caption-item">
-                      2018
-                    </p>
-                    <p class="top-movies__main-content-right-info-caption-item">
-                      ENGLISH
-                    </p>
-                    <p class="top-movies__main-content-right-info-caption-item">
-                      1hr 2min
-                    </p>
-                  </div>
-                  <div class="top-movies__main-content-right-info-rating">
-                    <div
-                      class="top-movies__main-content-right-info-rating-stars"
-                    >
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                    </div>
-                    <div
-                      class="top-movies__main-content-right-info-title-rating-number"
-                    >
-                      457k Viewers
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button class="top-movies__main-content-right-watchlist" type="button">
-              <span class="top-movies__main-content-right-icon icon-heart"></span
-              >
-            </button>
+            <label
+              class="top-movies__main-top-filter-item-label"
+              v-bind:for="genresID + genre.id"
+              >{{ genre.name }}</label
+            >
           </div>
         </div>
       </div>
+      <TopItem v-bind:checkboxDate="checkboxDate" />
     </div>
   </section>
 </template>
 
 <script>
+import axios from "axios";
+import TopItem from "@/components/pages/TopItem.vue";
+
 export default {
   name: "TopMovies",
+  components: {
+    TopItem,
+  },
+  data() {
+    return {
+      movies: null,
+      error: null,
+      genresMovieList: null,
+      slisedGenresList: null,
+      checkboxDate: [],
+      checkboxValues: [],
+      checkboxInput: null,
+      checkboxString: "",
+      checkboxID: null,
+      genresID: "genre-",
+      imgUrl: "https://image.tmdb.org/t/p/original",
+      apiDiscoverUrl: "https://api.themoviedb.org/3/discover/movie/?",
+      apiMovieGenres: "https://api.themoviedb.org/3/genre/movie/list?",
+      apiKEY: "api_key=399190ed100bc4cf5960c22c0347d9aa",
+      params: {
+        api_key: "api_key=399190ed100bc4cf5960c22c0347d9aa",
+        sort_by: "&sort_by=",
+        popularity: "popularity.desc&",
+        releseDateFilter: "",
+        primary_release_year: "",
+        with_genres: "",
+        page: "",
+      },
+    };
+  },
+  methods: {
+    movieGenresList() {
+      axios
+        .get(this.apiMovieGenres + this.params.api_key)
+        .then((response) => {
+          this.genresMovieList = response.data.genres;
+          this.slisedGenresList = this.genresMovieList.slice(0, 6);
+          console.log(this.slisedGenresList);
+        })
+        .catch((e) => {
+          this.error.push(e);
+        });
+    },
+    setOption(event) {
+      this.checkedDate = event.target;
+      if (this.checkedDate.checked) {
+        this.checkboxDate = [event.target.value];
+      } else {
+        this.checkboxDate = [];
+        this.params.releseDateFilter = "";
+        this.params.primary_release_year = "";
+      }
+    },
+  },
+  mounted() {
+    this.movieGenresList();
+  },
 };
 </script>

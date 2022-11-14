@@ -4,24 +4,24 @@
       <div class="header-burger" v-on:click="navbar()">
         <span class="header-burger__item"></span>
       </div>
-      <img
-        class="header-main__logo"
-        src="../../public/dist/img/1.header/logo.svg"
-        alt="Miru"
-      />
+        <img
+          class="header-main__logo"
+          src="../../public/dist/img/1.header/logo.svg"
+          alt="Miru"
+          @click="toTop()"
+        />
       <div class="header-main__search">
         <i class="fa-solid fa-magnifying-glass header-main__search-icon"></i>
         <router-link to="">
           <input
-          v-model="searchInput"
-          v-on:keyup.enter="searchValue(e)"
-          class="header-main__search-textarea"
-          placeholder="Search titles here..."
-          maxlength="50"
-          role="link"
-        />
+            v-model="searchInput"
+            v-on:keyup.enter="searchValue(e)"
+            class="header-main__search-textarea"
+            placeholder="Search titles here..."
+            maxlength="50"
+            role="link"
+          />
         </router-link>
-        
       </div>
       <nav class="header-main__navbar">
         <router-link
@@ -86,9 +86,7 @@
       :key="item.navmenu"
       >{{ item.name }}</router-link
     >
-    <div v-if="this.$route.name == 'Movies'" class="sidebar__filter">
-    
-    </div>
+    <div v-if="this.$route.name == 'Movies'" class="sidebar__filter"></div>
     <div v-else-if="this.$route.name == 'Series'" class="sidebar__filter">
       <p>Series</p>
     </div>
@@ -96,7 +94,6 @@
 </template>
 
 <script>
-
 export default {
   name: "HeaderComponent",
   data() {
@@ -118,8 +115,8 @@ export default {
   },
   methods: {
     searchValue() {
-      this.query = this.searchInput
-      this.$router.push({ path: `/Search/${this.query}` })
+      this.query = this.searchInput;
+      this.$router.push({ path: `/Search/${this.query}` });
     },
     navbar() {
       {
@@ -138,6 +135,9 @@ export default {
         });
       }
     },
+    toTop() {
+      window.scrollTo(0,0)
+    }
   },
 };
 </script>

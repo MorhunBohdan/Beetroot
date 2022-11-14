@@ -1,78 +1,80 @@
 <template>
   <section class="first-screen">
+    <div class="mask-img">
+      <img class="mask-img-img" src="" alt="" />
+    </div>
     <div class="movie-display conteiner">
-        <swiper
-          :effect="'coverflow'"
-          :grabCursor="true"
-          :centeredSlides="true"
-          :slidesPerView="'auto'"
-          :observer="true"
-          :observeSlideChildren="true"
-          :observeParents="true"
-          :coverflowEffect="{
-            rotate: 0,
-            stretch: 0,
-            depth: 748,
-            modifier: 3.5,
-            slideShadows: true,
-          }"
-          :loop="true"
-          :autoplay="{
-            delay: 1500,
-            disableOnInteraction: false,
-          }"
-          :pagination="false"
-          :modules="modules"
-          class="swiper-desc"
-          v-if="movies"
-        >
-          <swiper-slide v-for="item in movies" :key="item.movies">
-              <div class="movie-display__description" style="background: rgba(19,19,19,1);padding:30px; border-radius: 20px;">
-                <div class="movie-display__description-caption">
-                <p
-                  class="movie-display__description-item"
+      <swiper
+        :effect="'coverflow'"
+        :grabCursor="true"
+        :centeredSlides="true"
+        :slidesPerView="'auto'"
+        :observer="true"
+        :observeSlideChildren="true"
+        :observeParents="true"
+        :coverflowEffect="{
+          rotate: 0,
+          stretch: 0,
+          depth: 9048,
+          modifier: 7.5,
+          slideShadows: true,
+        }"
+        :loop="true"
+        :autoplay="{
+          delay: 6500,
+          disableOnInteraction: false,
+        }"
+        :pagination="false"
+        :modules="modules"
+        class="swiper-desc"
+        v-if="movies"
+      >
+        <swiper-slide v-for="item in movies" :key="item.movies">
+          <div
+            class="movie-display__description"
+            style="background: rgba(19, 19, 19, 1);padding: 30px;border-radius: 20px;"
+          >
+            <div class="movie-display__description-caption">
+              <p class="movie-display__description-item">
+                {{ item.release_date }}
+              </p>
+              <p class="movie-display__description-item">
+                {{ item.original_language }}
+              </p>
+              <p class="movie-display__description-item">
+                {{ item.vote_average / 2 + "/5" + " " + "Vote Averege" }}
+              </p>
+            </div>
+            <div class="movie-display__description-main">
+              <h1 class="movie-display__description-main-title">
+                {{ item.title }}
+              </h1>
+              <p class="movie-display__description-main-text">
+                {{ item.overview }}
+              </p>
+              <div class="movie-display__description-main-buttons">
+                <button
+                  class="movie-display__description-btn-wathch"
+                  type="button"
                 >
-                  {{ item.release_date }}
-                </p>
-                <p
-                  class="movie-display__description-item"
+                  Watch Now
+                  <img
+                    class="movie-display__description-btn-wathch-icon"
+                    src="../../public/dist/img/2.first-screen/button-play.svg"
+                    alt="login-icon"
+                  />
+                </button>
+                <button
+                  class="movie-display__description-btn-wathclist"
+                  type="button"
                 >
-                  {{ item.original_language }}
-                </p>
-                <p
-                  class="movie-display__description-item"
-                >
-                  {{ item.vote_average / 2 + "/5" + " " + "Vote Averege" }}
-                </p>
+                  Add to Wathclist
+                </button>
               </div>
-              <div class="movie-display__description-main">
-                <h1 class="movie-display__description-main-title">{{item.title}}</h1>
-                <p class="movie-display__description-main-text">
-                 {{item.overview}}
-                </p>
-                <div class="movie-display__description-main-buttons">
-                  <button
-                    class="movie-display__description-btn-wathch"
-                    type="button"
-                  >
-                    Watch Now
-                    <img
-                      class="movie-display__description-btn-wathch-icon"
-                      src="../../public/dist/img/2.first-screen/button-play.svg"
-                      alt="login-icon"
-                    />
-                  </button>
-                  <button
-                    class="movie-display__description-btn-wathclist"
-                    type="button"
-                  >
-                    Add to Wathclist
-                  </button>
-                </div>
-              </div>
-              </div>
-          </swiper-slide>
-        </swiper>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper>
       <div class="movie-display__slider">
         <swiper
           :effect="'coverflow'"
@@ -85,13 +87,13 @@
           :coverflowEffect="{
             rotate: 0,
             stretch: 0,
-            depth: 248,
-            modifier: 3.5,
+            depth: 260,
+            modifier: 4.0,
             slideShadows: true,
           }"
           :loop="true"
           :autoplay="{
-            delay: 1500,
+            delay: 6500,
             disableOnInteraction: false,
           }"
           :pagination="false"
@@ -108,49 +110,6 @@
             </router-link>
           </swiper-slide>
         </swiper>
-      </div>
-    </div>
-    <div class="recent-watched">
-      <div class="recent-watched__top">
-        <h2 class="recent-watched__top-title">Recent Watched</h2>
-        <div class="recent-watched__top-pagination">
-          <i class="fa-solid fa-circle"></i><i class="fa-solid fa-circle"></i
-          ><i class="fa-solid fa-circle"></i><i class="fa-solid fa-circle"></i>
-        </div>
-      </div>
-      <div class="recent-watched__slider">
-        <div class="recent-watched__block">
-          <div class="recent-watched__block-img"></div>
-          <div class="recent-watched__block-description">
-            <p class="recent-watched__block-description-genre">test</p>
-            <h2 class="recent-watched__block-description-title">Test Title</h2>
-            <p class="recent-watched__block-description-year">2020</p>
-          </div>
-        </div>
-        <div class="recent-watched__block">
-          <div class="recent-watched__block-img"></div>
-          <div class="recent-watched__block-description">
-            <p class="recent-watched__block-description-genre">test</p>
-            <h2 class="recent-watched__block-description-title">Test Title</h2>
-            <p class="recent-watched__block-description-year">2020</p>
-          </div>
-        </div>
-        <div class="recent-watched__block">
-          <div class="recent-watched__block-img"></div>
-          <div class="recent-watched__block-description">
-            <p class="recent-watched__block-description-genre">test</p>
-            <h2 class="recent-watched__block-description-title">Test Title</h2>
-            <p class="recent-watched__block-description-year">2020</p>
-          </div>
-        </div>
-        <div class="recent-watched__block">
-          <div class="recent-watched__block-img"></div>
-          <div class="recent-watched__block-description">
-            <p class="recent-watched__block-description-genre">test</p>
-            <h2 class="recent-watched__block-description-title">Test Title</h2>
-            <p class="recent-watched__block-description-year">2020</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -178,7 +137,9 @@ export default {
   data() {
     return {
       movies: "",
-      imgUrl: "https://image.tmdb.org/t/p/original/",
+      bg: "",
+      bacgroundImgs: [],
+      imgUrl: "https://image.tmdb.org/t/p/original",
       apiDiscoverUrl: "https://api.themoviedb.org/3/discover/movie/?",
       apiMovieUrl: "https://api.themoviedb.org/3/movie/",
       params: {
@@ -204,28 +165,37 @@ export default {
         )
         .then((response) => {
           this.movies = response.data.results;
+          this.bacgroundImgs = response.data.results;
+          console.log(this.bacgroundImgs);
+          this.changeBacground();
         })
         .catch((e) => {
           this.error.push(e);
         });
     },
-    movieItem(swiperURL) {
-      this.swiperTest = swiperURL;
-      console.log(this.swiperTest);
-      axios
-        .get(this.imgUrl + swiperURL)
-        .then((response) => {
-          this.url = response.data;
-          console.log(this.url);
-        })
-        .catch((e) => {
-          this.error.push(e);
+    changeBacground() {
+      this.bgImgArray = this.bacgroundImgs.map((poster_path) => {
+        return this.imgUrl + poster_path.poster_path;
+      });
+      this.firstScreen = document.querySelector(".mask-img");
+      if (this.bgImgArray) {
+        this.bgImgArray;
+        console.log(this.bgImgArray);
+        this.index = 0;
+        this.bg = "",
+        this.bgImgArray.forEach(function (value, index) {
+          setTimeout(function () {
+            this.imgTeg = document.querySelector(".mask-img-img")
+            this.imgTeg.setAttribute("src", value)
+            this.bg = value
+          },index * 7000);
         });
+        
+      }
     },
   },
   mounted() {
     this.moviesList();
-    this.movieItem();
   },
 };
 </script>

@@ -228,12 +228,12 @@ export default {
         )
         .then((response) => {
           this.tvTrailer = response.data.results;
-          console.log(this.tvTrailer)
+          
           if(this.tvTrailer.length == 0 ) {
-            console.log("false")
+            
             this.tvTrailer = false;
           } else {
-            console.log("true")
+            
             this.tvTrailer.forEach((results) => {
             if (results.lenght !== 0|| results.name.include("Official Trailer", "TV Series Trailer")) {
               this.tvTrailer = this.youtube + results.key

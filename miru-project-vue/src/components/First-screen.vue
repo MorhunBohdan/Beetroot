@@ -168,7 +168,6 @@ export default {
         .then((response) => {
           this.movies = response.data.results;
           this.bacgroundImgs = response.data.results;
-          console.log(this.bacgroundImgs);
           this.changeBacground();
         })
         .catch((e) => {
@@ -182,14 +181,13 @@ export default {
       this.firstScreen = document.querySelector(".mask-img");
       if (this.bgImgArray) {
         this.bgImgArray;
-        console.log(this.bgImgArray);
         this.index = 0;
         this.bg = "",
         this.bgImgArray.forEach(function (value, index) {
           setTimeout(function () {
             this.imgTeg = document.querySelector(".mask-img-img")
             this.imgTeg.setAttribute("src", value)
-            this.bg = value
+            this.bg = index
           },index * 6900);
         });
         

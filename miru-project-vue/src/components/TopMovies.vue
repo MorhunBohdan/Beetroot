@@ -101,7 +101,6 @@ export default {
         .then((response) => {
           this.genresMovieList = response.data.genres;
           this.slisedGenresList = this.genresMovieList.slice(0, 6);
-          console.log(this.slisedGenresList);
         })
         .catch((e) => {
           this.error.push(e);

@@ -114,7 +114,6 @@ export default {
         .then((response) => {
           this.movie = response.data.results;
           this.top5movie = this.movie.slice(0, 5);
-          console.log(this.movie);
           this.topImg1 =
             "https://image.tmdb.org/t/p/original" + this.movie[0].poster_path;
           this.topImg2 =
@@ -125,7 +124,6 @@ export default {
             "https://image.tmdb.org/t/p/original" + this.movie[3].poster_path;
           this.topImg5 =
             "https://image.tmdb.org/t/p/original" + this.movie[4].poster_path;
-          console.log(this.topImg1);
         })
         .catch((e) => {
           this.error.push(e);

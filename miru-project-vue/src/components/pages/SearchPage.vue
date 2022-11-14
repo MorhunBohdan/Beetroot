@@ -187,7 +187,7 @@
             </div>
           </div>
           <div class="main-filter__category-item by-type">
-            <h3 class="main-filter__category-title">By Type</h3>
+            <h3 class="main-filter__category-title">By Type1</h3>
             <div class="main-filter__category-type">
               <div class="main-filter__category-type-item">
                 <input
@@ -246,7 +246,7 @@
                 <input
                   class="main-filter__category-type-item-input"
                   type="radio"
-                  name="Movies"
+                  name="type"
                   id="Movies"
                   value="movie"
                   v-model="checkboxType"
@@ -263,7 +263,7 @@
                 <input
                   class="main-filter__category-type-item-input"
                   type="radio"
-                  name="tv"
+                  name="type"
                   id="tv"
                   value="tv"
                   v-model="checkboxType"
@@ -516,7 +516,7 @@ export default {
     "$route.params.query": {
       handler: function (query) {
         this.params.query = "&query=" + query;
-        console.log(query);
+        
         this.moviesList();
       },
       deep: true,
@@ -540,7 +540,7 @@ export default {
         )
         .then((response) => {
           this.movies = response.data.results;
-          console.log(this.params.query);
+          
           this.check = response;
           this.totalResults = response.data.total_results;
         })
@@ -571,7 +571,7 @@ export default {
     searchByGenre() {
       this.checkboxString = this.checkboxValues.join("|");
       this.params.with_genres = "&with_genres=" + this.checkboxString;
-      console.log(this.params.with_genres);
+      
     },
     searchByToday() {
       this.currentDate = new Date().toJSON().slice(0, 10);
@@ -593,7 +593,7 @@ export default {
         this.firstDayWeek +
         "&primary_release_date.lte=" +
         this.currentDate;
-      console.log(this.releseDateFilter);
+      
     },
     searchByMonth() {
       this.currentDate = new Date().toJSON().slice(0, 10);
@@ -614,7 +614,7 @@ export default {
       this.currentYear = new Date().getFullYear();
       this.params.primary_release_year = "&year=" + this.currentYear;
 
-      console.log(this.params.primary_release_year);
+      
     },
     searchByTodayTV() {
       this.currentDate = new Date().toJSON().slice(0, 10);
@@ -626,19 +626,19 @@ export default {
     },
     searchByWeekTV() {
       this.currentDate = new Date().toJSON().slice(0, 10);
-      console.log(this.currentDate)
+      
       this.current = new Date();
       this.day = this.current.getDay();
       this.diff = this.current.getDate() - this.day + (this.day == 0 ? -6 : 1);
       this.firstDayWeek = new Date(this.current.setDate(this.diff));
       this.firstDayWeek = new Date(this.firstDayWeek).toJSON().slice(0, 10);
-      console.log(this.firstDayWeek)
+     
       this.params.releseDateFilter =
         "&first_air_date.gte=" +
         this.firstDayWeek +
         "&first_air_date.lte=" +
         this.currentDate;
-      console.log(this.releseDateFilter);
+      
     },
     searchByMonthTV() {
       this.currentDate = new Date().toJSON().slice(0, 10);
@@ -659,7 +659,7 @@ export default {
       this.currentYear = new Date().getFullYear();
       this.params.primary_release_year = "&first_air_date_year=" + this.currentYear;
 
-      console.log(this.params.primary_release_year);
+      
     },
     onClickHandler(page) {
       this.currentPage = page;
@@ -669,31 +669,32 @@ export default {
     },
     setOptionType(event) {
       this.checkedType = event.target;
-      console.log(this.checkboxType)
+      
       if (this.checkedType.checked) {
         this.checkboxType = [event.target.value];
-        console.log("checked")
+        
         this.searchByType();
       } else {
         this.checkboxType = [];
         this.params.type = "movie?";
-        console.log("false")
+        
         
       }
     },
     setOptionTypeRadio(event) {
       this.checkedType = event.target;
-      console.log(this.checkboxType)
+      
       if (this.checkboxType == "movie") {
         this.params.type = this.checkboxType + "?";
+        
         this.typeSearch = this.params.type
         this.moviesList();
-        console.log(this.params.type)
+        
       } else {
         this.params.type = this.checkboxType + "?";
         this.typeSearch = this.params.type
         this.moviesList();
-        console.log(this.params.type)
+        
       }
     },
     setOption(event) {
@@ -724,7 +725,7 @@ export default {
         )
         .then((response) => {
           this.movies = response.data.results;
-          console.log(this.params.query);
+          
           this.check = response;
           this.totalResults = response.data.total_results;
         })
